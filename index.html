@@ -208,6 +208,43 @@
     .key-entry, .study-card p, .memo, .footer {
       font-family: var(--body);
     }
+
+    /* III / Sandy's shared anatomy workshop */
+    .anatomy-intro { border: 2px solid var(--wine); border-radius: 24px; padding: clamp(22px,3.2vw,36px); background: rgba(255,248,239,.86); display:grid; grid-template-columns:minmax(0,1.5fr) minmax(210px,.7fr); gap:26px; align-items:center; }
+    .anatomy-intro h3 { font-size:clamp(27px,3vw,39px); margin:0 0 13px; }
+    .anatomy-intro p {margin:0; max-width:650px;}
+    .anatomy-intro .mannequin-note {padding:20px 22px; border-radius:16px; background:#efe0d0; border:1px solid var(--line); font-size:14px;line-height:1.5;}
+    .anatomy-intro .mannequin-note strong { color:var(--wine); display:block; font-size:16px;margin-bottom:5px;}
+    .anatomy-module {margin-top:28px; padding:clamp(18px,2.8vw,28px); border:2px solid var(--wine); border-radius:24px; background:rgba(255,248,239,.8);}
+    .anatomy-module-head { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:17px;}
+    .anatomy-module-head h3 {font-size:clamp(28px,3.3vw,37px); margin:0 0 8px;}
+    .anatomy-module-head p {margin:0; max-width:610px; font-size:15px;}
+    .anatomy-chip {font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; border:1px solid var(--line-strong); color:var(--wine); border-radius:100px; padding:8px 12px; white-space:nowrap;}
+    .anatomy-compare {display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;}
+    .anatomy-example {min-width:0; margin:0; border:1px solid var(--line); background:#fffaf4; border-radius:18px;overflow:hidden;}
+    .anatomy-example figcaption {padding:14px 17px 16px;border-top:1px solid var(--line);font-size:14px;line-height:1.45; }
+    .anatomy-example figcaption strong {display:block;color:var(--wine);font:26px/1.1 var(--heading);margin-bottom:4px;}
+    .anatomy-crop {position:relative; width:100%;aspect-ratio:599 / 656;overflow:hidden;background:#f7e8d6;}
+    .anatomy-crop img {position:absolute; display:block; max-width:none; width:200%;height:200%;top:0;left:0;}
+    .anatomy-crop--right img {left:-100%;}
+    .anatomy-crop--bottom img {top:-100%;}
+    .anatomy-crop--bottom-right img {top:-100%;left:-100%;}
+    .anatomy-module-foot {margin:14px 1px 0;font-size:13px; color:#735557;}
+    .anatomy-rule-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px;}
+    .anatomy-rule {padding:21px;border:1px solid var(--line);border-radius:16px;background:#fff9f2;}
+    .anatomy-rule-num {font-size:11px; font-weight:700; color:var(--wine); letter-spacing:.1em;}
+    .anatomy-rule h4 {font:25px/1.06 var(--heading);color:var(--wine);margin:10px 0 9px;}
+    .anatomy-rule p {font-size:14px;line-height:1.48;margin:0;}
+    .anatomy-locks {margin-top:18px; display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+    .anatomy-locks article {border-radius:18px;padding:24px;border:1px solid var(--line);background:#f0e0d3;}
+    .anatomy-locks h3 {font-size:27px;margin:0 0 10px;}
+    .anatomy-locks p, .anatomy-locks li {font-size:14px;line-height:1.55;}
+    .anatomy-locks p {margin:0;}
+    .anatomy-locks ul {margin:0;padding-left:20px;}
+    .anatomy-archive-link {display:inline-flex;align-items:center; margin-top:20px; font-weight:700;color:var(--wine);text-underline-offset:3px;}
+    @media (max-width:900px){.anatomy-intro{grid-template-columns:1fr;}.anatomy-rule-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media (max-width:650px){.anatomy-compare,.anatomy-rule-grid,.anatomy-locks{grid-template-columns:1fr;}.anatomy-module{padding:15px}.anatomy-crop{max-width:430px;margin:auto;}.anatomy-chip{white-space:normal;}.anatomy-intro{gap:13px;}}
+    @media print {.anatomy-module,.anatomy-intro,.anatomy-rule,.anatomy-locks article{break-inside:avoid;}}
 </style>
 <!-- Subject index: character bars with three swatches, approximate names from Chirag Mehta’s Name That Color (CC BY 2.5) and authoritative hex codes. -->
 
@@ -222,6 +259,7 @@
 <nav aria-label="Journal sections" class="nav">
 <a class="current" href="#top">Overview</a>
 <a href="#subjects">Subjects</a>
+<a href="#anatomy">Anatomy</a>
 <a href="#notes">Notes</a>
 </nav>
 </div>
@@ -254,10 +292,88 @@
 </div>
 <div aria-label="Selected Growlfriends subjects" class="roster"><article class="subject-bar" data-palette-status="approved" data-type="Normal" style="--bar-a:#A89F8C; --bar-b:#F4E5D2; --bar-c:#E8A2B6;"><div class="subject-bar-inner"><h3>Mallow</h3><span aria-hidden="true" class="bar-separator">|</span><p>Doting Bunny</p><div class="swatch-row" role="group" aria-label="Mallow colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Gray Olive (#A9A491)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Gray Olive</span><span class="swatch-hex">#A89F8C</span></div><div class="palette-swatch" title="Closest Name That Color shade: Albescent White (#F5E9D3)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Albescent White</span><span class="swatch-hex">#F4E5D2</span></div><div class="palette-swatch" title="Closest Name That Color shade: Kobi (#E79FC4)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Kobi</span><span class="swatch-hex">#E8A2B6</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Psychic" style="--bar-a:#6B5196; --bar-b:#D4B3E2; --bar-c:#A891D1;"><div class="subject-bar-inner"><h3>Quill</h3><span aria-hidden="true" class="bar-separator">|</span><p>Magnetic Fish</p><div class="swatch-row" role="group" aria-label="Quill colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Butterfly Bush (#624E9A)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Butterfly Bush</span><span class="swatch-hex">#6B5196</span></div><div class="palette-swatch" title="Closest Name That Color shade: Prelude (#D0C0E5)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Prelude</span><span class="swatch-hex">#D4B3E2</span></div><div class="palette-swatch" title="Closest Name That Color shade: East Side (#AC91CE)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">East Side</span><span class="swatch-hex">#A891D1</span></div></div></div></article><article class="subject-bar" data-palette-status="approved" data-type="Fire" style="--bar-a:#B51F38; --bar-b:#F2C43D; --bar-c:#4C263D;"><div class="subject-bar-inner"><h3>Vesper</h3><span aria-hidden="true" class="bar-separator">|</span><p>Provocative Bat</p><div class="swatch-row" role="group" aria-label="Vesper colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Cardinal (#C41E3A)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Cardinal</span><span class="swatch-hex">#B51F38</span></div><div class="palette-swatch" title="Closest Name That Color shade: Saffron (#F4C430)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Saffron</span><span class="swatch-hex">#F2C43D</span></div><div class="palette-swatch" title="Closest Name That Color shade: Livid Brown (#4D282E)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Livid Brown</span><span class="swatch-hex">#4C263D</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Fighting" style="--bar-a:#9F4E55; --bar-b:#F4B27D; --bar-c:#6D3148;"><div class="subject-bar-inner"><h3>Bibi</h3><span aria-hidden="true" class="bar-separator">|</span><p>Tenacious Monkey</p><div class="swatch-row" role="group" aria-label="Bibi colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Copper Rust (#944747)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Copper Rust</span><span class="swatch-hex">#9F4E55</span></div><div class="palette-swatch" title="Closest Name That Color shade: Rajah (#F7B668)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Rajah</span><span class="swatch-hex">#F4B27D</span></div><div class="palette-swatch" title="Closest Name That Color shade: Finn (#692D54)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Finn</span><span class="swatch-hex">#6D3148</span></div></div></div></article><article class="subject-bar" data-palette-status="approved" data-type="Poison" style="--bar-a:#945DA9; --bar-b:#BCE27B; --bar-c:#DA3B98;"><div class="subject-bar-inner"><h3>Bubble</h3><span aria-hidden="true" class="bar-separator">|</span><p>Indulgent Tree Frog</p><div class="swatch-row" role="group" aria-label="Bubble colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Wisteria (#9771B5)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Wisteria</span><span class="swatch-hex">#945DA9</span></div><div class="palette-swatch" title="Closest Name That Color shade: Yellow Green (#C5E17A)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Yellow Green</span><span class="swatch-hex">#BCE27B</span></div><div class="palette-swatch" title="Closest Name That Color shade: Cerise (#DA3287)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Cerise</span><span class="swatch-hex">#DA3B98</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Spectral" style="--bar-a:#6E5A91; --bar-b:#C5CFD8; --bar-c:#292433;"><div class="subject-bar-inner"><h3>Mara</h3><span aria-hidden="true" class="bar-separator">|</span><p>Teasing Imp</p><div class="swatch-row" role="group" aria-label="Mara colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Kimberly (#736C9F)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Kimberly</span><span class="swatch-hex">#6E5A91</span></div><div class="palette-swatch" title="Closest Name That Color shade: Heather (#B7C3D0)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Heather</span><span class="swatch-hex">#C5CFD8</span></div><div class="palette-swatch" title="Closest Name That Color shade: Bastille (#292130)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Bastille</span><span class="swatch-hex">#292433</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Water" style="--bar-a:#357D96; --bar-b:#A9DDE6; --bar-c:#4777BE;"><div class="subject-bar-inner"><h3>Delphine</h3><span aria-hidden="true" class="bar-separator">|</span><p>Quirky Dolphin</p><div class="swatch-row" role="group" aria-label="Delphine colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Calypso (#31728D)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Calypso</span><span class="swatch-hex">#357D96</span></div><div class="palette-swatch" title="Closest Name That Color shade: Regent St Blue (#AAD6E6)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Regent St Blue</span><span class="swatch-hex">#A9DDE6</span></div><div class="palette-swatch" title="Closest Name That Color shade: Steel Blue (#4682B4)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Steel Blue</span><span class="swatch-hex">#4777BE</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Electric" style="--bar-a:#C98D2D; --bar-b:#F9DD75; --bar-c:#6E4D38;"><div class="subject-bar-inner"><h3>Zip</h3><span aria-hidden="true" class="bar-separator">|</span><p>Spunky Hedgehog</p><div class="swatch-row" role="group" aria-label="Zip colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Brandy Punch (#CD8429)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Brandy Punch</span><span class="swatch-hex">#C98D2D</span></div><div class="palette-swatch" title="Closest Name That Color shade: Marigold Yellow (#FBE870)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Marigold Yellow</span><span class="swatch-hex">#F9DD75</span></div><div class="palette-swatch" title="Closest Name That Color shade: Shingle Fawn (#6B4E31)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Shingle Fawn</span><span class="swatch-hex">#6E4D38</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Wind" style="--bar-a:#5C91A8; --bar-b:#D6EAF0; --bar-c:#B878A6;"><div class="subject-bar-inner"><h3>Connie</h3><span aria-hidden="true" class="bar-separator">|</span><p>Untamed Conure</p><div class="swatch-row" role="group" aria-label="Connie colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Horizon (#5A87A0)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Horizon</span><span class="swatch-hex">#5C91A8</span></div><div class="palette-swatch" title="Closest Name That Color shade: Jagged Ice (#C2E8E5)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Jagged Ice</span><span class="swatch-hex">#D6EAF0</span></div><div class="palette-swatch" title="Closest Name That Color shade: Bouquet (#AE809E)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Bouquet</span><span class="swatch-hex">#B878A6</span></div></div></div></article><article class="subject-bar" data-palette-status="illustrative" data-type="Ground" style="--bar-a:#AC805A; --bar-b:#EBD0A5; --bar-c:#775D58;"><div class="subject-bar-inner"><h3>Ada</h3><span aria-hidden="true" class="bar-separator">|</span><p>Coy Cat</p><div class="swatch-row" role="group" aria-label="Ada colour swatches"><div class="palette-swatch" title="Closest Name That Color shade: Limed Oak (#AC8A56)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Limed Oak</span><span class="swatch-hex">#AC805A</span></div><div class="palette-swatch" title="Closest Name That Color shade: Pancho (#EDCDAB)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Pancho</span><span class="swatch-hex">#EBD0A5</span></div><div class="palette-swatch" title="Closest Name That Color shade: Russett (#755A57)"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Russett</span><span class="swatch-hex">#775D58</span></div></div></div></article></div>
 </section>
+
+<section aria-labelledby="anatomy-title" id="anatomy">
+  <div class="section-heading">
+    <div><div class="section-num">II / THE ANATOMY ATLAS</div><h2 id="anatomy-title">Shared Anatomy</h2></div>
+    <p>One body standard. Many different girls. Sandy models the proportions without distracting character-specific features.</p>
+  </div>
+  <div class="anatomy-intro">
+    <div>
+      <span class="folio">Model sheet / Sandy</span>
+      <h3>Shape first, character second.</h3>
+      <p>Sandy is our cute, bald clay mannequin: softly sculpted features, blank uncoloured eyes, neutral skin and clothing. She makes it easier to compare the <strong>actual silhouettes</strong> rather than fur, feathers, hair, palettes or personalities. The examples are art-direction diagrams, not measurements.</p>
+    </div>
+    <div class="mannequin-note"><strong>The golden rule</strong>Keep the approved neck-down body mold consistent across the girls. For the head-scale study, only the whole head is enlarged; the normal petite neck and shoulders do not grow with it.</div>
+  </div>
+
+  <article class="anatomy-module" aria-labelledby="bust-module-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 01 / mass &amp; fabric</span><h3 id="bust-module-title">Bust: rounded to gravity-set</h3><p>Broad mid-to-lower fullness, an oblong silhouette and a smoother, supported fabric sweep — without changing the underlying body scale.</p></div>
+      <span class="anatomy-chip">Front view / schematic</span>
+    </div>
+    <div class="anatomy-compare">
+      <figure class="anatomy-example">
+        <div class="anatomy-crop" role="img" aria-label="Sandy before: rounded, high-set mass, two separate spherical lobes and a sharp center underbust notch"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <figcaption><strong>Before</strong>Two rounded lobes, fuller upper contour, deep center pinch and visibly gathered fabric.</figcaption>
+      </figure>
+      <figure class="anatomy-example">
+        <div class="anatomy-crop anatomy-crop--right" role="img" aria-label="Sandy after: broadened mid and lower poles, soft continuous lower sweep, calmer upper contour and smoother fabric tension"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <figcaption><strong>After</strong>Broader mid/lower volume, quieter upper pole, flatter center rise and more even horizontal stretch.</figcaption>
+      </figure>
+    </div>
+    <p class="anatomy-module-foot">Same underlying model and approximate scale; this is a visual redistribution study, not a literal measured volume calculation.</p>
+    <div class="anatomy-rule-grid">
+      <div class="anatomy-rule"><span class="anatomy-rule-num">01</span><h4>Mid &amp; lower weight</h4><p>Let fullness settle through the middle and lower poles rather than collecting high on the pecs.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">02</span><h4>Oblong, not round</h4><p>Give the mass horizontal breadth and gently lengthened lower curves; avoid two perfect spheres.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">03</span><h4>Lower-outer width</h4><p>Fill the lower sides while keeping armpit and upper-outer fullness unchanged.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">04</span><h4>One soft sweep</h4><p>Replace the dramatic W-shaped fabric notch with a long lower contour and a modest center rise.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">05</span><h4>Petite ribcage</h4><p>The bust can be wide without widening the ribcage, shoulders, waist or torso underneath.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">06</span><h4>Fabric follows form</h4><p>Use gentle transverse stretch with restrained underside folds. No vacuum-sealed cleavage seams or artificially lifted pouches.</p></div>
+    </div>
+  </article>
+
+  <article class="anatomy-module" aria-labelledby="head-module-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 02 / proportional exaggeration</span><h3 id="head-module-title">Head: petite to cartoon</h3><p>Give the girls an intentionally oversized animated head without shrinking the body or thickening the neck.</p></div>
+      <span class="anatomy-chip">Neck-down hard lock</span>
+    </div>
+    <div class="anatomy-compare">
+      <figure class="anatomy-example">
+        <div class="anatomy-crop anatomy-crop--bottom" role="img" aria-label="Sandy before head enlargement: smaller head on the unchanged petite body"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <figcaption><strong>Before</strong>A more conventional small head relative to her normal narrow neck and shoulders.</figcaption>
+      </figure>
+      <figure class="anatomy-example">
+        <div class="anatomy-crop anatomy-crop--bottom-right" role="img" aria-label="Sandy after head enlargement: same body and collar with a visibly larger whole head and preserved facial features"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <figcaption><strong>After</strong>Entire head scales together: skull, face and ears. Neck, shoulders, bust and outfit stay put.</figcaption>
+      </figure>
+    </div>
+    <p class="anatomy-module-foot">An intentionally cartoon-sized head on a petite adult frame — not a juvenile or super-deformed body. The illustration shows the intended visual relationship; it does not establish an exact percentage.</p>
+  </article>
+
+  <div class="anatomy-locks">
+    <article>
+      <h3>Hard locks</h3>
+      <ul>
+        <li>Neck length and width, shoulders, arms, bust, narrow underbust/ribcage, waist and pose.</li>
+        <li>Existing breast size and upper-pectoral/armpit contours unless explicitly unlocked.</li>
+        <li>Facial identity and expression; scaling must not redesign the eyes, mouth, muzzle or species.</li>
+        <li>Front-facing camera, lower crop, framing and outfit construction.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Character translation</h3>
+      <p>Sandy is the neutral teaching model. Each girl keeps her own face, species traits, hair, eyes, skin, fur, materials, palette and clothing. A bigger head does <em>not</em> mean bigger shoulders, a broader neck or a smaller bust.</p>
+      <p style="margin-top:12px">Treat the approved visual checkpoints as the target; iterative percentages are art-direction shorthand, not anatomical measurements.</p>
+    </article>
+  </div>
+  <a class="anatomy-archive-link" href="docs/growlfriends-bust-anatomy.md">Read the complete studio guide →</a>
+</section>
+
 <section aria-labelledby="notes-title" id="notes">
 <div class="section-heading">
 <div>
-<div class="section-num">II / WORKING NOTES</div>
+<div class="section-num">III / WORKING NOTES</div>
 <h2 id="notes-title">Study Areas</h2>
 </div>
 <p>Where observations, references, and revisions belong as the journal grows.</p>

@@ -1,74 +1,50 @@
-# Growlfriends — Shared Proportions Guide: Bust Anatomy & Head Scale
+# Growlfriends — Shared Anatomy Guide
+**Model:** Sandy, the neutral clay mannequin · **Status:** illustrated visual standard · **View:** upright, front-facing bust-up
 
-**Status:** approved visual targets · **Reference:** Mallow's final bust portrait and subsequent enlarged-head portrait, 20 November 2026  
-**Scope:** shared bust shape/garment response **and** the approved cartoon head-to-body proportion. This does **not** replace the universal neck-down body mold or redesign any girl's facial identity, species, colors, or outfit.
+Sandy is a **bald, feature-light, warm-ivory clay mannequin** with softly sculpted eye wells (no irises/pupils), minimal nose and mouth, subtle brows, and a neutral outfit. She is a teaching stand-in for the Growlfriends' **shared body geometry**, not a new species or a replacement for anyone's facial identity.
 
-## Before and after
+## Sandy anatomy comparison plate
 
-![Mallow bust comparison: before with two more individually rounded lobes and a deeply notched lower shirt silhouette; after with a broad mid-to-lower contour and smoother continuous lower sweep.](../assets/bust-anatomy/mallow-before-after.jpg)
+![Four-panel Sandy study, with bust before/after on the top row and head scale before/after on the bottom row.](../assets/anatomy/sandy-comparison.webp)
 
-*Both crops use the actual pre-refinement and final approved Mallow illustrations, aligned at the same approximate frontal scale. The image is a comparison thumbnail, not a measurement diagram.*
+The **top-left** panel shows the older, rounder bust silhouette. **Top-right** shows broader mid/lower fullness and a gentler lower fabric sweep. **Bottom-left** shows the smaller original head ratio; **bottom-right** enlarges the complete head on the unchanged petite body.
 
-| Feature | Before | Approved after |
-| --- | --- | --- |
-| **Upper pole** | Rounder, perkier transition into the chest | Quieter, softer upper slope; no added upper-pectoral bulk |
-| **Mid-pole** | Fullness reads as two mostly separate round forms | More distributed horizontal breadth through the middle |
-| **Lower pole** | Two strongly curved lower lobes | Heavy, oblong, laterally full volume with a broad lower sweep |
-| **Center underbust** | Sharp, upward central notch emphasized by fabric | Subtle center rise; visually smoother and more continuous |
-| **Garment** | Gathered folds exaggerate two isolated spheres | More even transverse tension with restrained folds below |
+*These are schematic illustrations, not precisely registered 3D renders or percent-accurate measurements.*
 
-## The six shape rules
+## Bust anatomy — six essentials
 
-1. **Weight lives in the middle and bottom.** The bust is large, broad, and gravity-set. The main visual fullness is in the mid-to-lower poles, not in high, round pectoral mounds.
-2. **Oblong rather than spherical.** Favor broad horizontal mass and gently lengthened lower contours over two identical circles. The breasts remain anatomically distinct; only the *clothed silhouette* becomes more continuous.
-3. **Lower-outer breadth, not armpit swelling.** Fuller lower-lateral sides provide the wide silhouette. Keep the upper outer breast/armpit transition quiet and consistent with the locked body mold.
-4. **A long, soft lower sweep.** The bottom contour settles into a gentle, wide arc with only a modest center rise. Do not pinch the middle into a sharp W or build two dangling, round bulbs.
-5. **A tiny ribcage beneath real weight.** Preserve the approved narrow underbust diameter, its vertical extent, and the relatively straight/tapered sides. Bust breadth must not widen the ribcage, shoulders, or torso.
-6. **Natural support and attachment.** Preserve the established upper-chest attachment points, cleavage position, symmetry, and overall breast scale. Do not lower the entire bust or simply enlarge it to imitate the final outline.
+1. **Weight through the middle and bottom.** Concentrate the visual fullness in the mid and lower poles; avoid a high, perkily rounded upper-pole mound.
+2. **Oblong rather than spherical.** Favor generous horizontal breadth and softly lengthened lower arcs, rather than two symmetrical spheres.
+3. **Lower-outer breadth, not armpit swelling.** The mass widens toward the lower sides; the upper-lateral/axillary contours remain locked.
+4. **A smooth lower sweep.** Keep only a modest central rise in the clothed underbust. Avoid a sharp W-shaped indentation or separated round fabric pouches.
+5. **A narrow stable ribcage.** Do not widen shoulders, ribcage, or waist to account for the broad bust; the approved petite underlying frame stays identical.
+6. **Cloth follows volume.** Use gentle transverse stretch over the breast mass and fewer folds except underneath the weight; avoid compressed, vacuum-sealed cleavage and artificial lift.
 
-## Cloth and neckline
+The existing total bust scale, upper-chest attachment, cleavage position, upper-pectoral region, and armpit area are **hard-locked unless individually unlocked**. The illustrated improvement is chiefly a **redistribution of form and fabric tension**, not simple enlargement or lowering of the whole bust.
 
-- Fabric follows the **existing breast mass**, not the reverse. Avoid compressing the shape into a new bra-like form.
-- Across the bust, use **gentle broad horizontal stretch** and dimensional shading; keep heavy folds chiefly beneath the weight.
-- Avoid vacuum-sealed central seams, excessive underbust wrinkles, sharply separated fabric pouches, or an artificially lifted contour.
-- Mallow retains her **dramatic, raised U-scoop** with glossy rose trim. That neckline is **her outfit detail**, not a required neckline for every girl.
+## Head scale — before and after
 
-## Hard locks when transferring to other girls
+The **bottom pair** illustrates the approved proportional language: a noticeably **oversized cartoon head** on a **petite, mature adult body** with unchanged, normal, narrow neck and shoulders.
 
-**Keep unchanged unless specifically unlocked:** total bust size/scale, upper pectoral volume, upper outer/axillary volume, shoulder span, neck, arm thickness and placement, narrow underbust/ribcage geometry, waist, posture, camera angle, and crop.
+- Enlarge the **whole head as a unit** — skull, face, cheeks, ears, hair (if present) — without redesigning or separately exaggerating any face feature.
+- Keep facial geometry, eye shape and spacing, nose, mouth, expression, species-specific anatomy and head silhouette consistent with each girl's established identity.
+- **Hard-lock everything from the neck down:** neck thickness and length, shoulders, arms, bust, torso, ribcage, collar, costume and all lower geometry.
+- Connect the larger head cleanly at the original neck junction. Do not change the neck, widen the shoulders, shrink the torso, raise the body, or zoom out.
+- Preserve the front-on upright pose and the lower frame; make extra room for the larger head above rather than rescaling the body.
+- Use the **illustrated visual ratio**, not an invented measured factor. The earlier tentative 8–12% estimate was exploratory, not a final measurement.
 
-**The permitted adjustment:** redistribute the *visual concentration* of the existing bust volume toward the mid/lower and lower-outer poles; smooth the fabric's lower outline to reflect the shape, without increasing total size.
+## Character transfer rule
 
-**Every Growlfriend shares the same underlying body geometry.** Fur, skin, scales, synthetic materials, markings, and clothing construction can vary by character; they do not justify changing the common bust proportions. A different neckline or fabric may reveal the shape differently, but must not silently redesign the anatomy.
+**Sandy is neutral.** All Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
 
-## Approved cartoon head scale
+## Quick quality check
 
-**Visual checkpoint:** the latest Mallow portrait with the noticeably enlarged head (generation ID `82cad3e1-e657-4dc2-a4c2-670ac8b02443`). It retains the exact same petite neck, shoulders, chest, arms, torso, clothing, and lower frame as the approved body reference; only the head assembly is intended to look larger.
+- [ ] Broad, heavy mid/lower bust; quiet upper pole
+- [ ] Lower-outer volume is full but the armpit contour is unchanged
+- [ ] Soft, continuous lower sweep and natural clothing tension
+- [ ] Ribcage stays narrow and the body scale stays fixed
+- [ ] Head is visibly larger relative to the **unchanged** neck/shoulders
+- [ ] Facial identity and features retain their internal proportions
+- [ ] No body scaling, crop changes or hidden alterations to the shared mold
 
-**Proportion target:** a distinctly oversized *cartoon* head resting on an otherwise petite, mature adult body — comparable in proportional language to classic animated anthropomorphic characters, **not** a fully chibi/deformed body. The head is visibly larger relative to the shoulder span, but the shoulders and neck do not broaden or thicken to compensate.
-
-### Head-only transfer rule
-
-- Scale the **entire head assembly** together: skull, face, muzzle, cheeks, eyes, ears, and hair, maintaining their established internal proportions and placement.
-- **Do not redesign or separately magnify the face.** Preserve eye shape/spacing, nose and mouth, smile, expression, cheek/muzzle construction, ears, hairstyle, and character-specific identity. Another girl's head must remain distinctly *her* species and face.
-- **Hard-lock everything from the neck down:** neck width and length, shoulder breadth, torso and bust anatomy, arm proportions, underbust/ribcage, outfit, accessories, pose, and lower crop. The collar and its hardware stay at their original size and position.
-- Make the enlarged head connect **cleanly at the existing neck junction**; do not grow a thicker neck, raise the shoulders, shrink the body, or widen the frame/body to make it fit.
-- Keep the portrait **upright, centered, and front-facing**. Allow room for the larger hair/ears above or around the original head while protecting the locked lower-frame region. Avoid zooming out or shrinking the body to gain headroom.
-- The previously discussed **8–12%** was an exploratory direction, **not a measured final scale factor**. Match the approved *visual ratio* from Mallow's enlarged-head checkpoint instead of applying an invented exact percentage.
-
-This is a **shared head-to-body proportion target**, not a universal head shape: character-specific skull silhouettes, animal anatomy, antennae/horns/ears, hair, and facial features remain individually authored.
-
-## Quality check
-
-- [ ] Broad, weighty mid/lower silhouette; no upper-pole perkiness
-- [ ] Lower sides full; armpit and upper-outer volume unchanged
-- [ ] Bottom edge reads as a soft sweep, not a deep W
-- [ ] Both breasts remain distinct beneath one broadly continuous garment
-- [ ] Narrow ribcage and all non-bust body locks intact
-- [ ] Outfit tension supports the form without shrinking, lifting, or splitting it
-- [ ] Entire portrait remains front-facing, centered, and on-model
-- [ ] Head is visibly larger relative to the **unchanged** petite shoulders and neck
-- [ ] Head, face, ears, and hair scale together without facial redesign or altered expression
-- [ ] No zoom-out, body rescale, shoulder/neck enlargement, or loss of the locked lower crop
-
-**Important:** These are front-view drawing rules, not claims about measured 3D volume. The approved image is the aesthetic checkpoint; side projection needs its own reference before it is treated as locked. Percent adjustments discussed during iteration were art-direction increments, not measured anatomical values.
+**Studio note:** These guidelines are **stylized illustration rules**, not medical/anatomical data or exact 3D measurements. See the [website's Shared Anatomy section](../index.html#anatomy) for the labelled visual study.
