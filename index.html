@@ -224,11 +224,11 @@
     .anatomy-example {min-width:0; margin:0; border:1px solid var(--line); background:#fffaf4; border-radius:18px;overflow:hidden;}
     .anatomy-example figcaption {padding:14px 17px 16px;border-top:1px solid var(--line);font-size:14px;line-height:1.45; }
     .anatomy-example figcaption strong {display:block;color:var(--wine);font:26px/1.1 var(--heading);margin-bottom:4px;}
-    .anatomy-crop {position:relative; width:100%;aspect-ratio:599 / 656;overflow:hidden;background:#f7e8d6;}
-    .anatomy-crop img {position:absolute; display:block; max-width:none; width:200%;height:200%;top:0;left:0;}
-    .anatomy-crop--right img {left:-100%;}
-    .anatomy-crop--bottom img {top:-100%;}
-    .anatomy-crop--bottom-right img {top:-100%;left:-100%;}
+    .anatomy-portrait {display:block; width:100%; overflow:hidden; background:#f7e8d6;}
+    .anatomy-portrait picture {display:block;}
+    .anatomy-portrait img {display:block;width:100%;height:auto;aspect-ratio:32 / 31;object-fit:contain;}
+    .anatomy-portrait:focus-visible {outline:3px solid var(--wine);outline-offset:-4px;border-radius:8px;}
+    .anatomy-portrait:hover {filter:brightness(1.015);}
     .anatomy-module-foot {margin:14px 1px 0;font-size:13px; color:#735557;}
     .anatomy-rule-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px;}
     .anatomy-rule {padding:21px;border:1px solid var(--line);border-radius:16px;background:#fff9f2;}
@@ -243,7 +243,7 @@
     .anatomy-locks ul {margin:0;padding-left:20px;}
     .anatomy-archive-link {display:inline-flex;align-items:center; margin-top:20px; font-weight:700;color:var(--wine);text-underline-offset:3px;}
     @media (max-width:900px){.anatomy-intro{grid-template-columns:1fr;}.anatomy-rule-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-    @media (max-width:650px){.anatomy-compare,.anatomy-rule-grid,.anatomy-locks{grid-template-columns:1fr;}.anatomy-module{padding:15px}.anatomy-crop{max-width:430px;margin:auto;}.anatomy-chip{white-space:normal;}.anatomy-intro{gap:13px;}}
+    @media (max-width:650px){.anatomy-compare,.anatomy-rule-grid,.anatomy-locks{grid-template-columns:1fr;}.anatomy-module{padding:15px}.anatomy-portrait{max-width:500px;margin:auto;}.anatomy-chip{white-space:normal;}.anatomy-intro{gap:13px;}}
     @media print {.anatomy-module,.anatomy-intro,.anatomy-rule,.anatomy-locks article{break-inside:avoid;}}
 </style>
 <!-- Subject index: character bars with three swatches, approximate names from Chirag Mehta’s Name That Color (CC BY 2.5) and authoritative hex codes. -->
@@ -302,7 +302,7 @@
     <div>
       <span class="folio">Model sheet / Sandy</span>
       <h3>Shape first, character second.</h3>
-      <p>Sandy is our cute, bald clay mannequin: softly sculpted features, blank uncoloured eyes, neutral skin and clothing. She makes it easier to compare the <strong>actual silhouettes</strong> rather than fur, feathers, hair, palettes or personalities. The examples are art-direction diagrams, not measurements.</p>
+      <p>Sandy is our cute, bald mannequin with muted stone-grey clay skin, softly sculpted features, blank uncoloured eyes, a pale grey shirt and a long charcoal underbust band. She makes it easier to compare the <strong>actual silhouettes</strong> rather than fur, feathers, hair, palettes or personalities. The examples are art-direction diagrams, not measurements.</p>
     </div>
     <div class="mannequin-note"><strong>The golden rule</strong>Keep the approved neck-down body mold consistent across the girls. For the head-scale study, only the whole head is enlarged; the normal petite neck and shoulders do not grow with it.</div>
   </div>
@@ -314,15 +314,15 @@
     </div>
     <div class="anatomy-compare">
       <figure class="anatomy-example">
-        <div class="anatomy-crop" role="img" aria-label="Sandy before: rounded, high-set mass, two separate spherical lobes and a sharp center underbust notch"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-bust-before.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-bust-before.avif" type="image/avif"><img src="assets/anatomy/sandy-bust-before.png" alt="Sandy before: rounded, high-set mass, two separate spherical lobes and a sharp center underbust notch" loading="lazy" decoding="async" width="1920" height="1860"></picture></a>
         <figcaption><strong>Before</strong>Two rounded lobes, fuller upper contour, deep center pinch and visibly gathered fabric.</figcaption>
       </figure>
       <figure class="anatomy-example">
-        <div class="anatomy-crop anatomy-crop--right" role="img" aria-label="Sandy after: broadened mid and lower poles, soft continuous lower sweep, calmer upper contour and smoother fabric tension"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-bust-after.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-bust-after.avif" type="image/avif"><img src="assets/anatomy/sandy-bust-after.png" alt="Sandy after: broadened mid and lower poles, soft continuous lower sweep, calmer upper contour and smoother fabric tension" loading="lazy" decoding="async" width="1920" height="1860"></picture></a>
         <figcaption><strong>After</strong>Broader mid/lower volume, quieter upper pole, flatter center rise and more even horizontal stretch.</figcaption>
       </figure>
     </div>
-    <p class="anatomy-module-foot">Same underlying model and approximate scale; this is a visual redistribution study, not a literal measured volume calculation.</p>
+    <p class="anatomy-module-foot">Matched 1920 × 1860 portraits. Click either image for the full-resolution PNG. This is a visual redistribution study, not a literal measured volume calculation.</p>
     <div class="anatomy-rule-grid">
       <div class="anatomy-rule"><span class="anatomy-rule-num">01</span><h4>Mid &amp; lower weight</h4><p>Let fullness settle through the middle and lower poles rather than collecting high on the pecs.</p></div>
       <div class="anatomy-rule"><span class="anatomy-rule-num">02</span><h4>Oblong, not round</h4><p>Give the mass horizontal breadth and gently lengthened lower curves; avoid two perfect spheres.</p></div>
@@ -340,15 +340,15 @@
     </div>
     <div class="anatomy-compare">
       <figure class="anatomy-example">
-        <div class="anatomy-crop anatomy-crop--bottom" role="img" aria-label="Sandy before head enlargement: smaller head on the unchanged petite body"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-head-before.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-head-before.avif" type="image/avif"><img src="assets/anatomy/sandy-head-before.png" alt="Sandy before head enlargement: smaller head on the unchanged petite body" loading="lazy" decoding="async" width="1920" height="1860"></picture></a>
         <figcaption><strong>Before</strong>A more conventional small head relative to her normal narrow neck and shoulders.</figcaption>
       </figure>
       <figure class="anatomy-example">
-        <div class="anatomy-crop anatomy-crop--bottom-right" role="img" aria-label="Sandy after head enlargement: same body and collar with a visibly larger whole head and preserved facial features"><img src="assets/anatomy/sandy-comparison.webp" alt="" loading="lazy" decoding="async" width="400" height="438"></div>
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-head-after.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-head-after.avif" type="image/avif"><img src="assets/anatomy/sandy-head-after.png" alt="Sandy after head enlargement: same body and collar with a visibly larger whole head and preserved facial features" loading="lazy" decoding="async" width="1920" height="1860"></picture></a>
         <figcaption><strong>After</strong>Entire head scales together: skull, face and ears. Neck, shoulders, bust and outfit stay put.</figcaption>
       </figure>
     </div>
-    <p class="anatomy-module-foot">An intentionally cartoon-sized head on a petite adult frame — not a juvenile or super-deformed body. The illustration shows the intended visual relationship; it does not establish an exact percentage.</p>
+    <p class="anatomy-module-foot">Matched 1920 × 1860 portraits. Click either image for the full-resolution PNG. The enlarged head sits on an unchanged petite adult frame; the study does not establish an exact scaling percentage.</p>
   </article>
 
   <div class="anatomy-locks">
@@ -363,7 +363,7 @@
     </article>
     <article>
       <h3>Character translation</h3>
-      <p>Sandy is the neutral teaching model. Each girl keeps her own face, species traits, hair, eyes, skin, fur, materials, palette and clothing. A bigger head does <em>not</em> mean bigger shoulders, a broader neck or a smaller bust.</p>
+      <p>Sandy is the neutral teaching model, with muted grey clay skin, pale grey shirt, charcoal trim and a thick charcoal ribcage band. Each girl keeps her own face, species traits, hair, eyes, skin, fur, materials, palette and clothing. A bigger head does <em>not</em> mean bigger shoulders, a broader neck or a smaller bust.</p>
       <p style="margin-top:12px">Treat the approved visual checkpoints as the target; iterative percentages are art-direction shorthand, not anatomical measurements.</p>
     </article>
   </div>

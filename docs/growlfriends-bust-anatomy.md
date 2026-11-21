@@ -1,15 +1,25 @@
 # Growlfriends — Shared Anatomy Guide
 **Model:** Sandy, the neutral clay mannequin · **Status:** illustrated visual standard · **View:** upright, front-facing bust-up
 
-Sandy is a **bald, feature-light, warm-ivory clay mannequin** with softly sculpted eye wells (no irises/pupils), minimal nose and mouth, subtle brows, and a neutral outfit. She is a teaching stand-in for the Growlfriends' **shared body geometry**, not a new species or a replacement for anyone's facial identity.
+Sandy is a **bald, feature-light, muted stone-grey clay mannequin** with softly sculpted eye wells (no irises/pupils), minimal nose and mouth, subtle brows, a pale grey scoop-neck shirt, charcoal trim, a **long, thick charcoal underbust/ribcage band**, and a charcoal choker with a gold O-ring. She is a teaching stand-in for the Growlfriends' **shared body geometry**, not a new species or a replacement for anyone's facial identity.
 
-## Sandy anatomy comparison plate
+## Sandy anatomy comparison plates
 
-![Four-panel Sandy study, with bust before/after on the top row and head scale before/after on the bottom row.](../assets/anatomy/sandy-comparison.webp)
+The four examples are now individual, matched **1920 × 1860** PNG portraits. Click each image to open its full-resolution master; the website uses optimized AVIF copies for fast loading.
 
-The **top-left** panel shows the older, rounder bust silhouette. **Top-right** shows broader mid/lower fullness and a gentler lower fabric sweep. **Bottom-left** shows the smaller original head ratio; **bottom-right** enlarges the complete head on the unchanged petite body.
+### Bust distribution — before and after
 
-*These are schematic illustrations, not precisely registered 3D renders or percent-accurate measurements.*
+| Before: rounded upper fullness | After: gravity-set mid/lower weight |
+| --- | --- |
+| [![Sandy before: rounded upper fullness, deep central underbust notch and gathered fabric](../assets/anatomy/sandy-bust-before.png)](../assets/anatomy/sandy-bust-before.png) | [![Sandy after: broad mid/lower mass, smoother lower sweep and softer tension](../assets/anatomy/sandy-bust-after.png)](../assets/anatomy/sandy-bust-after.png) |
+
+### Head scale — before and after
+
+| Before: standard head | After: larger cartoon head |
+| --- | --- |
+| [![Sandy standard head scale on the approved body](../assets/anatomy/sandy-head-before.png)](../assets/anatomy/sandy-head-before.png) | [![Sandy enlarged cartoon head with the same petite neck, shoulders, bust, shirt and dark band](../assets/anatomy/sandy-head-after.png)](../assets/anatomy/sandy-head-after.png) |
+
+These images illustrate the intended differences, not precise 3D measurements. The shared shoulder and ribcage geometry, garment, pose and crop should stay consistent within each pair.
 
 ## Bust anatomy — six essentials
 
@@ -28,20 +38,21 @@ The **bottom pair** illustrates the approved proportional language: a noticeably
 
 - Enlarge the **whole head as a unit** — skull, face, cheeks, ears, hair (if present) — without redesigning or separately exaggerating any face feature.
 - Keep facial geometry, eye shape and spacing, nose, mouth, expression, species-specific anatomy and head silhouette consistent with each girl's established identity.
-- **Hard-lock everything from the neck down:** neck thickness and length, shoulders, arms, bust, torso, ribcage, collar, costume and all lower geometry.
+- **Hard-lock everything from the neck down:** neck thickness and length, shoulders, arms, bust, torso, narrow ribcage, thick charcoal underbust band, collar, costume and all lower geometry.
 - Connect the larger head cleanly at the original neck junction. Do not change the neck, widen the shoulders, shrink the torso, raise the body, or zoom out.
 - Preserve the front-on upright pose and the lower frame; make extra room for the larger head above rather than rescaling the body.
 - Use the **illustrated visual ratio**, not an invented measured factor. The earlier tentative 8–12% estimate was exploratory, not a final measurement.
 
 ## Character transfer rule
 
-**Sandy is neutral.** All Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
+**Sandy is neutral.** Her stone-grey skin and pale-grey/charcoal clothing are only a teaching palette; all Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
 
 ## Quick quality check
 
 - [ ] Broad, heavy mid/lower bust; quiet upper pole
 - [ ] Lower-outer volume is full but the armpit contour is unchanged
 - [ ] Soft, continuous lower sweep and natural clothing tension
+- [ ] Thick, long charcoal band wraps the narrow ribcage without compressing or widening it
 - [ ] Ribcage stays narrow and the body scale stays fixed
 - [ ] Head is visibly larger relative to the **unchanged** neck/shoulders
 - [ ] Facial identity and features retain their internal proportions
