@@ -73,6 +73,14 @@ The map identifies the regions only; its pictured anatomy predates the final ref
 - “+1 puff” is qualitative art-direction shorthand, not a percentage, distance, or measured volume.
 - Do not infer actual sagittal depth from frontal shading. A later side study will be needed to promote this alpha into a locked three-dimensional standard.
 
+## Three-quarter anatomy transfer — v0.1 (alpha)
+
+The three-quarter study preserves the now-approved **rightward body orientation, heavy oblong bust projection, narrow waist, lifted rounded glutes, slimmer quadriceps, and soft anterior depth at regions 03 and 05**. The **body shape is locked**. In the supplied geometry checkpoint, the **head remains too frontal and the skin/clothing palette is not canonical**; those are the only two pending corrections.
+
+[Open the fully illustrated, iterative three-quarter guide](sandy-three-quarter-guide.md).
+
+![Six-stage three-quarter body development](../assets/anatomy/sandy-3q-iteration-gallery.webp)
+
 ## Character transfer rule
 
 **Sandy is neutral.** Her stone-grey skin and pale-grey/charcoal clothing are only a teaching palette; all Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
