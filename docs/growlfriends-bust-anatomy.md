@@ -43,6 +43,36 @@ The **bottom pair** illustrates the approved proportional language: a noticeably
 - Preserve the front-on upright pose and the lower frame; make extra room for the larger head above rather than rescaling the body.
 - Use the **illustrated visual ratio**, not an invented measured factor. The earlier tentative 8–12% estimate was exploratory, not a final measurement.
 
+## Anterior depth — v0.1 (alpha)
+
+**Status:** front-view appearance approved on 21 November 2026; Z-axis geometry remains provisional pending a side-profile or three-quarter study. **Checkpoint:** Sandy head-to-knee render `09e8e0c2-3ad2-4f1b-9c80-50b80d36acd2`.
+
+| Region map (earlier labeling reference) | Approved head-to-knee checkpoint |
+| --- | --- |
+| ![Sandy's numbered anterior depth landmarks](../assets/anatomy/sandy-depth-map-alpha.avif) | ![Latest approved, fully clothed Sandy head-to-knee reference](../assets/anatomy/sandy-head-to-knee-alpha.avif) |
+
+The map identifies the regions only; its pictured anatomy predates the final refinements. The later portrait is the approved visual target. These are compressed reference previews, not measured 3D geometry.
+
+**Core principle:** selective softness on a relatively slender underlying frame. Preserve the approved X-axis widths, Y-axis heights and placement, and alter only the intended anterior surface depth.
+
+| Region | Fullness | Target geometry |
+| --- | --- | --- |
+| 01 Upper abdomen | Lean | Smooth, restrained contour immediately below the ribcage. |
+| 02 Umbilical region | Lean | Gentle contour around the navel; maintain its position. |
+| 03 Lower abdomen | Plump | Soft convex lower-belly contour, distinct from the lean upper abdomen. |
+| 04 Anterior hips | Lean | Restrained forward prominence; do not change hip width. |
+| 05 Mons pubis | Full | Natural rounded pelvic contour under opaque clothing, blended into adjacent forms. |
+| 06 Inguinal folds | Recessed | Natural pelvis-to-thigh transitions without excess protrusion. |
+
+### Locks and clothing
+
+- Preserve the approved upper master, ribs, waist, abdomen length, hip width, pelvic placement, thigh diameter, stance, and slight upper-thigh separation.
+- The thick charcoal rib band remains intact. Opaque white high-waisted fitted bottoms begin directly beneath it and continue to the knee cuffs.
+- Use gradual, connected surface transitions rather than isolated bulges; clothing follows the form with restrained, natural tension.
+- Keep the narrower thighs from the final approved checkpoint. Do not silently restore the wider thighs in earlier references.
+- “+1 puff” is qualitative art-direction shorthand, not a percentage, distance, or measured volume.
+- Do not infer actual sagittal depth from frontal shading. A later side study will be needed to promote this alpha into a locked three-dimensional standard.
+
 ## Character transfer rule
 
 **Sandy is neutral.** Her stone-grey skin and pale-grey/charcoal clothing are only a teaching palette; all Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
