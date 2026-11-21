@@ -1,7 +1,7 @@
-# Growlfriends — Shared Bust Anatomy Guide
+# Growlfriends — Shared Proportions Guide: Bust Anatomy & Head Scale
 
-**Status:** approved visual target · **Reference:** Mallow's final front-facing portrait, 20 November 2026  
-**Scope:** bust shape and garment response only. This does **not** replace the approved universal neck-down body mold or any girl's individual face, species, palette, or outfit.
+**Status:** approved visual targets · **Reference:** Mallow's final bust portrait and subsequent enlarged-head portrait, 20 November 2026  
+**Scope:** shared bust shape/garment response **and** the approved cartoon head-to-body proportion. This does **not** replace the universal neck-down body mold or redesign any girl's facial identity, species, colors, or outfit.
 
 ## Before and after
 
@@ -41,6 +41,23 @@
 
 **Every Growlfriend shares the same underlying body geometry.** Fur, skin, scales, synthetic materials, markings, and clothing construction can vary by character; they do not justify changing the common bust proportions. A different neckline or fabric may reveal the shape differently, but must not silently redesign the anatomy.
 
+## Approved cartoon head scale
+
+**Visual checkpoint:** the latest Mallow portrait with the noticeably enlarged head (generation ID `82cad3e1-e657-4dc2-a4c2-670ac8b02443`). It retains the exact same petite neck, shoulders, chest, arms, torso, clothing, and lower frame as the approved body reference; only the head assembly is intended to look larger.
+
+**Proportion target:** a distinctly oversized *cartoon* head resting on an otherwise petite, mature adult body — comparable in proportional language to classic animated anthropomorphic characters, **not** a fully chibi/deformed body. The head is visibly larger relative to the shoulder span, but the shoulders and neck do not broaden or thicken to compensate.
+
+### Head-only transfer rule
+
+- Scale the **entire head assembly** together: skull, face, muzzle, cheeks, eyes, ears, and hair, maintaining their established internal proportions and placement.
+- **Do not redesign or separately magnify the face.** Preserve eye shape/spacing, nose and mouth, smile, expression, cheek/muzzle construction, ears, hairstyle, and character-specific identity. Another girl's head must remain distinctly *her* species and face.
+- **Hard-lock everything from the neck down:** neck width and length, shoulder breadth, torso and bust anatomy, arm proportions, underbust/ribcage, outfit, accessories, pose, and lower crop. The collar and its hardware stay at their original size and position.
+- Make the enlarged head connect **cleanly at the existing neck junction**; do not grow a thicker neck, raise the shoulders, shrink the body, or widen the frame/body to make it fit.
+- Keep the portrait **upright, centered, and front-facing**. Allow room for the larger hair/ears above or around the original head while protecting the locked lower-frame region. Avoid zooming out or shrinking the body to gain headroom.
+- The previously discussed **8–12%** was an exploratory direction, **not a measured final scale factor**. Match the approved *visual ratio* from Mallow's enlarged-head checkpoint instead of applying an invented exact percentage.
+
+This is a **shared head-to-body proportion target**, not a universal head shape: character-specific skull silhouettes, animal anatomy, antennae/horns/ears, hair, and facial features remain individually authored.
+
 ## Quality check
 
 - [ ] Broad, weighty mid/lower silhouette; no upper-pole perkiness
@@ -50,5 +67,8 @@
 - [ ] Narrow ribcage and all non-bust body locks intact
 - [ ] Outfit tension supports the form without shrinking, lifting, or splitting it
 - [ ] Entire portrait remains front-facing, centered, and on-model
+- [ ] Head is visibly larger relative to the **unchanged** petite shoulders and neck
+- [ ] Head, face, ears, and hair scale together without facial redesign or altered expression
+- [ ] No zoom-out, body rescale, shoulder/neck enlargement, or loss of the locked lower crop
 
 **Important:** These are front-view drawing rules, not claims about measured 3D volume. The approved image is the aesthetic checkpoint; side projection needs its own reference before it is treated as locked. Percent adjustments discussed during iteration were art-direction increments, not measured anatomical values.
