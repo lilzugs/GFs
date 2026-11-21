@@ -5,19 +5,19 @@ Sandy is a **bald, feature-light, muted stone-grey clay mannequin** with softly 
 
 ## Sandy anatomy comparison plates
 
-The before studies are historical **1920 × 1860 PNG** portraits. Both after panels now show the latest approved Sandy master from **21 November 2026** (generation ID `71c095c3-0c06-4469-a2c1-69005e70d2cb`), cropped from its native 1024 × 1536 render to a 1024 × 992 comparison image. Click for the source PNG; the website serves optimized AVIF copies. The different render iterations are **not pixel-registered**.
+Both after panels have been colour-matched to Sandy's canonical muted stone-grey clay skin, pale-grey clothing, charcoal trim and warm-gold hardware; the approved shape and crop were preserved. The before studies are historical **1920 × 1860 PNG** portraits. Both after panels now show the latest approved Sandy master from **21 November 2026** (generation ID `71c095c3-0c06-4469-a2c1-69005e70d2cb`), cropped from its native 1024 × 1536 render to a 1024 × 992 comparison image. Click for the source PNG; the website serves optimized AVIF copies. The different render iterations are **not pixel-registered**.
 
 ### Bust distribution — before and after
 
 | Before: rounded upper fullness | After: current approved gravity-set master |
 | --- | --- |
-| [![Sandy before: rounded upper fullness, deep central underbust notch and gathered fabric](../assets/anatomy/sandy-bust-before.png)](../assets/anatomy/sandy-bust-before.png) | [![Sandy after: broad mid/lower mass, smoother lower sweep and softer tension](../assets/anatomy/sandy-bust-after-final-20261121.png)](../assets/anatomy/sandy-bust-after-final-20261121.png) |
+| [![Sandy before: rounded upper fullness, deep central underbust notch and gathered fabric](../assets/anatomy/sandy-bust-before.png)](../assets/anatomy/sandy-bust-before.png) | [![Sandy after: broad mid/lower mass, smoother lower sweep and softer tension](../assets/anatomy/sandy-after-stonegrey-20261121.png)](../assets/anatomy/sandy-after-stonegrey-20261121.png) |
 
 ### Head scale — before and after
 
 | Before: standard head | After: current master with enlarged cartoon head |
 | --- | --- |
-| [![Sandy standard head scale on the approved body](../assets/anatomy/sandy-head-before.png)](../assets/anatomy/sandy-head-before.png) | [![Current master with enlarged cartoon head and finalized bust](../assets/anatomy/sandy-head-after-final-20261121.png)](../assets/anatomy/sandy-head-after-final-20261121.png) |
+| [![Sandy standard head scale on the approved body](../assets/anatomy/sandy-head-before.png)](../assets/anatomy/sandy-head-before.png) | [![Current master with enlarged cartoon head and finalized bust](../assets/anatomy/sandy-after-stonegrey-20261121.png)](../assets/anatomy/sandy-after-stonegrey-20261121.png) |
 
 These images illustrate stylistic progression, not precise 3D measurements. **Caution:** The updated head-after panel also contains later approved bust refinements; it is not a controlled head-only A/B comparison. Existing neck, shoulders, ribcage, waist, pelvis and leg locks remain in force, and these new reference crops do not unlock them.
 
