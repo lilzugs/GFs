@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5E6D3">
+<meta name="description" content="Growlfriends — a private working sheet for assigning romantic and psychosexual Reasons.">
+<title>Growlfriends · Reason Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+<style>
+:root { --wine:#743747; --wine-deep:#512638; --rose:#C58D91; --vanilla:#F5E6D3; --paper:#FFF8EF; --cocoa:#382729; --pale:#EBD2C5; --stroke:rgba(116,55,71,.23); --soft-shadow:0 9px 25px rgba(77,40,44,.055); --head:'Lilita One','Arial Rounded MT Bold',sans-serif; --body:'Fredoka','Trebuchet MS',system-ui,sans-serif; }
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--vanilla);color:var(--cocoa);font-family:var(--body);font-weight:400;line-height:1.4}button,select,input{font:inherit}button{cursor:pointer}a{color:var(--wine)}
+.page{max-width:1150px;margin:auto;padding:25px clamp(14px,4vw,36px) 70px}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:2px solid rgba(116,55,71,.4);padding-bottom:16px}
+.brand{font-family:var(--head);font-size:clamp(24px,4vw,31px);color:var(--wine);text-decoration:none;letter-spacing:.005em}
+.mini{font-size:11px;letter-spacing:.10em;font-weight:700;color:#79555c;text-transform:uppercase}
+.topline .mini{text-align:right}
+.hero{padding:32px 0 21px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end}
+.hero h1{font-family:var(--head);font-size:clamp(41px,7vw,67px);line-height:1.02;color:var(--wine);margin:6px 0 11px;font-weight:400}
+.hero p{margin:0;max-width:700px;font-size:15px;color:#6a4d51}
+.stamp{border:2px solid var(--wine);color:var(--wine);padding:9px 13px;border-radius:13px;align-self:center;text-align:center;transform:rotate(3deg);min-width:113px}
+.stamp strong{font-family:var(--head);font-size:20px;display:block;letter-spacing:.04em}.stamp small{font-size:11px;display:block}
+.intro{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}
+.intro>div{background:rgba(255,248,239,.62);border:1px solid var(--stroke);border-radius:13px;padding:12px 15px;font-size:13px}
+.intro strong{font-size:14px;color:var(--wine);display:block;margin-bottom:2px}
+.toolbar{background:var(--paper);border:1px solid var(--stroke);border-radius:17px;padding:13px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:var(--soft-shadow)}
+.toolbar-left,.toolbar-right{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.counter{color:var(--wine);font-size:14px;font-weight:700;margin-right:8px}
+.track{display:block;width:112px;height:7px;background:#eeded5;overflow:hidden;border-radius:99px}.fill{background:linear-gradient(90deg,var(--wine),var(--rose));height:100%;width:0%;transition:width .2s}
+button{border:1px solid var(--wine);background:var(--paper);color:var(--wine);border-radius:9px;padding:9px 12px;font-weight:600;font-size:13px;transition:background .16s,transform .16s}
+button:hover{background:#f4e4da}button:active{transform:translateY(1px)}button.primary{background:var(--wine);color:white}button.primary:hover{background:var(--wine-deep)}button.textbtn{border-color:transparent;padding:6px 3px;text-decoration:underline;text-underline-offset:3px}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ae7e91;outline-offset:2px}
+.feedback{font-size:12px;color:#6c4c53;min-height:19px;margin:8px 2px 6px}
+.section{margin-top:22px}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:11px;border-bottom:1px solid rgba(116,55,71,.19);padding-bottom:7px}
+.section-head h2{font-family:var(--head);font-weight:400;color:var(--wine);font-size:25px;margin:0}.section-head span{font-size:11px;letter-spacing:.08em;font-weight:700;color:#96717b;text-transform:uppercase}
+.entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.entry{background:var(--paper);border:1px solid rgba(116,55,71,.27);border-radius:15px;padding:15px 16px 13px;min-width:0;box-shadow:var(--soft-shadow);transition:border-color .12s}
+.entry.is-set{border-color:#aa7880}.entry.is-duplicate{border-color:#ad5a5d;box-shadow:inset 0 0 0 1px #ad5a5d}
+.entry-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:11px}.entry h3{font-family:var(--head);font-weight:400;color:var(--wine);font-size:25px;line-height:1.08;margin:0;overflow-wrap:anywhere}
+.identity{display:flex;gap:6px;justify-content:flex-end;align-items:center;flex-wrap:wrap;text-align:right}
+.type{font-size:11px;color:#6a4b50;font-weight:700;border:1px solid #e4c9c4;background:#f5e8dd;border-radius:6px;padding:3px 7px;white-space:nowrap}
+.nature{font-size:11px;color:#8b6a71;white-space:nowrap}
+.control-label{display:block;color:#8c5e65;letter-spacing:.08em;font-size:10px;font-weight:700;margin-bottom:5px}
+select{appearance:none;width:100%;border:1px solid #ceada9;border-radius:10px;background-color:#fffdf8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' stroke='%23743747' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding:11px 36px 11px 12px;color:var(--cocoa);font-weight:600;font-size:15px;min-height:44px}
+select.placeholder{color:#a17e7d}.description{font-size:12px;color:#786064;min-height:31px;margin-top:7px;line-height:1.32}.description strong{color:var(--wine)}.description.warn{color:#8c3d43;font-weight:600}
+.entry.custom{border-style:dashed}.entry.custom .remove{align-self:center;font-size:11px;letter-spacing:0;flex-shrink:0}
+.add-subject{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:12px 0 5px}.add-subject input{border:1px solid #ceada9;background:var(--paper);border-radius:9px;padding:9px 11px;min-width:0;width:165px;font-size:13px}.add-subject input:nth-child(2){width:115px}
+.glossary{margin-top:29px;background:var(--paper);border:1px solid var(--stroke);border-radius:16px;padding:12px 16px;box-shadow:var(--soft-shadow)}
+.glossary summary{color:var(--wine);font-family:var(--head);font-size:22px;cursor:pointer;list-style-position:outside;padding:4px 0}
+.glossary-intro{font-size:13px;color:#715860;margin:11px 0 15px}
+.bank{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 26px}.bank h3{color:var(--wine);font-size:14px;margin:0 0 7px}.bank-item{padding:6px 0;border-top:1px solid #ead5ce;font-size:12px;line-height:1.38}
+.bank-item strong{color:var(--cocoa);display:block;font-size:14px}.bank-item span{color:#765b61}
+.foot{border-top:1px solid var(--stroke);padding-top:17px;margin-top:26px;display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#86666e}.foot span:last-child{text-align:right}
+#copyFallback{display:none;width:100%;min-height:125px;border:1px solid var(--wine);border-radius:10px;margin-top:10px;padding:10px;background:white;font-size:12px}
+@media(max-width:760px){.page{padding:17px 12px 55px}.stamp{display:none}.hero{display:block;padding:22px 4px}.hero h1{margin-top:5px}.intro{grid-template-columns:1fr;gap:7px}.intro>div{padding:10px 13px}.entries{grid-template-columns:1fr}.entry{padding:13px 14px}.entry-top{gap:5px}.entry h3{font-size:24px}.toolbar{padding:12px}.toolbar-right{width:100%;justify-content:space-between}.toolbar-right button{flex:1}.bank{grid-template-columns:1fr}.foot{display:block}.foot span{display:block;margin-bottom:4px;text-align:left!important}.add-subject input{flex:1;min-width:105px}.add-subject input:nth-child(2){flex:0 0 88px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topline"><a class="brand" href="#top">Growlfriends.</a><div class="mini">Private field journal · Experimental taxonomy</div></header>
+<main id="top">
+<section class="hero"><div><div class="mini">Working sheet / Study 002</div><h1>Reason Workshop</h1><p>Assign each girl a <strong>Reason</strong>: the distinct experience of wanting, loving, or being loved that her character explores. The Type and Nature remain independent. Nothing below is final canon.</p></div><div class="stamp"><strong>ALPHA 0.1</strong><small>Open for revision</small></div></section>
+<section class="intro" aria-label="Classification guide">
+<div><strong>TYPE · Aesthetic</strong>Visual language, materials, symbolism.</div>
+<div><strong>NATURE · Temperament</strong>How she tends to act and express herself.</div>
+<div><strong>REASON · Relationship</strong>What makes intimacy meaningful to her.</div>
+</section>
+<div class="toolbar"><div class="toolbar-left"><strong class="counter" id="counter">0 / 18 assigned</strong><span class="track" role="progressbar" aria-label="Subjects assigned a Reason" aria-valuemin="0" aria-valuemax="18" aria-valuenow="0" id="progress"><span class="fill" id="fill"></span></span></div><div class="toolbar-right"><button class="primary" id="copy">Copy picks</button><button id="download">Export JSON</button><button id="exportCsv">Export CSV</button><button class="textbtn" id="clear">Clear</button></div></div>
+<div class="feedback" role="status" aria-live="polite" id="feedback">Selections save automatically in this browser. Unassigned entries are allowed.</div>
+<textarea readonly id="copyFallback" aria-label="Copy your assignments manually"></textarea>
+<div id="subjects"></div>
+<form class="add-subject" id="addForm"><input id="newName" aria-label="New character name" placeholder="Additional character" maxlength="70" required><input id="newType" aria-label="New character Type" placeholder="Type (optional)" maxlength="45"><button type="submit">+ Add subject</button></form>
+<details class="glossary" id="glossary"><summary>Browse all 30 Reasons and definitions</summary><p class="glossary-intro">These are candidate themes, not personality labels or fixed roles. Some concepts naturally touch each other; the distinction is in what each character chooses to emphasize.</p><div class="bank" id="bank"></div></details>
+<footer class="foot"><span>Growlfriends · Reason Workshop · v0.1</span><span>Local browser storage only. Use Copy picks or Export JSON to share a draft.</span></footer>
+</main>
+</div>
+<script>
+'use strict';
+const REASONS = [
+// Bond and attachment
+{name:'Trust',group:'Bond & attachment',meaning:'Safety in letting another person know and affect you.',expression:'Voluntary vulnerability, reliability, the courage to rely on someone.'},
+{name:'Devotion',group:'Bond & attachment',meaning:'Choosing someone again and again through attention and care.',expression:'Loyalty, tending, dedication beyond the first spark.'},
+{name:'Recognition',group:'Bond & attachment',meaning:'The longing to be deeply seen and understood.',expression:'Being understood in precise and irreplaceable ways.'},
+{name:'Belonging',group:'Bond & attachment',meaning:'Finding a place where one is wanted and welcomed.',expression:'Feeling at home with someone or within a chosen family.'},
+{name:'Reciprocity',group:'Bond & attachment',meaning:'The dynamic exchange between giving and receiving.',expression:'Mutual consideration, shared effort, answering one another.'},
+{name:'Security',group:'Bond & attachment',meaning:'Steadiness that makes closeness feel safe.',expression:'Consistency, shelter, reassurance, dependable presence.'},
+// Attraction and yearning
+{name:'Desire',group:'Attraction & yearning',meaning:'The experience of wanting, being drawn toward, or seeking.',expression:'Longing for connection, the magnetic urge to approach.'},
+{name:'Passion',group:'Attraction & yearning',meaning:'The intensity with which love or longing is felt.',expression:'Ardour, enthusiasm, wholehearted romantic intensity.'},
+{name:'Pleasure',group:'Attraction & yearning',meaning:'Taking delight in experience and shared enjoyment.',expression:'Savouring sensation, closeness, delight, and gratification.'},
+{name:'Longing',group:'Attraction & yearning',meaning:'The sweet or aching presence of what is not yet here.',expression:'Anticipation, yearning, absence, the distance between lovers.'},
+{name:'Fascination',group:'Attraction & yearning',meaning:'Having attention irresistibly captured by another.',expression:'Magnetism, intrigue, the pleasure of being captivated.'},
+{name:'Admiration',group:'Attraction & yearning',meaning:'Attraction built on esteem, wonder, and appreciation.',expression:'Looking up to someone without losing equality.'},
+// Agency and tension
+{name:'Power',group:'Agency & tension',meaning:'The ability to influence, lead, or shape a shared dynamic.',expression:'Agency, confident initiative, consensual negotiation of control.'},
+{name:'Surrender',group:'Agency & tension',meaning:'The chosen release of control in a trusted relationship.',expression:'Letting oneself be guided or cared for without losing agency.'},
+{name:'Freedom',group:'Agency & tension',meaning:'Remaining oneself while loving another person.',expression:'Independence, open choice, adventure without possession.'},
+{name:'Restraint',group:'Agency & tension',meaning:'The conscious choice not to act on every impulse.',expression:'Discipline, pacing, restraint as expression rather than denial.'},
+{name:'Vulnerability',group:'Agency & tension',meaning:'Risking emotional exposure and uncertainty.',expression:'Revealing fear, needs, or flaws; allowing another close.'},
+{name:'Transgression',group:'Agency & tension',meaning:'Finding meaning in questioning conventions.',expression:'Shared rebellion, the excitement of crossing social expectations.'},
+// Expressing closeness
+{name:'Play',group:'Expressions of closeness',meaning:'Connecting through fun, teasing, laughter, and games.',expression:'Flirtation, jokes, playful rituals, and shared silliness.'},
+{name:'Curiosity',group:'Expressions of closeness',meaning:'The drive to discover who another person really is.',expression:'Questions, exploration, attentive observation, interest.'},
+{name:'Tenderness',group:'Expressions of closeness',meaning:'Gentleness toward another person’s softness or need.',expression:'Small gestures, caring touch, quiet consideration.'},
+{name:'Authenticity',group:'Expressions of closeness',meaning:'Being fully oneself rather than performing an ideal.',expression:'Candour, unmasking, letting one’s quirks be known.'},
+{name:'Acceptance',group:'Expressions of closeness',meaning:'Welcoming the whole person, not only ideal parts.',expression:'Affection without demanding someone become different.'},
+{name:'Adventure',group:'Expressions of closeness',meaning:'Growing close through exploration and shared novelty.',expression:'New experiences, risk-taking together, discovery in motion.'},
+// Imagination and time
+{name:'Fantasy',group:'Imagination & time',meaning:'Giving form to possibilities beyond ordinary life.',expression:'Shared make-believe, imagination, dreams, romantic scenarios.'},
+{name:'Anticipation',group:'Imagination & time',meaning:'The charge of waiting for something meaningful.',expression:'Suspense, build-up, looking forward to another encounter.'},
+{name:'Nostalgia',group:'Imagination & time',meaning:'The pull of cherished past experience.',expression:'Remembered tenderness, shared history, sentimental objects.'},
+{name:'Mystery',group:'Imagination & time',meaning:'Attraction toward what remains partly unknown.',expression:'Intrigue, gradual revelation, the pleasure of uncertainty.'},
+{name:'Serenity',group:'Imagination & time',meaning:'A gentle stillness found in companionship.',expression:'Quiet closeness, peace, comfort without constant stimulation.'},
+{name:'Transformation',group:'Imagination & time',meaning:'The ways intimacy changes who we become.',expression:'Growth, metamorphosis, becoming through relationship.'}
+];
+const DEFAULTS = [
+{id:'j',name:'J',type:'Universe',nature:'',section:'Origins'},
+{id:'mother-vale',name:'Mother Vale',type:'Almighty',nature:'',section:'Origins'},
+{id:'sandy',name:'Sandy',type:'Null',nature:'',section:'Origins'},
+{id:'mallow',name:'Mallow',type:'Body',nature:'Doting',section:'The Self'},
+{id:'quill',name:'Quill',type:'Mind',nature:'Magnetic',section:'The Self'},
+{id:'vesper',name:'Vesper',type:'Soul',nature:'Provocative',section:'The Self'},
+{id:'cadence',name:'Cadence',type:'Heart',nature:'Playful',section:'The Self'},
+{id:'dixie',name:'Dixie',type:'Lunar',nature:'Virtuous',section:'The Supernatural'},
+{id:'mara',name:'Mara',type:'Umbral',nature:'Teasing',section:'The Supernatural'},
+{id:'loveander',name:'Loveander girl',type:'Eros',nature:'',section:'The Supernatural'},
+{id:'moth',name:'Moth girl',type:'Logos',nature:'',section:'The Supernatural'},
+{id:'bibi',name:'Bibi',type:'Earth',nature:'Tenacious',section:'The Elements'},
+{id:'bubble',name:'Bubble',type:'Water',nature:'Indulgent',section:'The Elements'},
+{id:'delphie',name:'Delphie',type:'Ice',nature:'Quirky',section:'The Elements'},
+{id:'zip',name:'Zip',type:'Lightning',nature:'Spunky',section:'The Elements'},
+{id:'connie',name:'Connie',type:'Wind',nature:'Untamed',section:'The Elements'},
+{id:'etna',name:'Etna',type:'Fire',nature:'Coy',section:'The Elements'},
+{id:'mouse',name:'Mouse / sloth girl',type:'Unassigned',nature:'',section:'Unassigned'}
+];
+const STORAGE_KEY='growlfriends-reasons-alpha-01';
+let state={assignments:{},custom:[]};
+const byId = x => document.getElementById(x);
+const allSubjects=()=>DEFAULTS.concat(state.custom.map(x=>({...x,section:'Additional subjects'})));
+const findReason=name=>REASONS.find(r=>r.name===name);
+function load(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;const v=JSON.parse(raw);if(v&&typeof v==='object'){state.assignments=(v.assignments&&typeof v.assignments==='object')?v.assignments:{};state.custom=Array.isArray(v.custom)?v.custom.filter(x=>x&&typeof x.id==='string'&&typeof x.name==='string').slice(0,100):[]}}catch(e){status('Browser storage is unavailable; export your selections before closing.')}}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}catch(e){status('Could not save locally. Use Copy picks or Export JSON.')}}
+function status(t){byId('feedback').textContent=t}
+function make(tag,className,textValue){let e=document.createElement(tag);if(className)e.className=className;if(textValue!==undefined)e.textContent=textValue;return e}
+function buildOptions(select){select.add(new Option('Choose a Reason…',''));const groups=[...new Set(REASONS.map(r=>r.group))];for(const group of groups){const og=document.createElement('optgroup');og.label=group;for(const r of REASONS.filter(x=>x.group===group)){og.appendChild(new Option(r.name,r.name))}select.appendChild(og)}}
+function draw(){
+ const target=byId('subjects');target.replaceChildren();const list=allSubjects();const groups=[...new Set(list.map(s=>s.section))];
+ for(const sectionName of groups){const entries=list.filter(s=>s.section===sectionName);const sec=make('section','section');const head=make('div','section-head');const title=make('h2','',sectionName);const count=make('span','',`${entries.length} subjects`);head.append(title,count);sec.append(head);
+ const grid=make('div','entries');
+ for(const sub of entries){
+  const card=make('article','entry');card.dataset.id=sub.id;
+  const top=make('div','entry-top');top.appendChild(make('h3','',sub.name));const ident=make('div','identity');ident.appendChild(make('span','type',sub.type));if(sub.nature)ident.appendChild(make('span','nature',`· ${sub.nature}`));
+  if(sub.id.startsWith('custom-')){const rm=make('button','remove','Remove');rm.type='button';rm.setAttribute('aria-label',`Remove ${sub.name}`);rm.onclick=()=>{if(confirm(`Remove ${sub.name} from this worksheet?`)){state.custom=state.custom.filter(x=>x.id!==sub.id);delete state.assignments[sub.id];save();draw()}};ident.appendChild(rm);card.classList.add('custom')}
+  top.appendChild(ident);card.appendChild(top);
+  const idLabel='reason-'+sub.id;const label=make('label','control-label','REASON');label.htmlFor=idLabel;card.appendChild(label);
+  const sel=make('select','placeholder');sel.id=idLabel;sel.setAttribute('aria-label',`${sub.name} Reason`);buildOptions(sel);sel.value=findReason(state.assignments[sub.id])?state.assignments[sub.id]:'';
+  sel.onchange=()=>{state.assignments[sub.id]=sel.value;save();updateStats();status(sel.value?`${sub.name} → ${sel.value}. Saved in this browser.`:`${sub.name} is unassigned.`)};
+  card.appendChild(sel);
+  const desc=make('div','description');desc.setAttribute('aria-live','polite');card.appendChild(desc);grid.appendChild(card)
+ }
+ sec.appendChild(grid);target.appendChild(sec)
+ }
+ updateStats()
+}
+function updateStats(){
+ const list=allSubjects();const picked=list.filter(x=>findReason(state.assignments[x.id]));const used=new Map();
+ for(const s of picked){const r=state.assignments[s.id];used.set(r,(used.get(r)||[]).concat(s.name))}
+ for(const s of list){const card=document.querySelector(`[data-id="${s.id}"]`);if(!card)continue;const select=card.querySelector('select'),desc=card.querySelector('.description');const value=state.assignments[s.id],r=findReason(value);const duplicate=!!r&&used.get(value).length>1;
+  card.classList.toggle('is-set',!!r);card.classList.toggle('is-duplicate',duplicate);select.classList.toggle('placeholder',!r);
+  if(r){desc.textContent=r.meaning;if(duplicate){desc.textContent+=` · Also assigned to ${used.get(value).filter(n=>n!==s.name).join(', ')}.`;desc.classList.add('warn')}else desc.classList.remove('warn')}
+  else{desc.textContent='Unassigned · Pick whichever relationship theme fits best.';desc.classList.remove('warn')}
+ }
+ byId('counter').textContent=`${picked.length} / ${list.length} assigned`;byId('progress').setAttribute('aria-valuemax',list.length);byId('progress').setAttribute('aria-valuenow',picked.length);byId('fill').style.width=`${(picked.length/(list.length||1))*100}%`;
+}
+function output(){const list=allSubjects();return 'Growlfriends · Reason workshop (alpha v0.1)\n'+list.map(s=>`${s.name} | ${s.type} | ${state.assignments[s.id]||'—'}`).join('\n')}
+async function copyPicks(){const txt=output();try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(txt);status('Copied! Paste your selections into our chat when you are ready.');byId('copyFallback').style.display='none'}catch(e){const t=byId('copyFallback');t.value=txt;t.style.display='block';t.focus();t.select();status('Your browser blocked automatic copying. Select and copy the text below.')}}
+function downloadFile(name,blob){const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+function exportJSON(){const payload={title:'Growlfriends Reason Workshop',version:'0.1',exportedAt:new Date().toISOString(),subjects:allSubjects().map(s=>({id:s.id,name:s.name,type:s.type,nature:s.nature||'',reason:state.assignments[s.id]||''})),reasonDefinitions:REASONS};downloadFile('growlfriends-reasons.json',new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'}));status('Exported all assignments and Reason definitions as JSON.')}
+function exportCSV(){const q=x=>'"'+String(x??'').replace(/"/g,'""')+'"';let lines=[['Name','Type','Nature','Reason'].map(q).join(',')];lines.push(...allSubjects().map(s=>[s.name,s.type,s.nature||'',state.assignments[s.id]||''].map(q).join(',')));downloadFile('growlfriends-reasons.csv',new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}));status('Exported spreadsheet-friendly CSV.')}
+function renderBank(){const target=byId('bank');let groups=[...new Set(REASONS.map(r=>r.group))];for(const group of groups){const section=make('section','');section.appendChild(make('h3','',group));for(const r of REASONS.filter(x=>x.group===group)){const item=make('div','bank-item');item.appendChild(make('strong','',r.name));item.appendChild(make('span','',`${r.meaning} ${r.expression}`));section.appendChild(item)}target.appendChild(section)}}
+byId('copy').addEventListener('click',copyPicks);byId('download').addEventListener('click',exportJSON);byId('exportCsv').addEventListener('click',exportCSV);
+byId('clear').addEventListener('click',()=>{if(confirm('Clear all Reason selections? Additional characters will remain.')){state.assignments={};save();draw();status('Reason selections cleared.')}});
+byId('addForm').addEventListener('submit',e=>{e.preventDefault();const name=byId('newName').value.trim(),type=byId('newType').value.trim()||'Unassigned';if(!name)return;const id=`custom-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;state.custom.push({id,name,type,nature:''});byId('newName').value='';byId('newType').value='';save();draw();status(`Added ${name}.`);document.querySelector(`[data-id="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'});});
+load();renderBank();draw();
+</script>
+</body>
+</html>
