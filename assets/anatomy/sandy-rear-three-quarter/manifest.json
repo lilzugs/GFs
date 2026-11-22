@@ -1,0 +1,35 @@
+{
+  "canonical_generation": "dd6a8f74-f95b-4774-bf94-bc159e8dd94d",
+  "status": "geometry and surface rendering approved; source palette is temporary",
+  "assets": {
+    "sandy-rear-three-quarter-preview.webp": {
+      "bytes": 58846,
+      "sha256": "e11fd2a67599c351f296eb5470a2da99eea2aacda1ad050caa37856774ec0c0a"
+    },
+    "sandy-palette.png": {
+      "bytes": 24093,
+      "sha256": "5829a7656abf73d828ece94958dd9fea2d37f993933bad303e91541f5dba38e3"
+    },
+    "sandy-surface-cleanup-comparison.webp": {
+      "bytes": 95156,
+      "sha256": "4df649dde4c5a0dbb9527497eac861f55a055dea10346afe15275da049f21da5"
+    },
+    "sandy-rear-three-quarter-approved.png": {
+      "bytes": 1568340,
+      "sha256": "a5dfce955909e3cb1c3d9a9c9ecaebc08414ada4f0254bf066108af02f281507"
+    },
+    "sandy-rear-three-quarter-landmarks.webp": {
+      "bytes": 110798,
+      "sha256": "7a5699edec010593d716f7a39c1ac2f6d5fd45a81a37056f798cab4fdd907f34"
+    },
+    "sandy-rear-three-quarter-history.webp": {
+      "bytes": 76650,
+      "sha256": "09618e0ee1ecff48b54bb23d939d83da315451942b40eef2c691ccb7f701a3a7"
+    }
+  },
+  "canonical_base_palette": {
+    "clay": "#606060",
+    "garment": "#FFFFFF",
+    "bands": "#111111"
+  }
+}

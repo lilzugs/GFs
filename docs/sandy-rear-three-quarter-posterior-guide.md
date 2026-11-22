@@ -4,9 +4,33 @@
 **Approved:** 21 November 2026 (America/Chicago)  
 **Status:** HARD LOCK — user explicitly approved the final geometry and surface rendering.  
 **Canonical generation:** `dd6a8f74-f95b-4774-bf94-bc159e8dd94d`  
-**Exact archived PNG filename:** `Sandy_rear_three_quarter_LOCKED_2026-11-21.png` (1024 × 1536; SHA-256 `a5dfce955909e3cb1c3d9a9c9ecaebc08414ada4f0254bf066108af02f281507`). The generation ID and checksum identify the approved conversation artwork. The PNG is saved separately; this repository guide is text-only.
+**Exact archived PNG filename:** `Sandy_rear_three_quarter_LOCKED_2026-11-21.png` (1024 × 1536; SHA-256 `a5dfce955909e3cb1c3d9a9c9ecaebc08414ada4f0254bf066108af02f281507`). The generation ID and checksum identify the approved conversation artwork. The exact PNG is now stored in the repository; all derivative plates are separate from the master.
 
 [Shared anatomy guide](growlfriends-bust-anatomy.md) · [Side posterior](sandy-side-posterior-guide.md) · [Side chest](sandy-side-bust-guide.md) · [Front three-quarter](sandy-three-quarter-guide.md)
+
+## Visual reference kit — read this first
+
+[**Open or download the untouched full-resolution canonical PNG**](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-approved.png). This is the only image in this kit intended as the clean rear-oblique edit source. SHA-256 and file sizes are recorded in the [asset manifest](../assets/anatomy/sandy-rear-three-quarter/manifest.json).
+
+[![Approved rear-oblique reference, temporary palette](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-preview.webp)](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-approved.png)
+
+### Six visual landmarks
+
+![Numbered landmark study: upper transition, lateral envelope, lower distribution, thigh junction, upper-thigh opening and knee bands.](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-landmarks.webp)
+
+### The shading failure and its fix
+
+![Actual before artwork, user-redlined diagnostic and the finally approved cleanup, using a consistent crop.](../assets/anatomy/sandy-rear-three-quarter/sandy-surface-cleanup-comparison.webp)
+
+### Selected historical checkpoints
+
+![Earlier redistributed geometry, a palette trial and the approved clean reference.](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-history.webp)
+
+### Palette authority
+
+![Three canonical base swatches: clay #606060, white clothing #FFFFFF, black accents #111111.](../assets/anatomy/sandy-rear-three-quarter/sandy-palette.png)
+
+**Retrieval order for future sessions:** open the clean PNG as the source visual, consult the side-profile and front guides to constrain the unseen dimensions, read the written locks below, and use annotations only to diagnose differences. Never edit the annotated plates, recolor the archive in place, or treat older trials as the current target. No future instance should rely on generation IDs alone when the actual image is available.
 
 ## 1. Authority and scope
 

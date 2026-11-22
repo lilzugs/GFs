@@ -91,7 +91,9 @@ The posterior contour and upper-thigh transition are now independently approved 
 
 ## Rear three-quarter posterior — v1.0 (hard-locked)
 
-The rear-oblique geometry and surface rendering are now approved at generation `dd6a8f74-f95b-4774-bf94-bc159e8dd94d`. Preserve the lower-biased volume distribution, smooth continuous contour, slim thighs and small upper-thigh opening. The successful final pass removed obsolete nested shadow contours without an intentional geometry change. See the [detailed rear three-quarter posterior guide](sandy-rear-three-quarter-posterior-guide.md) for the full lock, iteration history, rendering reset method, and straight-rear transfer plan. The exact final reference retains temporary pink/lavender coloration; the separate canonical palette below supersedes its colors, not its shape.
+The rear-oblique geometry and surface rendering are now approved at generation `dd6a8f74-f95b-4774-bf94-bc159e8dd94d`. Preserve the lower-biased volume distribution, smooth continuous contour, slim thighs and small upper-thigh opening. The successful final pass removed obsolete nested shadow contours without an intentional geometry change. See the [detailed rear three-quarter posterior guide](sandy-rear-three-quarter-posterior-guide.md) for the full lock, iteration history, rendering reset method, and straight-rear transfer plan. The exact final reference retains temporary pink/lavender coloration; the separate canonical palette below supersedes its colors, not its shape. The guide now embeds an annotated landmark plate, historical comparison and diagnostic cleanup comparison. [Open the untouched canonical PNG](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-approved.png).
+
+[![Sandy approved rear three-quarter preview](../assets/anatomy/sandy-rear-three-quarter/sandy-rear-three-quarter-preview.webp)](sandy-rear-three-quarter-posterior-guide.md)
 
 ### Canonical Sandy material palette (locked 21 November 2026)
 
