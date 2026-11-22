@@ -81,6 +81,10 @@ The three-quarter study preserves the now-approved **rightward body orientation,
 
 ![Six-stage three-quarter body development](../assets/anatomy/sandy-3q-iteration-gallery.webp)
 
+## Side-profile chest — v1.0 (approved)
+
+The right-facing 90° chest reference is locked at checkpoint `e4e0d854-c431-40b1-8b56-349c9bc32116`. The correction removes residual three-quarter perspective: the near contour occludes the far contour without reducing the intended volume. The approved forward projection, lower curve, neckline and fabric response are retained. **Glutes and other side-profile anatomy remain provisional.** See the [dedicated side-profile guide](sandy-side-bust-guide.md) and its [actual approved chest crop](../assets/anatomy/sandy-side-bust-approved.webp).
+
 ## Character transfer rule
 
 **Sandy is neutral.** Her stone-grey skin and pale-grey/charcoal clothing are only a teaching palette; all Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
