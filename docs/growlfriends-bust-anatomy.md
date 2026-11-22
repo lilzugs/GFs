@@ -89,6 +89,19 @@ The right-facing 90° chest reference is locked at checkpoint `e4e0d854-c431-40b
 
 The posterior contour and upper-thigh transition are now independently approved at checkpoint `73361fbb-7bec-4deb-a048-c44ce75813e3`. Preserve the lower-set rounded silhouette and the narrower posterior upper thigh. See the [internal side-profile posterior guide](sandy-side-posterior-guide.md) for the actual iterative checkpoints and final-pass checks. This supersedes the earlier provisional posterior status; it does not lock unrelated unfinished side-view regions.
 
+## Rear three-quarter posterior — v1.0 (hard-locked)
+
+The rear-oblique geometry and surface rendering are now approved at generation `dd6a8f74-f95b-4774-bf94-bc159e8dd94d`. Preserve the lower-biased volume distribution, smooth continuous contour, slim thighs and small upper-thigh opening. The successful final pass removed obsolete nested shadow contours without an intentional geometry change. See the [detailed rear three-quarter posterior guide](sandy-rear-three-quarter-posterior-guide.md) for the full lock, iteration history, rendering reset method, and straight-rear transfer plan. The exact final reference retains temporary pink/lavender coloration; the separate canonical palette below supersedes its colors, not its shape.
+
+### Canonical Sandy material palette (locked 21 November 2026)
+
+- Exposed neutral grey clay: `#606060`.
+- Opaque white shirt and bottoms extending to the knee cuffs: `#FFFFFF`.
+- Black/near-black bands, cuffs and collar: `#111111`.
+- Existing warm-gold O-ring; no new exact hex specified.
+
+These are base swatches; lighting may vary. This palette supersedes earlier descriptions of pale-grey clothing or unspecified clay swatches. No swatch card in production renders. Shape approval is independent of color approval.
+
 ## Character transfer rule
 
 **Sandy is neutral.** Her stone-grey skin and pale-grey/charcoal clothing are only a teaching palette; all Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
