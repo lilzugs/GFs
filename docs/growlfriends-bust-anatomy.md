@@ -104,6 +104,12 @@ The rear-oblique geometry and surface rendering are now approved at generation `
 
 These are base swatches; lighting may vary. This palette supersedes earlier descriptions of pale-grey clothing or unspecified clay swatches. No swatch card in production renders. Shape approval is independent of color approval.
 
+## Five-view reconciliation — v1.0 (regional decisions approved; unified sheet pending)
+
+The November 21–22 review establishes view 1 as the structural base for everything visible in that angle, with region-specific authorities for other views. Ribcage and thigh references are 1/3; abdomen 1/2; waist 1/4; posterior preference 4 > 2 > 3 > 5; relaxed stance 5. View 1 also establishes the head identity and maximum shoulder/arm thickness. View 5 is not a posterior shape authority. The five-view generations remain experimental.
+
+[Read the complete five-view art-direction decisions and correction ledger](sandy-five-view-reconciliation.md). These later decisions govern reconciliation of conflicting source views without overwriting the individual approved artwork.
+
 ## Character transfer rule
 
 **Sandy is neutral.** Her stone-grey skin and pale-grey/charcoal clothing are only a teaching palette; all Growlfriends inherit the same shared body mold and general enlarged-head proportional language, while preserving each character's separate skull, muzzle, ears/horns, hair, eyes, color scheme, material properties, and outfit aesthetic. A different garment can reveal the same underlying anatomy differently.
