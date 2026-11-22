@@ -21,4 +21,4 @@ The initial profile retained a three-quarter neckline and visible far-side conto
 
 ## Scope
 
-Only the side-view chest is approved by this checkpoint. **Glutes are explicitly unfinished.** Do not lock the posterior, abdomen, pelvis, thighs or the rest of the side-view silhouette by association. Continue those studies separately while preserving the approved chest.
+Only the side-view chest is approved by this checkpoint. **At the time of this chest checkpoint, glutes were unfinished.** They were subsequently approved separately; see the [side-profile posterior guide](sandy-side-posterior-guide.md). Do not lock the posterior, abdomen, pelvis, thighs or the rest of the side-view silhouette by association. Continue those studies separately while preserving the approved chest.
