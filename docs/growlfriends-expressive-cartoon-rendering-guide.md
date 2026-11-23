@@ -76,6 +76,10 @@ The intended read is mature, playful, affectionate, expressive, and hand-drawn: 
 - For later expression or animation tests, conserve main construction and move smaller elements—eyes, lids, brows, mouth, ear tips, hair ends—intentionally. Don't add constant motion everywhere.
 - Static model-sheet clarity and expressive illustration are separate deliverables. Each can use the same rendering language without identical posing.
 
+## Linked visual-reference folder
+
+The [Mallow visual checkpoint directory](../assets/style/mallow/) defines the intended repository image paths and exact approved generation IDs for the facial lock, restored pink lop ears on paper, and final expressive inking checkpoint. **Actual PNG/JPG files may still require binary upload.** Do not interpret an image's absence in GitHub as permission to improvise a replacement; use the genuine approved source. The directory's README explains relative authority for each artwork.
+
 ## Mallow's present style checkpoint
 
 Generation `f17435d4-0c7f-4297-9649-75628c2000e2` was received with “damn ok thats nice.” It is the **preferred current ink-and-color example** for the shared style's direction: stronger dark wine lines, expressive tapered segments, broad rose/mauve shadows, simple ivory clothing, distinctly pink inner lop ears, and an off-white paper-textured backdrop.
