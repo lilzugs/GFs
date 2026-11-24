@@ -328,6 +328,46 @@ body{background-color:var(--vanilla);background-image:url("data:image/svg+xml,%3
 .prose{max-width:850px;background:var(--paper);padding:clamp(18px,4vw,38px);border:2px solid var(--wine);border-radius:20px;margin:24px 0}.prose h2{margin-top:28px;font-size:30px}.prose li{margin:10px 0}.prose img{max-width:100%;height:auto}.prose table{width:100%;border-collapse:collapse}.prose td,.prose th{padding:10px;text-align:left;border-bottom:1px solid var(--line)}details{margin:22px 0}summary{cursor:pointer;color:var(--wine);font-weight:600;padding:14px;background:#ead5c455;border-radius:9px}.profile-link{display:block;margin-top:12px;font-weight:600}.section-heading{margin-top:28px}.journal-cover{display:none}.chapter-note{border-left:3px solid var(--rose);padding-left:16px}
 @media(max-width:700px){.directory{grid-template-columns:1fr}.directory a{padding:22px}.topbar-right{width:100%}}
 @media print{.topbar,.chapter-nav,.chapter-controls{display:none}body{background:white}.prose{border:0}}
+</style><style id="storybook-theme">
+/* Storybook bestiary: parchment, ink rules and inset menu frames. */
+:root{--wine:#743747;--vanilla:#F5E6D3;--rose:#C58D91;--cocoa:#382729;--paper:#fff4e2;--head:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;--heading:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;--body:"Fredoka","Trebuchet MS",sans-serif}
+html{background:#d9bfb0}
+body{background-color:#F5E6D3;background-image:radial-gradient(ellipse at 50% 0%,#fff7e8aa,transparent 65%),repeating-linear-gradient(3deg,#74374703 0px,#74374703 1px,transparent 1px,transparent 5px),url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23743747' opacity='.12' filter='url(%23paper)' d='M0 0h150v150H0z'/%3E%3C/svg%3E");color:var(--cocoa)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 120px #74374716;z-index:9}
+.page{max-width:1180px;background:linear-gradient(90deg,#74374708,transparent 3%,transparent 97%,#74374708);border-left:1px solid #74374725;border-right:1px solid #74374725;padding-left:clamp(16px,3vw,38px);padding-right:clamp(16px,3vw,38px)}
+.topbar,.topline{border-bottom:3px double #74374765;min-height:90px}
+.mark,.brand{font-family:var(--heading);font-weight:700;letter-spacing:-.04em;font-size:32px}
+.chapter-title,.hero h1{font-family:var(--heading);font-weight:700;letter-spacing:.035em;font-size:clamp(38px,6vw,66px);text-shadow:0 1px #fff8ef;margin-top:38px}
+.folio,.section-num,.mini,.edition{font-family:var(--body);font-size:11px;letter-spacing:.13em;font-weight:500}
+.directory{gap:20px}
+.directory a,.prose,.anatomy-module,.anatomy-intro,.style-principle,.style-detail,.style-workflow,.entry,.glossary,.toolbar,.study-card{border-radius:4px;border:1px solid #74374780;background-color:#f9edda;background-image:linear-gradient(135deg,#fffaf160,#c58d910b),repeating-linear-gradient(0deg,transparent 0px,transparent 3px,#74374703 4px);box-shadow:inset 0 0 0 3px #fff7e6,inset 0 0 0 4px #74374725,0 4px 9px #38272912}
+.directory a{padding:28px 24px;position:relative;border-top:4px solid var(--wine);transition:background-color .15s,transform .15s}
+.directory a:hover{background-color:#efdbc5;transform:translateY(-2px)}
+.directory h2,.section-heading h2,.anatomy-module h3,.prose h2,.prose h3,.entry h3{font-family:var(--heading);font-weight:700}
+.directory h2{font-size:31px}.directory p{font-size:15px;line-height:1.5}
+.nav a,.chapter-nav a{font-size:14px;font-weight:500}
+.chapter-nav{border-bottom:3px double #74374745}
+.chapter-nav a{border-radius:3px;border:1px solid #74374750;background:#fff4e266;box-shadow:inset 0 0 0 2px #fff8ed80}
+.chapter-nav a[aria-current=page]{background:linear-gradient(#8b4d5d,#743747);color:#fff4e2;box-shadow:inset 0 0 0 2px #e0bbc166}
+.subject-bar{border-radius:5px;padding:3px;box-shadow:0 3px 7px #38272912}
+.subject-bar-inner{height:100%;border-radius:3px;background:#fff4e2;background-image:linear-gradient(135deg,#fffaf166,#c58d9108);padding:20px}
+.subject-bar h3{font-family:var(--heading);font-weight:700;font-size:27px}
+.type-label{font-size:11px;letter-spacing:.08em}
+.swatch-chip{border-radius:2px;height:20px}
+.profile-link{font-size:13px;letter-spacing:.025em;text-underline-offset:4px}
+.section-heading{border-bottom:3px double #74374745;padding-bottom:15px;margin-bottom:24px}
+.lede{font-size:17px;line-height:1.65;max-width:600px}
+.anatomy-chip,.stamp,.type{border-radius:3px;background:#e5ccc050}
+.anatomy-example,.anatomy-rule,.anatomy-locks article,.style-principle-art{border-radius:3px;border-color:#74374740}
+details>summary{background:#e8d2bb70;border:1px solid #74374735;border-radius:3px;font-weight:500}
+select,button,.add-subject input{border-radius:3px;background-color:#fff4e2}
+button.primary{background:var(--wine);color:var(--paper)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--wine);outline-offset:4px}
+.footer,.foot{border-top:3px double #74374750;letter-spacing:.08em;font-size:10px}
+@media(max-width:700px){.page{width:calc(100% - 20px);padding-left:14px;padding-right:14px}.directory a{padding:25px}.chapter-title{font-size:38px}.topbar{gap:14px}.subject-bar-inner{padding:16px}}
+@media(prefers-reduced-motion:reduce){.directory a{transition:none}.directory a:hover{transform:none}}
+@media print{body{background:white}body::before{display:none}.page{border:0}.directory a,.prose,.anatomy-module{box-shadow:none;background:white}}
+
 </style></head><body><div class="page"><header class="topbar"><a class="mark" href="index.html">Growlfriends.</a><nav class="nav" aria-label="Main navigation"><a href="index.html">Bestiary</a><a href="guide.html?chapter=body">Design guide</a><a href="guide.html?chapter=characters">Characters</a><a href="reasons.html">Reasons</a></nav></header><main><span class="folio">The studio field guide</span><h1 class="chapter-title">GROWLFRIENDS</h1><p class="lede">Three shared foundations. One individual identity for every girl.</p><div class="directory"><a href="guide.html?chapter=body"><span class="folio">Chapter 01</span><h2>Body standard</h2><p>Approved anatomy, proportions and fixed geometry.</p></a><a href="guide.html?chapter=uniform"><span class="folio">Chapter 02</span><h2>Uniform</h2><p>Construction, coverage, fit and colour roles.</p></a><a href="guide.html?chapter=style"><span class="folio">Chapter 03</span><h2>Art style</h2><p>Inking, shading, materials and facial rendering.</p></a></div><section aria-labelledby="subjects-title" id="subjects">
 <div class="section-heading">
 <div>
