@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="light" name="color-scheme"/>
 <meta content="#F5E6D3" name="theme-color"/>
-<meta content="Growlfriends — private character research journal and working index." name="description"/>
+<meta content="Growlfriends — character research journal and working index." name="description"/>
 <title>Growlfriends — Field Journal</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -251,6 +251,12 @@
     .swatch-role{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--wine);font-weight:600}
     .swatch-chip{height:22px}.swatch-name{font-size:12px}.swatch-hex{font-size:11px;user-select:all}
     @media(max-width:370px){.subject-bar-inner{grid-template-columns:1fr}.bar-separator{display:none}.subject-bar p{font-size:14px}.swatch-row{grid-column:1/-1}}
+
+    /* Keep gradient frames uniformly 5px thick even when adjacent cards differ in height. */
+    .subject-bar{display:flex;min-width:0;}
+    .subject-bar-inner{flex:1;min-width:0;grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr);gap:10px 14px;align-content:start;}
+    .subject-bar h3{overflow-wrap:anywhere;}
+    @media(max-width:370px){.subject-bar-inner{grid-template-columns:1fr;gap:9px;}}
 </style>
 <!-- Subject index: working Type palettes v0.1, three base swatches with descriptive colour names and exact hex values. -->
 
@@ -261,7 +267,7 @@
 <header class="topbar">
 <a aria-label="Growlfriends journal home" class="mark" href="#top">Growlfriends.</a>
 <div class="topbar-right">
-<span class="edition">Private working journal · Vol. 01</span>
+<span class="edition">Working journal · Vol. 01</span>
 <nav aria-label="Journal sections" class="nav">
 <a class="current" href="#top">Overview</a>
 <a href="#subjects">Subjects</a>
@@ -478,7 +484,7 @@
 </div>
 </section>
 </main>
-<footer class="footer"><span>Growlfriends / Research Journal</span><span>Private working copy · Folio 001</span></footer>
+<footer class="footer"><span>Growlfriends / Research Journal</span><span>Working copy · Folio 001</span></footer>
 </div>
 </body>
 </html>
