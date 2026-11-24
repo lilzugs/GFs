@@ -1,8 +1,20 @@
 # Growlfriends — Universal Uniform Construction and Color Roles
 
-**Status:** Working visual uniform standard, established 23 November 2026. **Applies to all Growlfriends unless the user explicitly specifies a character exception.** Use alongside the [expressive rendering guide](growlfriends-expressive-cartoon-rendering-guide.md) and the character's own reference and approved anatomy.
+**Status:** Approved universal outfit visual and color-role standard, refined 24 November 2026. **Applies to all Growlfriends unless the user explicitly specifies a character exception.** Use alongside the [expressive rendering guide](growlfriends-expressive-cartoon-rendering-guide.md) and the character's own reference and approved anatomy.
 
-![Uniform color and construction diagram](../assets/style/growlfriends-uniform-color-roles.svg)
+## Approved visual reference — use this one
+
+![Approved Growlfriends Uniform Guide: spacious full front and back views, standard primary/secondary/accent assignments, construction notes and key components](../assets/style/growlfriends-uniform-guide-approved.webp)
+
+[Open the full-resolution approved infographic](../assets/style/growlfriends-uniform-guide-approved.webp) · 1536 × 1024 px. This is the preferred reference when adapting the uniform to another character. **The right-hand panel is universal; this is not Bubble's assigned palette.** The red/green/blue arrangement only illustrates body/clothing/band color roles.
+
+The front and back views must be **both fully readable, unwarped, and comfortably spaced**. The back silhouette must not be squashed to make room for callouts, labels or panels. Keep each silhouette anatomically coherent; if another guide becomes crowded, enlarge the canvas or simplify labels instead of compressing the figure.
+
+<details><summary>Supplementary editable schematic (not the final illustrated checkpoint)</summary>
+
+![Secondary construction schematic](../assets/style/growlfriends-uniform-color-roles.svg)
+
+</details>
 
 ## The most important rule: color is assigned by **what a surface is**, not by its location
 
@@ -36,6 +48,7 @@
 
 ## Common mistakes to reject
 
+- Shrinking, squeezing or distorting a body or rear-view silhouette to fit a busy information panel; instead prioritize **spacing and legibility**.
 - Labeling primary color as the shirt rather than **the body**.
 - Labeling secondary color as the collar/neckline rather than **clothing**.
 - Labeling accent color as arbitrary highlights rather than the **bands and trim**.
@@ -52,6 +65,6 @@
 
 ## Visual reference provenance
 
-The SVG above is a **directly viewable, editable schematic** committed with this document; it communicates construction and color semantics, not pixel-perfect proportions or anatomical measurements. The companion user-approved illustrated graphic was generated as image `1e7a7464-3ffc-46e4-be6e-1f8700b0363b` during the 23 November workshop and may be uploaded later under `assets/style/growlfriends-uniform-guide-final.png`. That PNG is **not yet in the repository** if the file path is absent; do not falsely claim it is.
+**Approved illustrated checkpoint:** generation ID `41411d28-b90e-4fa2-bb44-45ebb0630604`, created after a deliberate legibility revision to avoid a cramped layout and warped rear silhouette. The repository contains a full-resolution **1536 × 1024 WebP** rendition at [`assets/style/growlfriends-uniform-guide-approved.webp`](../assets/style/growlfriends-uniform-guide-approved.webp). This is a visually equivalent image encoding of the original PNG, not a vector reconstruction; the chat's original PNG remains the source image. **Use this illustrated reference as the authoritative uniform guide graphic**. The SVG is only a lightweight editable schematic for color-role semantics and must not override the approved image.
 
 **Authority:** user-approved character designs > this uniform construction and color role convention > miscellaneous generation prompts.
