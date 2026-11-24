@@ -137,7 +137,27 @@ const DEFAULTS = [
 {id:'mouse',name:'Mouse / sloth girl',type:'Unassigned',nature:'',section:'Unassigned'}
 ];
 const STORAGE_KEY='growlfriends-reasons-alpha-01';
-let state={assignments:{},custom:[]};
+// Shared alpha assignments; browser edits remain local and override these defaults.
+const DEFAULT_ASSIGNMENTS = {
+  "j": "Fantasy",
+  "mother-vale": "Devotion",
+  "sandy": "Transformation",
+  "mallow": "Acceptance",
+  "quill": "Fascination",
+  "vesper": "Desire",
+  "cadence": "Adventure",
+  "dixie": "Vulnerability",
+  "mara": "Surrender",
+  "loveander": "Transgression",
+  "moth": "Restraint",
+  "bibi": "Authenticity",
+  "bubble": "Pleasure",
+  "delphie": "Mystery",
+  "zip": "Reciprocity",
+  "connie": "Freedom",
+  "etna": "Anticipation"
+};
+let state={assignments:{...DEFAULT_ASSIGNMENTS},custom:[]};
 const byId = x => document.getElementById(x);
 const allSubjects=()=>DEFAULTS.concat(state.custom.map(x=>({...x,section:'Additional subjects'})));
 const findReason=name=>REASONS.find(r=>r.name===name);
