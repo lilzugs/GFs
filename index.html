@@ -261,6 +261,59 @@
     /* Uniform gradient frame: grid stretches the inner panel in both axes. */
     .roster > .subject-bar{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr;align-items:stretch;padding:5px;}
     .roster > .subject-bar > .subject-bar-inner{align-self:stretch;min-height:100%;align-content:start;}
+
+    /* III / Expressive visual-language guide */
+    .style-intro {
+      display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
+      gap:22px;align-items:stretch;
+      padding:clamp(23px,3.2vw,38px);border:2px solid var(--wine);border-radius:24px;
+      background:rgba(255,248,239,.89);
+    }
+    .style-intro h3 {font-size:clamp(28px,3.1vw,39px);margin:12px 0 14px;}
+    .style-intro p {max-width:650px;margin:0 0 13px;line-height:1.55;}
+    .style-intro p:last-child {margin-bottom:0;}
+    .style-diagram {
+      display:flex;flex-direction:column;justify-content:center;min-width:0;
+      background:#F4E4DB;border:1px solid var(--line);border-radius:18px;
+      padding:24px;gap:12px;
+    }
+    .style-diagram svg {display:block;width:100%;height:auto;max-height:170px;}
+    .style-diagram .caption {font-size:13px;color:var(--wine);font-weight:600;line-height:1.5;}
+    .style-principles {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
+    .style-principle {min-width:0;background:rgba(255,248,239,.86);border:2px solid var(--wine);border-radius:22px;overflow:hidden;}
+    .style-principle-art {height:135px;display:flex;align-items:center;justify-content:center;background:#F4E4DB;border-bottom:1px solid var(--line);padding:14px;}
+    .style-principle-art svg {max-width:100%;max-height:100%;display:block;}
+    .style-principle-copy {padding:22px 23px 26px;}
+    .style-principle-copy .folio {display:block;margin-bottom:11px;}
+    .style-principle h3 {font-size:27px;margin:0 0 12px;}
+    .style-principle p {font-size:15px;line-height:1.52;margin:0;}
+    .style-details {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:18px;}
+    .style-detail {border:1px solid var(--line);background:#FFF8EF;border-radius:17px;padding:22px 24px;}
+    .style-detail h3 {font-size:26px;margin:0 0 9px;}
+    .style-detail p {font-size:15px;line-height:1.5;margin:0;}
+    .style-workflow {
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.42fr);
+      gap:24px;align-items:center;background:#F0DFD5;border:2px solid var(--wine);
+      border-radius:22px;margin-top:18px;padding:clamp(22px,3vw,31px);
+    }
+    .style-workflow h3 {font-size:clamp(27px,3vw,36px);margin:9px 0 12px;}
+    .style-workflow p {font-size:15px;line-height:1.55;margin:0;}
+    .style-authority {margin:0;padding:0;list-style:none;counter-reset:style-steps;}
+    .style-authority li {counter-increment:style-steps;padding:10px 0;border-top:1px solid var(--line);
+      font-size:15px;line-height:1.35;font-weight:700;}
+    .style-authority li:first-child{border-top:0;}
+    .style-authority li:before{content:counter(style-steps,decimal-leading-zero);display:inline-block;
+      width:35px;font-size:12px;color:var(--wine);letter-spacing:.07em;}
+    .style-readmore {display:inline-flex;align-items:center;gap:7px;margin-top:19px;font-weight:700;color:var(--wine);text-underline-offset:3px;}
+    @media(max-width:900px){.style-principles{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media(max-width:650px){
+      .style-intro,.style-workflow{grid-template-columns:1fr;gap:15px;}
+      .style-diagram{padding:18px;}
+      .style-principles,.style-details{grid-template-columns:1fr;gap:12px;}
+      .style-principle-art{height:115px;}
+      .nav{flex-wrap:wrap;gap:6px 16px;}
+    }
+    @media print {.style-intro,.style-principle,.style-detail,.style-workflow{break-inside:avoid;}}
 </style>
 <!-- Subject index: working Type palettes v0.1, three base swatches with descriptive colour names and exact hex values. -->
 
@@ -276,6 +329,7 @@
 <a class="current" href="#top">Overview</a>
 <a href="#subjects">Subjects</a>
 <a href="#anatomy">Anatomy</a>
+<a href="#style">Style</a>
 <a href="#notes">Notes</a>
 </nav>
 </div>
@@ -469,10 +523,104 @@
   <a class="anatomy-archive-link" href="docs/growlfriends-bust-anatomy.md">Read the complete studio guide →</a>
 </section>
 
+
+<section aria-labelledby="style-title" id="style">
+  <div class="section-heading">
+    <div><div class="section-num">III / VISUAL LANGUAGE</div><h2 id="style-title">Expressive Rendering</h2></div>
+    <p>One coherent drawing language. Distinct personalities, faces and species.</p>
+  </div>
+  <div class="style-intro">
+    <div>
+      <span class="folio">Art direction / shared rendering system</span>
+      <h3>Deliberate, not overworked.</h3>
+      <p>Our Growlfriends style combines confident hand-drawn cartoon contours with graphic cel shading and expressive shapes. The goal is <strong>simple, readable, affectionate character art</strong> with enough irregularity to feel drawn rather than mechanically traced.</p>
+      <p><strong>Simplicity is a designed visual hierarchy, not merely the absence of detail.</strong> We borrow broad principles from animation and illustration studies without copying any particular artist's compositions.</p>
+    </div>
+    <div class="style-diagram" role="img" aria-label="Diagram comparing bold silhouette ink, medium structural ink, and fine tapering interior marks">
+      <svg viewBox="0 0 380 175" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#552834" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 50 C83 -4 129 112 187 55 S300 -5 355 56" stroke-width="12"/>
+          <path d="M35 101 C96 58 131 139 194 103 S295 75 355 105" stroke-width="6"/>
+          <path d="M55 150 Q113 134 147 147 M205 150 Q260 135 310 148" stroke-width="2.8"/>
+        </g>
+      </svg>
+      <div class="caption"><strong>Ink hierarchy:</strong> bold silhouettes, lighter structural lines, restrained interior marks. No ghost contours or equal-weight tracing.</div>
+    </div>
+  </div>
+
+  <div class="style-principles" aria-label="Core illustration principles">
+    <article class="style-principle">
+      <div class="style-principle-art" aria-hidden="true">
+        <svg viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#582A37" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 87 Q49 17 112 28 T227 77" stroke-width="11"/>
+            <path d="M49 82 Q80 50 113 61 T206 84" stroke-width="5"/>
+            <path d="M89 95 Q116 86 129 96 M157 96 Q173 89 184 96" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="style-principle-copy">
+        <span class="folio">01 / INK HIERARCHY</span>
+        <h3>Confident contours</h3>
+        <p>Deep burgundy or plum ink. Strong outer silhouettes, medium structural boundaries and sparse tapered details. Avoid duplicate edges and uniform line weight.</p>
+      </div>
+    </article>
+    <article class="style-principle">
+      <div class="style-principle-art" aria-hidden="true">
+        <svg viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 13 H218 Q228 13 228 23 V89 Q228 99 218 99 H32 Q22 99 22 89 V23 Q22 13 32 13Z" fill="#F6DDD1" stroke="#582A37" stroke-width="5"/>
+          <path d="M25 75 Q79 43 139 68 Q172 84 226 45 L226 90 Q226 97 216 97 H32 Q25 96 25 88 Z" fill="#BE7E84"/>
+          <path d="M54 29 Q86 24 103 32" stroke="#FFF8EF" stroke-width="6" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="style-principle-copy">
+        <span class="folio">02 / SHADOW ECONOMY</span>
+        <h3>One decisive shape</h3>
+        <p>Start with a clear local color, explain volume with broad hard-edged shadows, and reserve highlights for emphasis. Avoid scattered gradients and identical glossy spots.</p>
+      </div>
+    </article>
+    <article class="style-principle">
+      <div class="style-principle-art" aria-hidden="true">
+        <svg viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+          <path d="M44 78 C12 55 50 14 109 18 Q165 16 202 49 Q227 85 166 94 Q100 108 44 78Z" fill="#E3B2AF" stroke="#582A37" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M61 64 Q102 29 154 42" stroke="#FFF5ED" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M173 77 Q182 74 190 68" stroke="#8E5362" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="style-principle-copy">
+        <span class="folio">03 / SHAPE LANGUAGE</span>
+        <h3>Organic, not geometric</h3>
+        <p>Prioritize clean silhouette reads, then allow subtle asymmetry, irregular tapers and changes of curvature. Do not redesign locked anatomy just to exaggerate a curve.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="style-details" aria-label="Character-specific rendering notes">
+    <article class="style-detail"><h3>Fabric &amp; materials</h3><p>Use a few purposeful folds where fabric pulls or carries weight. Keep clothing, fur, feathers, skin, hair and hardware visually distinct; never confuse garment shadows with exposed body color.</p></article>
+    <article class="style-detail"><h3>Faces &amp; eyes</h3><p>Eye direction, lids, brow and cheek relationships define the expression. Keep every girl's approved pupil design, muzzle, beak, teeth and facial proportions rather than imposing a universal face.</p></article>
+    <article class="style-detail"><h3>Hair, ears &amp; layering</h3><p>Use a confident overall hair shape, larger shadow masses and fewer strand marks. Make every overlap explicit: one clean boundary at hair, ear, neck and shoulder junctions—no doubled or ghosted shapes.</p></article>
+    <article class="style-detail"><h3>Composition &amp; animation</h3><p>Neutral turnaround views can be symmetrical and calm. Expressive poses may stretch the gesture, eyes and hair, but keep construction consistent; do not confuse character-sheet clarity with action-illustration energy.</p></article>
+  </div>
+
+  <div class="style-workflow">
+    <div>
+      <span class="folio">A rule for every adaptation</span>
+      <h3>Preserve identity before polish.</h3>
+      <p>For each new Growlfriend, retain the character's locked face, species, hairstyle, palette and outfit. Use Sandy for shared anatomical geometry, then apply the rendering principles above. A successful style transfer must look like <em>the same girl</em> drawn by the same art department—not a recolored Mallow.</p>
+      <a class="style-readmore" href="docs/growlfriends-expressive-cartoon-rendering-guide.md">Read the complete rendering guide &rarr;</a>
+    </div>
+    <ol class="style-authority" aria-label="Order of visual authority">
+      <li>Character identity &amp; locks</li>
+      <li>Approved shared anatomy</li>
+      <li>Expressive rendering language</li>
+    </ol>
+  </div>
+</section>
+
 <section aria-labelledby="notes-title" id="notes">
 <div class="section-heading">
 <div>
-<div class="section-num">III / WORKING NOTES</div>
+<div class="section-num">IV / WORKING NOTES</div>
 <h2 id="notes-title">Study Areas</h2>
 </div>
 <p>Where observations, references, and revisions belong as the journal grows.</p>
