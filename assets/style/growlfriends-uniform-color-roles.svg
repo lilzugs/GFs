@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 930" role="img" aria-labelledby="ttl desc">
+<title id="ttl">Growlfriends Universal Uniform: color roles and garment construction</title>
+<desc id="desc">Front and back outfit illustrations. Red is exposed natural body material, green is clothing, blue is collar, neckline, integrated sleeve cuffs, underbust band and legbands. Gold is only the collar O-ring and necessary mount. Sample colors are semantic placeholders, not character palettes.</desc>
+<defs>
+ <pattern id="paper" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="#FBF3E8"/><path d="M3 9l5 -2 M15 24l4 -1 M22 9l3 1" stroke="#D7BFAE" stroke-opacity=".15" stroke-width="1"/></pattern>
+ <style>
+ text{font-family:"Trebuchet MS",Verdana,sans-serif;fill:#3E1F23} .h{font-weight:900} .line{stroke:#40191E;stroke-width:7;stroke-linecap:round;stroke-linejoin:round} .thin{stroke:#40191E;stroke-width:3;stroke-linecap:round;stroke-linejoin:round} .call{font-size:23;font-weight:700} .small{font-size:18} .tiny{font-size:15}
+ </style>
+</defs>
+<rect width="1500" height="930" fill="url(#paper)"/>
+<rect x="26" y="22" width="980" height="882" rx="28" fill="#FFF9F1" stroke="#734148" stroke-width="3"/>
+<text x="70" y="79" font-size="39" class="h">GROWLFRIENDS / UNIFORM STANDARD</text>
+<text x="70" y="114" font-size="19">The same structure for every character; swap in her own primary, secondary and accent colors.</text>
+<text x="300" y="165" text-anchor="middle" font-size="26" class="h">FRONT</text>
+<text x="762" y="165" text-anchor="middle" font-size="26" class="h">BACK</text>
+<!-- FRONT: shirt body, sleeves, and bottoms -->
+<g transform="translate(85 165)">
+ <!-- main short sleeve outfit -->
+ <path class="line" fill="#2EB857" d="M160 98 Q190 72 227 78 L271 78 Q309 72 340 98 L389 135 L420 206 L387 230 L346 206 L343 344 Q340 382 316 417 L138 417 Q114 382 112 344 L109 206 L69 230 L36 206 L65 135 Z"/>
+ <!-- bottom garment: thigh-covering continuous knee-length fabric -->
+ <path class="line" fill="#2EB857" d="M138 417 Q104 445 95 501 L86 612 Q87 695 104 737 L111 780 L204 780 L210 630 Q211 585 227 575 Q243 585 244 630 L250 780 L343 780 L350 737 Q368 695 368 612 L359 501 Q348 445 316 417Z"/>
+ <!-- sleeve cuffs integrated with shirt -->
+ <path class="line" fill="#2B63D9" d="M39 192 L108 198 L109 224 Q77 229 57 247 L27 225 Z"/>
+ <path class="line" fill="#2B63D9" d="M344 198 L413 192 L425 225 L395 247 Q375 229 343 224 Z"/>
+ <!-- hem legbands -->
+ <path class="line" fill="#2B63D9" d="M110 758 Q156 773 205 758 L204 806 Q165 823 109 804 Z"/>
+ <path class="line" fill="#2B63D9" d="M250 758 Q296 773 345 758 L344 804 Q288 823 251 806 Z"/>
+ <!-- underbust band wide and anchored -->
+ <path class="line" fill="#2B63D9" d="M119 321 Q224 337 337 321 L336 405 Q224 420 119 405 Z"/>
+ <!-- neck cutout exposed natural material -->
+ <path class="line" fill="#E63232" d="M154 118 Q151 166 171 206 Q191 245 227 246 Q263 245 283 206 Q303 166 300 118 L279 98 Q264 94 227 94 Q190 94 175 98 Z"/>
+ <!-- accent neckline from beneath collar, looping down and up -->
+ <path d="M176 102 C174 170 188 246 227 254 C266 246 280 170 278 102" stroke="#2B63D9" stroke-width="18" stroke-linecap="round" fill="none"/>
+ <path d="M176 102 C174 170 188 246 227 254 C266 246 280 170 278 102" stroke="#40191E" stroke-width="3.5" fill="none"/>
+ <!-- limited shirt folds -->
+ <path d="M137 284 Q173 305 203 302 M254 302 Q290 306 319 286" stroke="#177F2A" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/>
+ <!-- collar -->
+ <rect class="line" x="167" y="69" width="120" height="47" rx="15" fill="#2B63D9"/>
+ <circle cx="190" cy="94" r="5" fill="#EEBE4A"/><circle cx="265" cy="94" r="5" fill="#EEBE4A"/>
+ <path d="M228 103 L228 137" stroke="#3D1C1F" stroke-width="16" stroke-linecap="round"/><path d="M228 103 L228 137" stroke="#F6C34F" stroke-width="10" stroke-linecap="round"/>
+ <circle cx="228" cy="145" r="20" fill="none" stroke="#3D1C1F" stroke-width="14"/><circle cx="228" cy="145" r="20" fill="none" stroke="#F6C34F" stroke-width="9"/>
+</g>
+<!-- BACK -->
+<g transform="translate(548 165)">
+ <path class="line" fill="#2EB857" d="M160 98 Q190 72 227 78 L271 78 Q309 72 340 98 L389 135 L420 206 L387 230 L346 206 L343 344 Q340 382 316 417 L138 417 Q114 382 112 344 L109 206 L69 230 L36 206 L65 135 Z"/>
+ <path class="line" fill="#2EB857" d="M138 417 Q104 445 95 501 L86 612 Q87 695 104 737 L111 780 L204 780 L210 630 Q211 585 227 575 Q243 585 244 630 L250 780 L343 780 L350 737 Q368 695 368 612 L359 501 Q348 445 316 417Z"/>
+ <path class="line" fill="#2B63D9" d="M39 192 L108 198 L109 224 Q77 229 57 247 L27 225 Z"/>
+ <path class="line" fill="#2B63D9" d="M344 198 L413 192 L425 225 L395 247 Q375 229 343 224 Z"/>
+ <path class="line" fill="#2B63D9" d="M110 758 Q156 773 205 758 L204 806 Q165 823 109 804 Z"/>
+ <path class="line" fill="#2B63D9" d="M250 758 Q296 773 345 758 L344 804 Q288 823 251 806 Z"/>
+ <path class="line" fill="#2B63D9" d="M119 321 Q224 337 337 321 L336 405 Q224 420 119 405 Z"/>
+ <!-- neck straps from collar to upper edges -->
+ <path d="M176 104 Q166 162 120 184 M278 104 Q288 162 336 184" fill="none" stroke="#40191E" stroke-width="19"/>
+ <path d="M176 104 Q166 162 120 184 M278 104 Q288 162 336 184" fill="none" stroke="#2B63D9" stroke-width="12"/>
+ <path d="M160 275 Q221 316 287 273" stroke="#167D2B" stroke-width="5" fill="none" opacity=".6"/>
+ <rect class="line" x="167" y="69" width="120" height="47" rx="15" fill="#2B63D9"/>
+ <circle cx="190" cy="94" r="5" fill="#EEBE4A"/><circle cx="265" cy="94" r="5" fill="#EEBE4A"/>
+</g>
+<!-- RIGHT PANELS -->
+<rect x="1024" y="22" width="450" height="882" rx="28" fill="#4C2027"/>
+<text x="1249" y="78" text-anchor="middle" font-size="35" font-weight="900" fill="#FFF8ED">UNIVERSAL COLOR ROLES</text>
+<rect x="1044" y="106" width="410" height="382" rx="18" fill="#FFF8ED"/>
+<rect x="1062" y="127" width="90" height="86" rx="12" fill="#E63232" stroke="#472327" stroke-width="3"/>
+<text x="1170" y="154" font-size="24" class="h">PRIMARY / BODY</text>
+<text x="1170" y="184" font-size="17">Skin, fur, scales, feathers,</text>
+<text x="1170" y="207" font-size="17">other natural surfaces.</text>
+<rect x="1062" y="236" width="90" height="86" rx="12" fill="#2EB857" stroke="#472327" stroke-width="3"/>
+<text x="1170" y="266" font-size="24" class="h">SECONDARY / OUTFIT</text>
+<text x="1170" y="294" font-size="17">Short-sleeved shirt and</text>
+<text x="1170" y="317" font-size="17">fitted knee-length bottoms.</text>
+<rect x="1062" y="345" width="90" height="86" rx="12" fill="#2B63D9" stroke="#472327" stroke-width="3"/>
+<text x="1170" y="371" font-size="24" class="h">ACCENT / BANDS</text>
+<text x="1170" y="395" font-size="17">Collar, neckline, cuffs,</text>
+<text x="1170" y="418" font-size="17">underbust and legbands.</text>
+<text x="1070" y="467" font-size="16" font-weight="700">Sample red / green / blue only — use each girl's palette.</text>
+<rect x="1044" y="505" width="410" height="373" rx="18" fill="#FFF8ED"/>
+<text x="1068" y="547" font-size="28" class="h">CONSTRUCTION RULES</text>
+<g font-size="20" fill="#3E1F23">
+<text x="1071" y="587">1. Accent neckline begins under</text>
+<text x="1092" y="613">the collar, scoops down,</text>
+<text x="1092" y="639">then loops back up.</text>
+<text x="1071" y="677">2. Sleeve cuffs join the shirt.</text>
+<text x="1071" y="716">3. Underbust band has depth,</text>
+<text x="1092" y="742">extending down the torso.</text>
+<text x="1071" y="781">4. Only collar O-ring / needed</text>
+<text x="1092" y="807">mounting hardware is gold.</text>
+<text x="1071" y="846" font-size="17" font-weight="700">No added jewelry or accessories.</text>
+</g>
+</svg>
