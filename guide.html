@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="#F5E6D3" name="theme-color"/>
+<meta content="Growlfriends — character research journal and working index." name="description"/>
+<title>Growlfriends — Field Journal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Lilita+One&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Growlfriends typography: Lilita One for display, Fredoka for all other UI.
+       The Google Fonts stylesheet loads online; rounded system fallbacks work offline. */
+    :root {
+      --wine: #743747;
+      --vanilla: #F5E6D3;
+      --rose: #C58D91;
+      --cocoa: #382729;
+      --paper: #FFF8EF;
+      --faded: #E9C5C0;
+      --line: rgba(116,55,71,.28);
+      --line-strong: rgba(116,55,71,.75);
+      --heading: "Lilita One", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+      --body: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+    }
+    *, *:before, *:after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--cocoa);
+      -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(ellipse at 4% 0%, #fff6e9 0, transparent 34rem),
+        radial-gradient(ellipse at 98% 36%, rgba(197,141,145,.15) 0, transparent 38rem),
+        var(--vanilla);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { color: var(--wine); font-family: var(--heading); font-weight: 400; line-height: 1.05; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--wine); outline-offset: 4px; border-radius: 6px; }
+    .page { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
+      min-height: 92px; display: flex; justify-content: space-between; align-items: center;
+      gap: 24px; border-bottom: 2px solid var(--line); padding: 15px 2px;
+    }
+    .mark { font: 32px/1 var(--heading); color: var(--wine); text-decoration: none; }
+    .topbar-right { display: flex; align-items: center; gap: 38px; }
+    .edition { color: var(--wine); font-weight: 700; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .nav { display: flex; gap: 26px; }
+    .nav a { text-decoration: none; font-size: 15px; font-weight: 600; border-bottom: 2px solid transparent; padding: 8px 0; }
+    .nav a:hover, .nav a:focus-visible { border-bottom-color: var(--wine); }
+    .nav a.current { border-bottom-color: var(--wine); }
+    .journal-cover {
+      display: grid; grid-template-columns: minmax(0,1.52fr) minmax(290px,.78fr);
+      gap: 20px; margin-top: 30px; align-items: stretch;
+    }
+    .cover-main, .cover-aside, .study-card, .subject, .memo {
+      border: 2px solid var(--wine); border-radius: 24px;
+    }
+    .cover-main {
+      padding: clamp(28px, 4.7vw, 62px);
+      background: rgba(255,248,239,.89);
+      box-shadow: 0 18px 40px rgba(93,45,52,.055);
+      min-height: 347px;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .folio { font-size: 12px; font-weight: 700; letter-spacing: .125em; text-transform: uppercase; color: var(--wine); }
+    .fine-rule { width: 70px; height: 3px; background: var(--rose); border-radius: 3px; margin: 16px 0 19px; }
+    .cover-main h1 { font-size: clamp(41px, 5.3vw, 76px); letter-spacing: -.025em; margin: 0; overflow-wrap: anywhere; }
+    .subtitle { margin: 10px 0 16px; font-size: clamp(19px,2.7vw,27px); font-weight: 600; color: var(--wine); }
+    .cover-summary { margin: 0; max-width: 550px; font-size: 17px; line-height: 1.52; }
+    .cover-aside {
+      padding: 30px 31px; background: linear-gradient(156deg,#8d5363 0%,#743747 65%,#642f40 100%);
+      color: var(--paper); display: flex; flex-direction: column;
+    }
+    .cover-aside .folio { color: #f8e4d5; }
+    .cover-aside h2 { color: var(--paper); font-size: 35px; margin: 23px 0 16px; }
+    .key-entry { padding: 13px 0; border-top: 1px solid rgba(255,248,239,.35); }
+    .key-entry strong { display: block; font-size: 16px; font-weight: 700; }
+    .key-entry span { color: #f4ded9; display: block; font-size: 14px; margin-top: 2px; }
+    .aside-foot { margin: auto 0 0; padding-top: 22px; font-size: 12px; letter-spacing: .07em; color: #f1d5d1; }
+    .section-heading { display:flex; align-items: end; justify-content: space-between; gap: 24px; margin: 57px 2px 20px; }
+    .section-heading .section-num { font-size: 12px; font-weight: 700; color: var(--wine); letter-spacing: .12em; margin-bottom: 6px; }
+    .section-heading h2 { margin: 0; font-size: clamp(37px, 4.3vw, 53px); }
+    .section-heading p { max-width: 380px; font-size: 15px; line-height: 1.4; margin: 0 0 4px; }
+    section { scroll-margin-top: 25px; }
+    .roster { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 13px; }
+    .subject {
+      min-width: 0; min-height: 137px; background: rgba(255,248,239,.74);
+      padding: 17px 18px 16px; display: flex; flex-direction: column; align-items: flex-start;
+      transition: background .15s ease;
+    }
+    .subject:hover { background: rgba(255,250,246,1); }
+    .subject { min-height: 236px; }
+    .subject-num { font-size: 11px; color: var(--wine); font-weight: 700; letter-spacing: .12em; }
+    .subject h3 { font-size: clamp(23px, 2.65vw, 32px); margin: 20px 0 18px; overflow-wrap: anywhere; }
+    .subject-record { width: 100%; margin: auto 0 0; }
+    .subject-record .field { display: flex; align-items: baseline; justify-content: space-between;
+      gap: 5px 8px; padding: 7px 0; border-top: 1px solid var(--line); }
+    .subject-record dt { color: var(--wine); font-size: 10px; font-weight: 700;
+      letter-spacing: .075em; text-transform: uppercase; flex-shrink: 0; }
+    .subject-record dd { margin: 0; font-size: 14px; font-weight: 600; color: var(--cocoa);
+      text-align: right; line-height: 1.3; overflow-wrap: anywhere; }
+    .subject-record .field:first-child dd { font-weight: 700; }
+    .study-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
+    .study-card { background: rgba(255,248,239,.8); padding: 26px 26px 29px; min-height: 205px; }
+    .study-card .index { font-weight: 700; color: var(--wine); font-size: 12px; letter-spacing: .11em; }
+    .study-card h3 { font-size: 28px; margin: 22px 0 12px; }
+    .study-card p { font-size: 15px; line-height: 1.48; margin: 0; }
+    .memo {
+      margin-top: 25px; padding: 22px 28px; background: rgba(233,197,192,.3);
+      display: flex; align-items: start; gap: 32px;
+    }
+    .memo .folio { white-space: nowrap; padding-top: 4px; }
+    .memo p { margin: 0; font-size: 15px; }
+    .footer {
+      margin: 55px 0 0; border-top: 2px solid var(--line); padding: 22px 2px 32px;
+      display: flex; gap: 10px 20px; justify-content: space-between; flex-wrap: wrap;
+      color: var(--wine); font-size: 12px; font-weight: 700; letter-spacing: .065em; text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .journal-cover { grid-template-columns: 1fr; }
+      .cover-main { min-height: 290px; }
+      .cover-aside { min-height: unset; }
+      .cover-aside h2 { margin-top: 12px; }
+      .aside-foot { margin-top: 12px; }
+      .roster { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    }
+    @media (max-width: 650px) {
+      .page { width: calc(100% - 30px); }
+      .topbar { flex-direction: column; align-items: flex-start; gap: 10px; min-height: unset; }
+      .topbar-right { gap: 18px; flex-wrap: wrap; }
+      .nav { gap: 19px; }
+      .journal-cover { margin-top: 17px; gap: 14px; }
+      .cover-main { padding: 28px 23px; min-height: 0; }
+      .cover-main h1 { font-size: clamp(39px, 9.6vw, 53px); }
+      .cover-aside { padding: 25px 23px; }
+      .section-heading { display: block; margin-top: 42px; }
+      .section-heading p { margin-top: 10px; }
+      .roster { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+      .subject { min-height: 216px; padding: 15px; }
+      .subject h3 { margin: 14px 0 14px; }
+      .subject-record dt { font-size: 9px; }
+      .subject-record dd { font-size: 12.5px; }
+      .subject-record .field { gap: 4px; padding: 6px 0; }
+      .study-grid { grid-template-columns: 1fr; gap: 11px; }
+      .study-card { min-height: 0; padding: 23px; }
+      .study-card h3 { margin-top: 12px; }
+      .memo { display: block; padding: 22px; }
+      .memo p { margin-top: 11px; }
+      .footer { margin-top: 40px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  
+
+    /* Compact Growlfriends subject register. No type glyphs or type labels. */
+    .roster {display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px;}
+    .subject-bar {
+      min-width:0; border-radius:23px; padding:5px;
+      background:linear-gradient(122deg,var(--bar-a) 0%,var(--bar-b) 34%,var(--bar-c) 71%,var(--bar-a) 100%);
+      box-shadow:0 5px 15px rgba(89,46,55,.045);
+      transition:transform .16s ease,box-shadow .16s ease;
+    }
+    .subject-bar:hover {transform:translateY(-1px);box-shadow:0 8px 21px rgba(89,46,55,.10);}
+    .subject-bar-inner {
+      display:grid;grid-template-columns:132px 14px minmax(0,1fr);align-items:center;column-gap:12px;
+      min-height:65px;padding:13px 20px;
+      background:#FFF8EF;border-radius:18px;
+    }
+    .subject-bar h3 {margin:0;color:var(--wine);font-size:clamp(23px,2.25vw,29px);line-height:1.05;flex:0 0 auto;}
+    .subject-bar p {margin:0;min-width:0;font-size:clamp(15px,1.55vw,19px);line-height:1.2;font-weight:600;color:var(--cocoa);}
+    .bar-separator {font:600 24px/1 var(--body);color:var(--rose);opacity:.95;text-align:center;}
+    /* Palette samples: precise hex codes plus nearest conventional shade names. */
+    .swatch-row {
+      grid-column:1 / -1;display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;margin-top:6px;padding-top:12px;
+      border-top:1px solid rgba(116,55,71,.12);
+    }
+    .palette-swatch {min-width:0;display:flex;flex-direction:column;gap:3px;}
+    .swatch-chip {display:block;width:100%;height:18px;border-radius:7px;border:1px solid rgba(56,39,41,.16);}
+    .palette-swatch:nth-child(1) .swatch-chip {background:var(--bar-a);}
+    .palette-swatch:nth-child(2) .swatch-chip {background:var(--bar-b);}
+    .palette-swatch:nth-child(3) .swatch-chip {background:var(--bar-c);}
+    .swatch-name {display:block;color:var(--cocoa);font-size:11px;font-weight:600;line-height:1.2;overflow-wrap:break-word;}
+    .swatch-hex {display:block;color:var(--wine);font:600 10px/1.2 var(--body);letter-spacing:.03em;font-variant-numeric:tabular-nums;}
+    @media (max-width:700px) {.swatch-row{gap:8px}.swatch-name{font-size:11px}.swatch-hex{font-size:10px}}
+    @media (max-width:900px) {.roster{grid-template-columns:1fr 1fr;gap:11px}.subject-bar-inner{grid-template-columns:122px 12px minmax(0,1fr);padding:12px 13px;column-gap:11px}.subject-bar h3{font-size:24px}.subject-bar p{font-size:16px}}
+    @media (max-width:700px) {.roster{grid-template-columns:1fr;gap:10px}.subject-bar-inner{grid-template-columns:122px 12px minmax(0,1fr);min-height:62px;padding:12px 18px;column-gap:14px}.subject-bar h3{font-size:25px}.subject-bar p{font-size:17px}}
+    @media (prefers-reduced-motion:reduce) {.subject-bar {transition:none;}.subject-bar:hover{transform:none}}
+
+    /* Explicit font roles throughout the journal. */
+    body, button, input, select, textarea {
+      font-family: var(--body);
+      font-optical-sizing: auto;
+    }
+    .mark, h1, h2, h3, .subject-bar h3 {
+      font-family: var(--heading);
+      font-optical-sizing: auto;
+    }
+    .nav, .edition, .folio, .subject-bar p, .section-num,
+    .key-entry, .study-card p, .memo, .footer {
+      font-family: var(--body);
+    }
+
+    /* III / Sandy's shared anatomy workshop */
+    .anatomy-intro { border: 2px solid var(--wine); border-radius: 24px; padding: clamp(22px,3.2vw,36px); background: rgba(255,248,239,.86); display:grid; grid-template-columns:minmax(0,1.5fr) minmax(210px,.7fr); gap:26px; align-items:center; }
+    .anatomy-intro h3 { font-size:clamp(27px,3vw,39px); margin:0 0 13px; }
+    .anatomy-intro p {margin:0; max-width:650px;}
+    .anatomy-intro .mannequin-note {padding:20px 22px; border-radius:16px; background:#efe0d0; border:1px solid var(--line); font-size:14px;line-height:1.5;}
+    .anatomy-intro .mannequin-note strong { color:var(--wine); display:block; font-size:16px;margin-bottom:5px;}
+    .anatomy-module {margin-top:28px; padding:clamp(18px,2.8vw,28px); border:2px solid var(--wine); border-radius:24px; background:rgba(255,248,239,.8);}
+    .anatomy-module-head { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:17px;}
+    .anatomy-module-head h3 {font-size:clamp(28px,3.3vw,37px); margin:0 0 8px;}
+    .anatomy-module-head p {margin:0; max-width:610px; font-size:15px;}
+    .anatomy-chip {font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; border:1px solid var(--line-strong); color:var(--wine); border-radius:100px; padding:8px 12px; white-space:nowrap;}
+    .anatomy-compare {display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;}
+    .anatomy-example {min-width:0; margin:0; border:1px solid var(--line); background:#fffaf4; border-radius:18px;overflow:hidden;}
+    .anatomy-example figcaption {padding:14px 17px 16px;border-top:1px solid var(--line);font-size:14px;line-height:1.45; }
+    .anatomy-example figcaption strong {display:block;color:var(--wine);font:26px/1.1 var(--heading);margin-bottom:4px;}
+    .anatomy-portrait {display:block; width:100%; overflow:hidden; background:#f7e8d6;}
+    .anatomy-portrait picture {display:block;}
+    .anatomy-portrait img {display:block;width:100%;height:auto;aspect-ratio:32 / 31;object-fit:contain;}
+    .anatomy-portrait:focus-visible {outline:3px solid var(--wine);outline-offset:-4px;border-radius:8px;}
+    .anatomy-portrait:hover {filter:brightness(1.015);}
+    .anatomy-module-foot {margin:14px 1px 0;font-size:13px; color:#735557;}
+    .anatomy-rule-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px;}
+    .anatomy-rule {padding:21px;border:1px solid var(--line);border-radius:16px;background:#fff9f2;}
+    .anatomy-rule-num {font-size:11px; font-weight:700; color:var(--wine); letter-spacing:.1em;}
+    .anatomy-rule h4 {font:25px/1.06 var(--heading);color:var(--wine);margin:10px 0 9px;}
+    .anatomy-rule p {font-size:14px;line-height:1.48;margin:0;}
+    .anatomy-locks {margin-top:18px; display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+    .anatomy-locks article {border-radius:18px;padding:24px;border:1px solid var(--line);background:#f0e0d3;}
+    .anatomy-locks h3 {font-size:27px;margin:0 0 10px;}
+    .anatomy-locks p, .anatomy-locks li {font-size:14px;line-height:1.55;}
+    .anatomy-locks p {margin:0;}
+    .anatomy-locks ul {margin:0;padding-left:20px;}
+    .anatomy-archive-link {display:inline-flex;align-items:center; margin-top:20px; font-weight:700;color:var(--wine);text-underline-offset:3px;}
+    @media (max-width:900px){.anatomy-intro{grid-template-columns:1fr;}.anatomy-rule-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media (max-width:650px){.anatomy-compare,.anatomy-rule-grid,.anatomy-locks{grid-template-columns:1fr;}.anatomy-module{padding:15px}.anatomy-portrait{max-width:500px;margin:auto;}.anatomy-chip{white-space:normal;}.anatomy-intro{gap:13px;}}
+    @media print {.anatomy-module,.anatomy-intro,.anatomy-rule,.anatomy-locks article{break-inside:avoid;}}
+
+    /* Offline colour-index additions; retain the online font and anatomy styles. */
+    .type-label{display:block;color:var(--wine);font-size:12px;font-weight:500;letter-spacing:.04em;margin-top:3px}
+    .swatch-role{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--wine);font-weight:600}
+    .swatch-chip{height:22px}.swatch-name{font-size:12px}.swatch-hex{font-size:11px;user-select:all}
+    @media(max-width:370px){.subject-bar-inner{grid-template-columns:1fr}.bar-separator{display:none}.subject-bar p{font-size:14px}.swatch-row{grid-column:1/-1}}
+
+    /* Keep gradient frames uniformly 5px thick even when adjacent cards differ in height. */
+    .subject-bar{display:flex;min-width:0;}
+    .subject-bar-inner{flex:1;min-width:0;grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr);gap:10px 14px;align-content:start;}
+    .subject-bar h3{overflow-wrap:anywhere;}
+    @media(max-width:370px){.subject-bar-inner{grid-template-columns:1fr;gap:9px;}}
+
+    /* Uniform gradient frame: grid stretches the inner panel in both axes. */
+    .roster > .subject-bar{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr;align-items:stretch;padding:5px;}
+    .roster > .subject-bar > .subject-bar-inner{align-self:stretch;min-height:100%;align-content:start;}
+
+    /* III / Expressive visual-language guide */
+    .style-intro {
+      display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
+      gap:22px;align-items:stretch;
+      padding:clamp(23px,3.2vw,38px);border:2px solid var(--wine);border-radius:24px;
+      background:rgba(255,248,239,.89);
+    }
+    .style-intro h3 {font-size:clamp(28px,3.1vw,39px);margin:12px 0 14px;}
+    .style-intro p {max-width:650px;margin:0 0 13px;line-height:1.55;}
+    .style-intro p:last-child {margin-bottom:0;}
+    .style-diagram {
+      display:flex;flex-direction:column;justify-content:center;min-width:0;
+      background:#F4E4DB;border:1px solid var(--line);border-radius:18px;
+      padding:24px;gap:12px;
+    }
+    .style-diagram svg {display:block;width:100%;height:auto;max-height:170px;}
+    .style-diagram .caption {font-size:13px;color:var(--wine);font-weight:600;line-height:1.5;}
+    .style-principles {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
+    .style-principle {min-width:0;background:rgba(255,248,239,.86);border:2px solid var(--wine);border-radius:22px;overflow:hidden;}
+    .style-principle-art {height:135px;display:flex;align-items:center;justify-content:center;background:#F4E4DB;border-bottom:1px solid var(--line);padding:14px;}
+    .style-principle-art svg {max-width:100%;max-height:100%;display:block;}
+    .style-principle-copy {padding:22px 23px 26px;}
+    .style-principle-copy .folio {display:block;margin-bottom:11px;}
+    .style-principle h3 {font-size:27px;margin:0 0 12px;}
+    .style-principle p {font-size:15px;line-height:1.52;margin:0;}
+    .style-details {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:18px;}
+    .style-detail {border:1px solid var(--line);background:#FFF8EF;border-radius:17px;padding:22px 24px;}
+    .style-detail h3 {font-size:26px;margin:0 0 9px;}
+    .style-detail p {font-size:15px;line-height:1.5;margin:0;}
+    .style-workflow {
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.42fr);
+      gap:24px;align-items:center;background:#F0DFD5;border:2px solid var(--wine);
+      border-radius:22px;margin-top:18px;padding:clamp(22px,3vw,31px);
+    }
+    .style-workflow h3 {font-size:clamp(27px,3vw,36px);margin:9px 0 12px;}
+    .style-workflow p {font-size:15px;line-height:1.55;margin:0;}
+    .style-authority {margin:0;padding:0;list-style:none;counter-reset:style-steps;}
+    .style-authority li {counter-increment:style-steps;padding:10px 0;border-top:1px solid var(--line);
+      font-size:15px;line-height:1.35;font-weight:700;}
+    .style-authority li:first-child{border-top:0;}
+    .style-authority li:before{content:counter(style-steps,decimal-leading-zero);display:inline-block;
+      width:35px;font-size:12px;color:var(--wine);letter-spacing:.07em;}
+    .style-readmore {display:inline-flex;align-items:center;gap:7px;margin-top:19px;font-weight:700;color:var(--wine);text-underline-offset:3px;}
+    @media(max-width:900px){.style-principles{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media(max-width:650px){
+      .style-intro,.style-workflow{grid-template-columns:1fr;gap:15px;}
+      .style-diagram{padding:18px;}
+      .style-principles,.style-details{grid-template-columns:1fr;gap:12px;}
+      .style-principle-art{height:115px;}
+      .nav{flex-wrap:wrap;gap:6px 16px;}
+    }
+    @media print {.style-intro,.style-principle,.style-detail,.style-workflow{break-inside:avoid;}}
+</style>
+<!-- Subject index: working Type palettes v0.1, three base swatches with descriptive colour names and exact hex values. -->
+
+<!-- Palette status: new working palettes approved for upload; additional hair, human skin, and scale swatches remain unassigned. J has no assigned palette. -->
+<style>
+body{background-color:var(--vanilla);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23743747' opacity='.045' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");}
+.page{padding-bottom:40px}.topbar{flex-wrap:wrap}.nav{flex-wrap:wrap;gap:18px}
+.chapter-title{margin:38px 0 12px;font-size:clamp(34px,6vw,58px)}.lede{max-width:650px;color:var(--wine)}
+.directory{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 40px}.directory a{display:block;text-decoration:none;background:var(--paper);border:2px solid var(--wine);border-radius:18px;padding:26px;box-shadow:inset 0 0 0 5px var(--vanilla),0 5px 0 #74374712}.directory a:hover{background:#f7e8de}.directory h2{font-size:30px;margin:12px 0}.directory p{margin:0}
+.chapter-nav{display:flex;flex-wrap:wrap;gap:10px;padding:18px 0;border-bottom:1px solid var(--line)}.chapter-nav a{padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid var(--line)}.chapter-nav a[aria-current=page]{background:var(--wine);color:var(--paper)}
+[hidden]{display:none!important}.chapter-controls{padding:18px 0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}select{font:inherit;padding:10px;border:1px solid var(--wine);border-radius:8px;color:var(--cocoa);background:var(--paper)}
+.prose{max-width:850px;background:var(--paper);padding:clamp(18px,4vw,38px);border:2px solid var(--wine);border-radius:20px;margin:24px 0}.prose h2{margin-top:28px;font-size:30px}.prose li{margin:10px 0}.prose img{max-width:100%;height:auto}.prose table{width:100%;border-collapse:collapse}.prose td,.prose th{padding:10px;text-align:left;border-bottom:1px solid var(--line)}details{margin:22px 0}summary{cursor:pointer;color:var(--wine);font-weight:600;padding:14px;background:#ead5c455;border-radius:9px}.profile-link{display:block;margin-top:12px;font-weight:600}.section-heading{margin-top:28px}.journal-cover{display:none}.chapter-note{border-left:3px solid var(--rose);padding-left:16px}
+@media(max-width:700px){.directory{grid-template-columns:1fr}.directory a{padding:22px}.topbar-right{width:100%}}
+@media print{.topbar,.chapter-nav,.chapter-controls{display:none}body{background:white}.prose{border:0}}
+</style></head><body><div class="page"><header class="topbar"><a class="mark" href="index.html">Growlfriends.</a><nav class="nav" aria-label="Main navigation"><a href="index.html">Bestiary</a><a href="guide.html?chapter=body">Design guide</a><a href="guide.html?chapter=characters">Characters</a><a href="reasons.html">Reasons</a></nav></header><nav class="chapter-nav" aria-label="Design chapters"><a data-chapter="body" href="?chapter=body">01 Body</a><a data-chapter="uniform" href="?chapter=uniform">02 Uniform</a><a data-chapter="style" href="?chapter=style">03 Art style</a><a data-chapter="characters" href="?chapter=characters">Characters</a><a data-chapter="render" href="?chapter=render">Render reference</a><a data-chapter="archive" href="?chapter=archive">Archive</a></nav><div class="chapter-controls"><label for="girl">Character</label><select id="girl"><option value="">All characters</option><option>Mother Vale</option><option>Sandy</option><option>Mallow</option><option>Quill</option><option>Vesper</option><option>Cadence</option><option>Bibi</option><option>Bubble</option><option>Delphie</option><option>Dixie</option><option>Mara</option><option>Zip</option><option>Connie</option><option>Etna</option><option>Loveander</option><option>Moth girl</option></select><a id="render-link" href="?chapter=render">Read with shared standards →</a></div><main><section aria-labelledby="anatomy-title" id="anatomy">
+  <div class="section-heading">
+    <div><div class="section-num">II / THE ANATOMY ATLAS</div><h2 id="anatomy-title">01 · Body standard</h2></div>
+    <p>One body standard. Many different girls. Sandy models the proportions without distracting character-specific features.</p>
+  </div>
+  <div class="prose"><h3>Current reference authority</h3><p>Use the approved front for overall structure; apply angle-specific regional references for depth. A fully reconciled five-view turnaround is still unfinished.</p><p>Petite frame, narrow shoulders and limbs; preserve approved volume distribution and silhouette. Do not rescale the body to fit another character.</p><p><a href="docs/sandy-five-view-reconciliation.md">Complete regional authority table and open corrections →</a></p><a href="assets/anatomy/sandy-after-stonegrey-20261121.png"><img src="assets/anatomy/sandy-after-stonegrey-20261121.png" alt="Current approved Sandy front reference" loading="lazy" style="max-height:600px;max-width:100%;object-fit:contain"></a></div><div class="anatomy-intro">
+    <div>
+      <span class="folio">Model sheet / Sandy</span>
+      <h3>Shape first, character second.</h3>
+      <p>Sandy is our cute, bald mannequin with muted stone-grey clay skin, softly sculpted features, blank uncoloured eyes, a pale grey shirt and a long charcoal underbust band. She makes it easier to compare the <strong>actual silhouettes</strong> rather than fur, feathers, hair, palettes or personalities. The examples are art-direction diagrams, not measurements.</p>
+    </div>
+    <div class="mannequin-note"><strong>The golden rule</strong>Keep the approved neck-down body mold consistent across the girls. For the head-scale study, only the whole head is enlarged; the normal petite neck and shoulders do not grow with it.</div>
+  </div>
+
+  <details class="historical"><summary>View regional study and development notes</summary><article class="anatomy-module" aria-labelledby="bust-module-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 01 / mass &amp; fabric</span><h3 id="bust-module-title">Bust: rounded to gravity-set</h3><p>Broad mid-to-lower fullness, an oblong silhouette and a smoother, supported fabric sweep — without changing the underlying body scale.</p></div>
+      <span class="anatomy-chip">Front view / schematic</span>
+    </div>
+    <div class="anatomy-compare">
+      <figure class="anatomy-example">
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-bust-before.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-bust-before.avif" type="image/avif"><img src="assets/anatomy/sandy-bust-before.png" alt="Sandy before: rounded, high-set mass, two separate spherical lobes and a sharp center underbust notch" loading="lazy" decoding="async" width="1920" height="1860"></picture></a>
+        <figcaption><strong>Before</strong>Two rounded lobes, fuller upper contour, deep center pinch and visibly gathered fabric.</figcaption>
+      </figure>
+      <figure class="anatomy-example">
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-after-stonegrey-20261121.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-after-stonegrey-20261121.avif" type="image/avif"><img src="assets/anatomy/sandy-after-stonegrey-20261121.png" alt="Current locked Sandy bust: heavy elongated oblong shape with pronounced lower-pole fullness, soft upper slope and smooth fabric tension" loading="lazy" decoding="async" width="1024" height="992"></picture></a>
+        <figcaption><strong>After · current master</strong>Heavier, more oblong bust with concentrated mid/lower fullness, a soft upper slope and natural horizontal fabric tension.</figcaption>
+      </figure>
+    </div>
+    <p class="anatomy-module-foot">Historical before versus the current approved 21 November 2026 bust master. Click either image for its source PNG; the two images were created in different iterations and are not pixel-registered or volume-measured.</p>
+    <div class="anatomy-rule-grid">
+      <div class="anatomy-rule"><span class="anatomy-rule-num">01</span><h4>Mid &amp; lower weight</h4><p>Let fullness settle through the middle and lower poles rather than collecting high on the pecs.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">02</span><h4>Oblong, not round</h4><p>Give the mass horizontal breadth and gently lengthened lower curves; avoid two perfect spheres.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">03</span><h4>Lower-outer width</h4><p>Fill the lower sides while keeping armpit and upper-outer fullness unchanged.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">04</span><h4>One soft sweep</h4><p>Replace the dramatic W-shaped fabric notch with a long lower contour and a modest center rise.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">05</span><h4>Petite ribcage</h4><p>The bust can be wide without widening the ribcage, shoulders, waist or torso underneath.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">06</span><h4>Fabric follows form</h4><p>Use gentle transverse stretch with restrained underside folds. No vacuum-sealed cleavage seams or artificially lifted pouches.</p></div>
+    </div>
+  </article></details>
+
+  <details class="historical"><summary>View regional study and development notes</summary><article class="anatomy-module" aria-labelledby="head-module-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 02 / proportional exaggeration</span><h3 id="head-module-title">Head: petite to cartoon</h3><p>Give the girls an intentionally oversized animated head without shrinking the body or thickening the neck.</p></div>
+      <span class="anatomy-chip">Neck-down hard lock</span>
+    </div>
+    <div class="anatomy-compare">
+      <figure class="anatomy-example">
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-head-before.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-head-before.avif" type="image/avif"><img src="assets/anatomy/sandy-head-before.png" alt="Sandy before head enlargement: smaller head on the unchanged petite body" loading="lazy" decoding="async" width="1920" height="1860"></picture></a>
+        <figcaption><strong>Before</strong>A more conventional small head relative to her normal narrow neck and shoulders.</figcaption>
+      </figure>
+      <figure class="anatomy-example">
+        <a class="anatomy-portrait" href="assets/anatomy/sandy-after-stonegrey-20261121.png" target="_blank" rel="noopener noreferrer" title="Open full-resolution illustration"><picture><source srcset="assets/anatomy/sandy-after-stonegrey-20261121.avif" type="image/avif"><img src="assets/anatomy/sandy-after-stonegrey-20261121.png" alt="Latest approved Sandy head and upper-body master with cartoon head, approved face and heavier lower-pole bust distribution" loading="lazy" decoding="async" width="1024" height="992"></picture></a>
+        <figcaption><strong>After · current master</strong>Enlarged cartoon head preserved in the latest approved head-to-knee model; the bust also reflects subsequent approved revisions.</figcaption>
+      </figure>
+    </div>
+    <p class="anatomy-module-foot">The after panel now uses the current locked master (including subsequent bust refinements); this is a progression comparison, not a strictly isolated head-only experiment. Click either picture for its source PNG.</p>
+  </article></details>
+
+
+  <details class="historical"><summary>View regional study and development notes</summary><article class="anatomy-module" id="anterior-depth" aria-labelledby="depth-module-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 03 / anterior depth</span><h3 id="depth-module-title">Abdomen &amp; pelvis: selective softness</h3><p>Keep the locked frontal silhouette. Study forward projection independently of width and height.</p></div>
+      <span class="anatomy-chip">v0.1 Alpha / depth provisional</span>
+    </div>
+    <div class="anatomy-compare" style="align-items:start">
+      <figure class="anatomy-example">
+        <a href="assets/anatomy/sandy-depth-map-alpha.avif"><img src="assets/anatomy/sandy-depth-map-alpha.avif" alt="Six numbered anterior depth landmarks in Sandy's earlier labeling diagram" width="600" height="341" loading="lazy" style="display:block;width:100%;height:auto"></a>
+        <figcaption><strong>Region map</strong>Earlier labeling reference; not the final silhouette.</figcaption>
+      </figure>
+      <figure class="anatomy-example">
+        <a href="assets/anatomy/sandy-head-to-knee-alpha.avif"><img src="assets/anatomy/sandy-head-to-knee-alpha.avif" alt="Approved clothed Sandy front-facing head-to-knee anatomy checkpoint" width="320" height="480" loading="lazy" style="display:block;width:100%;max-width:320px;height:auto;margin:auto"></a>
+        <figcaption><strong>Approved front view</strong>21 November 2026 checkpoint, with the narrow thighs and continuous white knee-length bottoms.</figcaption>
+      </figure>
+    </div>
+    <div class="anatomy-rule-grid">
+      <div class="anatomy-rule"><span class="anatomy-rule-num">01 / LEAN</span><h4>Upper abdomen</h4><p>Smooth, restrained transition below the ribcage.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">02 / LEAN</span><h4>Navel region</h4><p>Gentle contour and unchanged navel placement.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">03 / FULLER</span><h4>Lower abdomen</h4><p>Soft convex contour below the navel.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">04 / LEAN</span><h4>Anterior hips</h4><p>Restrained depth; preserve hip width.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">05 / FULLER</span><h4>Central pelvic contour</h4><p>Natural rounded transition beneath opaque clothing.</p></div>
+      <div class="anatomy-rule"><span class="anatomy-rule-num">06 / RECESSED</span><h4>Inguinal folds</h4><p>Clean transitions between pelvis and thighs.</p></div>
+    </div>
+    <p style="margin:18px 0 0"><strong>Hard locks:</strong> upper master, ribcage, waist, hip width, abdomen length, pelvic placement, narrower thighs, stance and garment construction. The charcoal band remains intact, with white high-waisted bottoms below it.</p>
+    <p class="anatomy-module-foot">These are compressed visual previews. Front-view appearance is approved; actual Z-axis geometry remains provisional until a side or three-quarter study. “Puff” is qualitative shorthand, not a numerical measurement.</p>
+  </article></details>
+
+  <details class="historical"><summary>View regional study and development notes</summary><article class="anatomy-module" id="sandy-threequarter" aria-labelledby="sandy-threequarter-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 04 / three-quarter translation</span><h3 id="sandy-threequarter-title">Three-quarter anatomy: shape locked, head and palette pending</h3><p>The body follows our approved heavy, oblong bust; narrow ribcage and waist; lifted rounded glutes; narrow quadriceps; and selective forward fullness at lower-abdomen region 03 and pelvic region 05.</p></div>
+      <span class="anatomy-chip">Alpha / Right-facing body</span>
+    </div>
+    <div class="anatomy-compare" style="align-items:start">
+      <figure class="anatomy-example">
+        <a href="assets/anatomy/sandy-3q-shape-checkpoint.webp" target="_blank" rel="noopener noreferrer"><img src="assets/anatomy/sandy-3q-shape-checkpoint.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Sandy approved three-quarter shape and silhouette, shown before head-angle and colour correction" style="display:block;width:100%;max-width:440px;height:auto;margin:auto"></a>
+        <figcaption><strong>Body-shape checkpoint</strong>This anatomy, pose and silhouette are locked. Her head still faces too far forward, and the temporary pinkish skin is not the final grey clay colour.</figcaption>
+      </figure>
+      <figure class="anatomy-example">
+        <a href="assets/anatomy/sandy-3q-iteration-gallery.webp" target="_blank" rel="noopener noreferrer"><img src="assets/anatomy/sandy-3q-iteration-gallery.webp" width="1440" height="1236" loading="lazy" decoding="async" alt="Six-step development sequence: base three-quarter transfer, narrower hips, thinner quadriceps and rounder glutes, weighted oblong bust, lower pole refinement and regions three and five depth" style="display:block;width:100%;height:auto"></a>
+        <figcaption><strong>Iterative development</strong>Six historical passes, each retaining earlier approvals. Last stage is the geometry master; do not copy its temporary colours or frontal head angle.</figcaption>
+      </figure>
+    </div>
+    <div class="anatomy-locks">
+      <article><h3>Locked anatomy</h3><p>Rib band downward; waist and hip width; lifted round posterior; slim quadriceps; soft Z-axis fullness at lower abdomen (03) and mons pubis (05); gravity-set oblong bust, retained scale and fabric weight.</p></article></details>
+      <article><h3>Only corrections remaining</h3><p>Turn the head to face <strong>right</strong> in three-quarter perspective while preserving her face. Restore the <strong>grey clay</strong> skin, <strong>white</strong> shirt/bottoms, <strong>black</strong> trim and warm-gold collar ring. Do not shift any body proportions.</p></article>
+    </div>
+    <a class="anatomy-archive-link" href="docs/sandy-three-quarter-guide.md">Read the complete iterative three-quarter guide →</a>
+  </article>
+
+
+  <div class="anatomy-locks">
+    <article>
+      <h3>Hard locks</h3>
+      <ul>
+        <li>Neck length and width, shoulders, arms, bust, narrow underbust/ribcage, waist and pose.</li>
+        <li>Existing breast size and upper-pectoral/armpit contours unless explicitly unlocked.</li>
+        <li>Facial identity and expression; scaling must not redesign the eyes, mouth, muzzle or species.</li>
+        <li>Front-facing camera, lower crop, framing and outfit construction.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Character translation</h3>
+      <p>Sandy is the neutral teaching model, with muted grey clay skin, pale grey shirt, charcoal trim and a thick charcoal ribcage band. Each girl keeps her own face, species traits, hair, eyes, skin, fur, materials, palette and clothing. A bigger head does <em>not</em> mean bigger shoulders, a broader neck or a smaller bust.</p>
+      <p style="margin-top:12px">Treat the approved visual checkpoints as the target; iterative percentages are art-direction shorthand, not anatomical measurements.</p>
+    </article>
+  </div>
+  <details class="historical"><summary>View regional study and development notes</summary><article class="anatomy-module" id="sandy-side-bust" aria-labelledby="sandy-side-bust-title">
+    <div class="anatomy-module-head">
+      <div><span class="folio">Study 05 / true lateral projection</span><h3 id="sandy-side-bust-title">Side profile: approved chest</h3><p>Correct lateral occlusion while preserving the established shape and forward projection.</p></div>
+      <span class="anatomy-chip">Chest locked / posterior pending</span>
+    </div>
+    <div class="anatomy-compare" style="align-items:start">
+      <figure class="anatomy-example">
+        <a href="assets/anatomy/sandy-side-bust-approved.webp"><img src="assets/anatomy/sandy-side-bust-approved.webp" alt="Approved right-facing Sandy chest-only profile crop" width="260" height="215" loading="lazy" style="display:block;width:100%;max-width:390px;height:auto;margin:auto"></a>
+        <figcaption><strong>Approved profile</strong>Actual final render, cropped to the chest for this study. The far-side contour is occluded.</figcaption>
+      </figure>
+      <div class="anatomy-rule"><h4>Perspective correction</h4><p>The earlier profile retained three-quarter geometry. In the approved true 90° view the near contour hides the far contour: one continuous upper slope, forward curve and rounded underside. No doubled silhouette or central cleavage. The neckline and fabric follow the same angle.</p><h4>Do not change</h4><p>Preserve the approved chest projection, lower contour, narrow ribcage relationship and fabric response. Glutes are unfinished; the rest of the lateral anatomy is not locked by this study.</p></div>
+    </div>
+    <a class="anatomy-archive-link" href="docs/sandy-side-bust-guide.md">Read the side-profile chest guide →</a>
+  </article></details>
+
+  <a class="anatomy-archive-link" href="docs/growlfriends-bust-anatomy.md">Read the complete studio guide →</a>
+</section><section id="uniform"><h1 class="chapter-title">02 · Uniform</h1><div class="prose"><h1>Growlfriends — Universal Uniform Construction and Color Roles</h1>
+<p><strong>Status:</strong> Approved universal outfit visual and color-role standard, refined 24 November 2026. <strong>Applies to all Growlfriends unless the user explicitly specifies a character exception.</strong> Use alongside the <a href="https://github.com/lilzugs/GFs/blob/main/docs/growlfriends-expressive-cartoon-rendering-guide.md">expressive rendering guide</a> and the character's own reference and approved anatomy.</p>
+<h2>Approved visual reference — use this one</h2>
+<p><img alt="Approved Growlfriends Uniform Guide: spacious full front and back views, standard primary/secondary/accent assignments, construction notes and key components" src="assets/style/growlfriends-uniform-guide-approved.webp"></p>
+<p><a href="assets/style/growlfriends-uniform-guide-approved.webp">Open the full-resolution approved infographic</a> · 1536 × 1024 px. This is the preferred reference when adapting the uniform to another character. <strong>The right-hand panel is universal; this is not Bubble's assigned palette.</strong> The red/green/blue arrangement only illustrates body/clothing/band color roles.</p>
+<p>The front and back views must be <strong>both fully readable, unwarped, and comfortably spaced</strong>. The back silhouette must not be squashed to make room for callouts, labels or panels. Keep each silhouette anatomically coherent; if another guide becomes crowded, enlarge the canvas or simplify labels instead of compressing the figure.</p>
+
+<p><img alt="Secondary construction schematic" src="assets/style/growlfriends-uniform-color-roles.svg"></p>
+
+<h2>The most important rule: color is assigned by <strong>what a surface is</strong>, not by its location</h2>
+<table><tr><th>Role</th><th>Universal assignment</th><th>Red/green/blue demonstration</th></tr><tr><td><strong>Primary</strong></td><td>Natural <strong>skin, fur, scales, feathers, or other bodily material</strong>, including visible chest, arms and legs</td><td>RED</td></tr><tr><td><strong>Secondary</strong></td><td><strong>Clothing fabric:</strong> fitted short-sleeved shirt and opaque fitted knee-length bottoms</td><td>GREEN</td></tr><tr><td><strong>Accent</strong></td><td>The <strong>pet collar, neckline piping, sleeve cuffs (formerly called armbands), deep underbust/waist band, and legbands</strong></td><td>BLUE</td></tr><tr><td><strong>Hardware</strong></td><td><strong>Only</strong> the collar's hanging metal O-ring and minimal necessary attachment pieces</td><td>GOLD</td></tr></table>
+<p><strong>Do not treat these red, green, and blue demo colors as Bubble's colors or as any girl's actual final palette.</strong> Each girl inherits the <strong>color roles</strong> using her own documented primary/secondary/accent swatches. Fur/scale markings and intentional individual variations are permitted only as approved exceptions.</p>
+<h2>Uniform shape and assembly</h2>
+<ul><li><strong>Collar:</strong> A snug accent-colored <strong>pet collar</strong> around the neck with <strong>one hanging gold O-ring</strong>. The ring hangs visibly below the collar; it is <strong>not a central clasp</strong> and not a generic necklace. No invented earrings, bracelets, piercings, hairpins or extra gold jewelry.</li><li><strong>Neckline construction:</strong> Accent-colored piping originates <strong>under the collar on both sides</strong>, descends toward the chest, forms <strong>one continuous rounded scoop</strong> showing <strong>noticeable but not excessive natural cleavage</strong>, then curves upward again. The neckline piping is the <strong>accent</strong> color, *not* secondary fabric color. Do not make a cutaway bra, disconnected straps, sharp V, or a second decorative harness.</li><li><strong>Shirt:</strong> One <strong>opaque secondary-colored garment</strong> covering both shoulders, with short sleeves and a continuous bust/front section. The chest is <strong>natural primary color only within the neckline's opening</strong>; elsewhere the colored area is fabric. Fit reflects approved Sandy/Mallow bust weight and material rendering. No invented crop top/bikini.</li><li><strong>Sleeve cuffs:</strong> Accent-colored bands are <strong>integrated into the ends of the shirt sleeves</strong>, not loose floating armbands on exposed skin. Only a single accent cuff per sleeve; never double-stack two colors.</li><li><strong>Underbust band:</strong> A single substantial accent-colored band immediately below the weighted bust. It extends downward along the ribcage, wider than the initial narrow strip, approximately <strong>10–15% deeper than the prior approved working diagram</strong>. Its width tapers naturally with the torso; do not separate it from the shirt, and do not move the bust to achieve the band change.</li><li><strong>Bottoms:</strong> <strong>Opaque secondary-colored, close-fitting knee-length</strong> bottoms continuing uninterrupted to integrated accent-colored <strong>legbands at the knees</strong>. They are not panties, shorts, bare legs, stockings, or separate tights unless specifically requested.</li><li><strong>Back:</strong> Same sleeve cuff integration, collar, underbust band depth, fitted bottoms and legbands. There is <strong>no cleavage</strong> on the back. Preserve structural continuity from front to rear.</li></ul>
+<h2>What must remain stable on future adaptations</h2>
+<ul><li>Shared <strong>Sandy anatomical geometry</strong> (where applicable), not a new shape for each girl.</li><li>Distinct head/species identity and individual palette: read each girl's approved reference first.</li><li>Outfit <strong>construction and color roles</strong> above. Hair and fur pattern variations must not silently recolor fabric.</li><li>Clean, expressive burgundy linework and deliberate broad cel-shade shapes.</li><li>No added character, jewelry, or props in stand-alone outfit studies.</li><li>For image-based guides, no character-name label or character-specific palette unless deliberately requested.</li></ul>
+<h2>Common mistakes to reject</h2>
+<ul><li>Shrinking, squeezing or distorting a body or rear-view silhouette to fit a busy information panel; instead prioritize <strong>spacing and legibility</strong>.</li><li>Labeling primary color as the shirt rather than <strong>the body</strong>.</li><li>Labeling secondary color as the collar/neckline rather than <strong>clothing</strong>.</li><li>Labeling accent color as arbitrary highlights rather than the <strong>bands and trim</strong>.</li><li>Confusing exposed cleavage skin with neckline fabric.</li><li>Leaving green/red intermediate rows above an accent-colored cuff: <strong>the cuff is a single accent-colored unit attached directly to the sleeve</strong>.</li><li>Making a narrow belt at the waist instead of a <strong>deep underbust band</strong>.</li><li>Drawing a camisole/crop-top with briefs instead of <strong>short sleeves plus knee-length bottoms</strong>.</li><li>Inventing additional jewelry, studs, charms, floral accessories or hair decorations.</li><li>Copying the Mallow sample's skin/fur or Connie's feathers to another species.</li></ul>
+<h2>Production prompt fragment</h2>
+<p>Use the approved Growlfriends universal outfit construction. <strong>Primary = natural body, secondary = shirt and opaque knee-length bottoms, accent = pet collar, continuous scoop-neckline piping from beneath the collar, integrated short-sleeve cuffs, substantial underbust band and knee legbands; gold = hanging collar O-ring only.</strong> Keep one continuous clothing system and preserve the girl's approved anatomy, species, identity, palette and current framing. Do not borrow another character's colors, invent accessories, create a crop top, detach sleeve cuffs, or expose the legs above the knee cuffs. Follow the approved expressive-cartoon rendering guide.</p>
+<h2>Visual reference provenance</h2>
+<p><strong>Approved illustrated checkpoint:</strong> generation ID <code>41411d28-b90e-4fa2-bb44-45ebb0630604</code>, created after a deliberate legibility revision to avoid a cramped layout and warped rear silhouette. The repository contains a full-resolution <strong>1536 × 1024 WebP</strong> rendition at <a href="assets/style/growlfriends-uniform-guide-approved.webp"><code>assets/style/growlfriends-uniform-guide-approved.webp</code></a>. This is a visually equivalent image encoding of the original PNG, not a vector reconstruction; the chat's original PNG remains the source image. <strong>Use this illustrated reference as the authoritative uniform guide graphic</strong>. The SVG is only a lightweight editable schematic for color-role semantics and must not override the approved image.</p>
+<p><strong>Authority:</strong> user-approved character designs &gt; this uniform construction and color role convention &gt; miscellaneous generation prompts.
+</p></div></section><section aria-labelledby="style-title" id="style">
+  <div class="section-heading">
+    <div><div class="section-num">III / VISUAL LANGUAGE</div><h2 id="style-title">Expressive Rendering</h2></div>
+    <p>One coherent drawing language. Distinct personalities, faces and species.</p>
+  </div>
+  <div class="style-intro">
+    <div>
+      <span class="folio">Art direction / shared rendering system</span>
+      <h3>Deliberate, not overworked.</h3>
+      <p>Our Growlfriends style combines confident hand-drawn cartoon contours with graphic cel shading and expressive shapes. The goal is <strong>simple, readable, affectionate character art</strong> with enough irregularity to feel drawn rather than mechanically traced.</p>
+      <p><strong>Simplicity is a designed visual hierarchy, not merely the absence of detail.</strong> We borrow broad principles from animation and illustration studies without copying any particular artist's compositions.</p>
+    </div>
+    <div class="style-diagram" role="img" aria-label="Diagram comparing bold silhouette ink, medium structural ink, and fine tapering interior marks">
+      <svg viewBox="0 0 380 175" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#552834" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 50 C83 -4 129 112 187 55 S300 -5 355 56" stroke-width="12"/>
+          <path d="M35 101 C96 58 131 139 194 103 S295 75 355 105" stroke-width="6"/>
+          <path d="M55 150 Q113 134 147 147 M205 150 Q260 135 310 148" stroke-width="2.8"/>
+        </g>
+      </svg>
+      <div class="caption"><strong>Ink hierarchy:</strong> bold silhouettes, lighter structural lines, restrained interior marks. No ghost contours or equal-weight tracing.</div>
+    </div>
+  </div>
+
+  <div class="style-principles" aria-label="Core illustration principles">
+    <article class="style-principle">
+      <div class="style-principle-art" aria-hidden="true">
+        <svg viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#582A37" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 87 Q49 17 112 28 T227 77" stroke-width="11"/>
+            <path d="M49 82 Q80 50 113 61 T206 84" stroke-width="5"/>
+            <path d="M89 95 Q116 86 129 96 M157 96 Q173 89 184 96" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="style-principle-copy">
+        <span class="folio">01 / INK HIERARCHY</span>
+        <h3>Confident contours</h3>
+        <p>Deep burgundy or plum ink. Strong outer silhouettes, medium structural boundaries and sparse tapered details. Avoid duplicate edges and uniform line weight.</p>
+      </div>
+    </article>
+    <article class="style-principle">
+      <div class="style-principle-art" aria-hidden="true">
+        <svg viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 13 H218 Q228 13 228 23 V89 Q228 99 218 99 H32 Q22 99 22 89 V23 Q22 13 32 13Z" fill="#F6DDD1" stroke="#582A37" stroke-width="5"/>
+          <path d="M25 75 Q79 43 139 68 Q172 84 226 45 L226 90 Q226 97 216 97 H32 Q25 96 25 88 Z" fill="#BE7E84"/>
+          <path d="M54 29 Q86 24 103 32" stroke="#FFF8EF" stroke-width="6" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="style-principle-copy">
+        <span class="folio">02 / SHADOW ECONOMY</span>
+        <h3>One decisive shape</h3>
+        <p>Start with a clear local color, explain volume with broad hard-edged shadows, and reserve highlights for emphasis. Avoid scattered gradients and identical glossy spots.</p>
+      </div>
+    </article>
+    <article class="style-principle">
+      <div class="style-principle-art" aria-hidden="true">
+        <svg viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+          <path d="M44 78 C12 55 50 14 109 18 Q165 16 202 49 Q227 85 166 94 Q100 108 44 78Z" fill="#E3B2AF" stroke="#582A37" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M61 64 Q102 29 154 42" stroke="#FFF5ED" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M173 77 Q182 74 190 68" stroke="#8E5362" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="style-principle-copy">
+        <span class="folio">03 / SHAPE LANGUAGE</span>
+        <h3>Organic, not geometric</h3>
+        <p>Prioritize clean silhouette reads, then allow subtle asymmetry, irregular tapers and changes of curvature. Do not redesign locked anatomy just to exaggerate a curve.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="style-details" aria-label="Character-specific rendering notes">
+    <article class="style-detail"><h3>Fabric &amp; materials</h3><p>Use a few purposeful folds where fabric pulls or carries weight. Keep clothing, fur, feathers, skin, hair and hardware visually distinct; never confuse garment shadows with exposed body color.</p></article>
+    <article class="style-detail"><h3>Faces &amp; eyes</h3><p>Eye direction, lids, brow and cheek relationships define the expression. Keep every girl's approved pupil design, muzzle, beak, teeth and facial proportions rather than imposing a universal face.</p></article>
+    <article class="style-detail"><h3>Hair, ears &amp; layering</h3><p>Use a confident overall hair shape, larger shadow masses and fewer strand marks. Make every overlap explicit: one clean boundary at hair, ear, neck and shoulder junctions—no doubled or ghosted shapes.</p></article>
+    <article class="style-detail"><h3>Composition &amp; animation</h3><p>Neutral turnaround views can be symmetrical and calm. Expressive poses may stretch the gesture, eyes and hair, but keep construction consistent; do not confuse character-sheet clarity with action-illustration energy.</p></article>
+  </div>
+
+  <div class="style-workflow">
+    <div>
+      <span class="folio">A rule for every adaptation</span>
+      <h3>Preserve identity before polish.</h3>
+      <p>For each new Growlfriend, retain the character's locked face, species, hairstyle, palette and outfit. Use Sandy for shared anatomical geometry, then apply the rendering principles above. A successful style transfer must look like <em>the same girl</em> drawn by the same art department—not a recolored Mallow.</p>
+      <a class="style-readmore" href="https://github.com/lilzugs/GFs/blob/main/docs/growlfriends-expressive-cartoon-rendering-guide.md" target="_blank" rel="noopener noreferrer">Read the complete rendering guide &rarr;</a>
+    </div>
+    <ol class="style-authority" aria-label="Order of visual authority">
+      <li>Character identity &amp; locks</li>
+      <li>Approved shared anatomy</li>
+      <li>Expressive rendering language</li>
+    </ol>
+  </div>
+</section><section aria-labelledby="subjects-title" id="characters">
+<div class="section-heading">
+<div>
+<div class="section-num">I / SUBJECT REGISTER</div>
+<h2 id="subjects-title">Character profiles</h2>
+</div>
+<p>Working palettes v0.1 — primary, secondary and accent. Extra hair, skin and scale colours remain in study.</p>
+</div>
+<div aria-label="Selected Growlfriends subjects" class="roster">
+<article class="subject-bar" data-reason="Devotion" data-palette-status="working" data-type="Almighty" style="--bar-a:#8A6A9E; --bar-b:#E7C2C6; --bar-c:#E7C76E;"><div class="subject-bar-inner"><h3>Mother Vale</h3><span aria-hidden="true" class="bar-separator">|</span><p>Synthetic Goddess<span class="type-label">Almighty</span></p><div class="swatch-row" role="group" aria-label="Mother Vale colour swatches"><div class="palette-swatch" title="Primary: Regal Orchid (#8A6A9E)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Regal Orchid</span><span class="swatch-hex">#8A6A9E</span></div><div class="palette-swatch" title="Secondary: Pearl Rose (#E7C2C6)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Pearl Rose</span><span class="swatch-hex">#E7C2C6</span></div><div class="palette-swatch" title="Accent: Sacred Gold (#E7C76E)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Sacred Gold</span><span class="swatch-hex">#E7C76E</span></div></div></div></article>
+<article class="subject-bar" data-reason="Transformation" data-palette-status="working" data-type="Null" style="--bar-a:#B6A59C; --bar-b:#E7DCD2; --bar-c:#8E918B;"><div class="subject-bar-inner"><h3>Sandy</h3><span aria-hidden="true" class="bar-separator">|</span><p>Clay Mannequin<span class="type-label">Null</span></p><div class="swatch-row" role="group" aria-label="Sandy colour swatches"><div class="palette-swatch" title="Primary: Neutral Clay (#B6A59C)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Neutral Clay</span><span class="swatch-hex">#B6A59C</span></div><div class="palette-swatch" title="Secondary: Porcelain (#E7DCD2)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Porcelain</span><span class="swatch-hex">#E7DCD2</span></div><div class="palette-swatch" title="Accent: Quiet Stone (#8E918B)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Quiet Stone</span><span class="swatch-hex">#8E918B</span></div></div></div></article>
+<article class="subject-bar" data-reason="Acceptance" data-palette-status="working" data-type="Body" style="--bar-a:#A89F8C; --bar-b:#F4E5D2; --bar-c:#E8A2B6;"><div class="subject-bar-inner"><h3>Mallow</h3><span aria-hidden="true" class="bar-separator">|</span><p>Doting Bunny<span class="type-label">Body</span></p><div class="swatch-row" role="group" aria-label="Mallow colour swatches"><div class="palette-swatch" title="Primary: Warm Taupe (#A89F8C)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Warm Taupe</span><span class="swatch-hex">#A89F8C</span></div><div class="palette-swatch" title="Secondary: Cream (#F4E5D2)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Cream</span><span class="swatch-hex">#F4E5D2</span></div><div class="palette-swatch" title="Accent: Soft Rose (#E8A2B6)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Soft Rose</span><span class="swatch-hex">#E8A2B6</span></div></div></div></article>
+<article class="subject-bar" data-reason="Fascination" data-palette-status="working" data-type="Mind" style="--bar-a:#5A6A91; --bar-b:#B8DAD5; --bar-c:#ECE4F4;"><div class="subject-bar-inner"><h3>Quill</h3><span aria-hidden="true" class="bar-separator">|</span><p>Magnetic Fish<span class="type-label">Mind</span></p><div class="swatch-row" role="group" aria-label="Quill colour swatches"><div class="palette-swatch" title="Primary: Soft Indigo (#5A6A91)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Soft Indigo</span><span class="swatch-hex">#5A6A91</span></div><div class="palette-swatch" title="Secondary: Opaline Teal (#B8DAD5)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Opaline Teal</span><span class="swatch-hex">#B8DAD5</span></div><div class="palette-swatch" title="Accent: Misty Lavender (#ECE4F4)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Misty Lavender</span><span class="swatch-hex">#ECE4F4</span></div></div></div></article>
+<article class="subject-bar" data-reason="Desire" data-palette-status="working" data-type="Soul" style="--bar-a:#372439; --bar-b:#9D4A6B; --bar-c:#D49A80;"><div class="subject-bar-inner"><h3>Vesper</h3><span aria-hidden="true" class="bar-separator">|</span><p>Provocative Bat<span class="type-label">Soul</span></p><div class="swatch-row" role="group" aria-label="Vesper colour swatches"><div class="palette-swatch" title="Primary: Velvet Plum (#372439)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Velvet Plum</span><span class="swatch-hex">#372439</span></div><div class="palette-swatch" title="Secondary: Wine Rose (#9D4A6B)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Wine Rose</span><span class="swatch-hex">#9D4A6B</span></div><div class="palette-swatch" title="Accent: Warm Copper (#D49A80)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Warm Copper</span><span class="swatch-hex">#D49A80</span></div></div></div></article>
+<article class="subject-bar" data-reason="Adventure" data-palette-status="working" data-type="Heart" style="--bar-a:#C74C68; --bar-b:#FFC28A; --bar-c:#F8E5AD;"><div class="subject-bar-inner"><h3>Cadence</h3><span aria-hidden="true" class="bar-separator">|</span><p>Playful Dog<span class="type-label">Heart</span></p><div class="swatch-row" role="group" aria-label="Cadence colour swatches"><div class="palette-swatch" title="Primary: Raspberry (#C74C68)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Raspberry</span><span class="swatch-hex">#C74C68</span></div><div class="palette-swatch" title="Secondary: Coral (#FFC28A)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Coral</span><span class="swatch-hex">#FFC28A</span></div><div class="palette-swatch" title="Accent: Sunlight (#F8E5AD)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Sunlight</span><span class="swatch-hex">#F8E5AD</span></div></div></div></article>
+<article class="subject-bar" data-reason="Authenticity" data-palette-status="working" data-type="Earth" style="--bar-a:#6B7150; --bar-b:#B58B5C; --bar-c:#E5CF9D;"><div class="subject-bar-inner"><h3>Bibi</h3><span aria-hidden="true" class="bar-separator">|</span><p>Tenacious Monkey<span class="type-label">Earth</span></p><div class="swatch-row" role="group" aria-label="Bibi colour swatches"><div class="palette-swatch" title="Primary: Moss (#6B7150)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Moss</span><span class="swatch-hex">#6B7150</span></div><div class="palette-swatch" title="Secondary: Earthen Clay (#B58B5C)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Earthen Clay</span><span class="swatch-hex">#B58B5C</span></div><div class="palette-swatch" title="Accent: Warm Sand (#E5CF9D)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Warm Sand</span><span class="swatch-hex">#E5CF9D</span></div></div></div></article>
+<article class="subject-bar" data-reason="Pleasure" data-palette-status="working" data-type="Water" style="--bar-a:#147A88; --bar-b:#73C9C6; --bar-c:#F6B3A4;"><div class="subject-bar-inner"><h3>Bubble</h3><span aria-hidden="true" class="bar-separator">|</span><p>Indulgent Tree Frog<span class="type-label">Water</span></p><div class="swatch-row" role="group" aria-label="Bubble colour swatches"><div class="palette-swatch" title="Primary: Deep Teal (#147A88)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Deep Teal</span><span class="swatch-hex">#147A88</span></div><div class="palette-swatch" title="Secondary: Aqua (#73C9C6)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Aqua</span><span class="swatch-hex">#73C9C6</span></div><div class="palette-swatch" title="Accent: Peach (#F6B3A4)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Peach</span><span class="swatch-hex">#F6B3A4</span></div></div></div></article>
+<article class="subject-bar" data-reason="Mystery" data-palette-status="working" data-type="Ice" style="--bar-a:#496A9D; --bar-b:#A6D8E7; --bar-c:#E3E5F4;"><div class="subject-bar-inner"><h3>Delphie</h3><span aria-hidden="true" class="bar-separator">|</span><p>Quirky Dolphin<span class="type-label">Ice</span></p><div class="swatch-row" role="group" aria-label="Delphie colour swatches"><div class="palette-swatch" title="Primary: Abyssal Blue (#496A9D)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Abyssal Blue</span><span class="swatch-hex">#496A9D</span></div><div class="palette-swatch" title="Secondary: Glacial Cyan (#A6D8E7)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Glacial Cyan</span><span class="swatch-hex">#A6D8E7</span></div><div class="palette-swatch" title="Accent: Ethereal Lilac (#E3E5F4)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Ethereal Lilac</span><span class="swatch-hex">#E3E5F4</span></div></div></div></article>
+<article class="subject-bar" data-reason="Vulnerability" data-palette-status="working" data-type="Lunar" style="--bar-a:#586581; --bar-b:#BCC7DB; --bar-c:#E9D6DC;"><div class="subject-bar-inner"><h3>Dixie</h3><span aria-hidden="true" class="bar-separator">|</span><p>Virtuous Unicorn<span class="type-label">Lunar</span></p><div class="swatch-row" role="group" aria-label="Dixie colour swatches"><div class="palette-swatch" title="Primary: Moonlit Blue (#586581)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Moonlit Blue</span><span class="swatch-hex">#586581</span></div><div class="palette-swatch" title="Secondary: Silver (#BCC7DB)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Silver</span><span class="swatch-hex">#BCC7DB</span></div><div class="palette-swatch" title="Accent: Tender Blush (#E9D6DC)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Tender Blush</span><span class="swatch-hex">#E9D6DC</span></div></div></div></article>
+<article class="subject-bar" data-reason="Surrender" data-palette-status="working" data-type="Umbral" style="--bar-a:#29243E; --bar-b:#6D5496; --bar-c:#A1B5C9;"><div class="subject-bar-inner"><h3>Mara</h3><span aria-hidden="true" class="bar-separator">|</span><p>Teasing Imp<span class="type-label">Umbral</span></p><div class="swatch-row" role="group" aria-label="Mara colour swatches"><div class="palette-swatch" title="Primary: Shadow Indigo (#29243E)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Shadow Indigo</span><span class="swatch-hex">#29243E</span></div><div class="palette-swatch" title="Secondary: Hidden Violet (#6D5496)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Hidden Violet</span><span class="swatch-hex">#6D5496</span></div><div class="palette-swatch" title="Accent: Blue Silver (#A1B5C9)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Blue Silver</span><span class="swatch-hex">#A1B5C9</span></div></div></div></article>
+<article class="subject-bar" data-reason="Reciprocity" data-palette-status="working" data-type="Lightning" style="--bar-a:#E3AD35; --bar-b:#FFE58A; --bar-c:#564DA5;"><div class="subject-bar-inner"><h3>Zip</h3><span aria-hidden="true" class="bar-separator">|</span><p>Spunky Hedgehog<span class="type-label">Lightning</span></p><div class="swatch-row" role="group" aria-label="Zip colour swatches"><div class="palette-swatch" title="Primary: Electric Gold (#E3AD35)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Electric Gold</span><span class="swatch-hex">#E3AD35</span></div><div class="palette-swatch" title="Secondary: Bright Yellow (#FFE58A)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Bright Yellow</span><span class="swatch-hex">#FFE58A</span></div><div class="palette-swatch" title="Accent: Violet (#564DA5)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Violet</span><span class="swatch-hex">#564DA5</span></div></div></div></article>
+<article class="subject-bar" data-reason="Freedom" data-palette-status="working" data-type="Wind" style="--bar-a:#5F9EAB; --bar-b:#B9E6DB; --bar-c:#EFF4E8;"><div class="subject-bar-inner"><h3>Connie</h3><span aria-hidden="true" class="bar-separator">|</span><p>Untamed Conure<span class="type-label">Wind</span></p><div class="swatch-row" role="group" aria-label="Connie colour swatches"><div class="palette-swatch" title="Primary: Open Sky (#5F9EAB)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Open Sky</span><span class="swatch-hex">#5F9EAB</span></div><div class="palette-swatch" title="Secondary: Seafoam (#B9E6DB)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Seafoam</span><span class="swatch-hex">#B9E6DB</span></div><div class="palette-swatch" title="Accent: Cloud White (#EFF4E8)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Cloud White</span><span class="swatch-hex">#EFF4E8</span></div></div></div></article>
+<article class="subject-bar" data-reason="Anticipation" data-palette-status="working" data-type="Fire" style="--bar-a:#7E263E; --bar-b:#E47748; --bar-c:#F3C371;"><div class="subject-bar-inner"><h3>Etna</h3><span aria-hidden="true" class="bar-separator">|</span><p>Coy Cat<span class="type-label">Fire</span></p><div class="swatch-row" role="group" aria-label="Etna colour swatches"><div class="palette-swatch" title="Primary: Banked Ember (#7E263E)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Banked Ember</span><span class="swatch-hex">#7E263E</span></div><div class="palette-swatch" title="Secondary: Flame Orange (#E47748)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Flame Orange</span><span class="swatch-hex">#E47748</span></div><div class="palette-swatch" title="Accent: Warm Gold (#F3C371)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Warm Gold</span><span class="swatch-hex">#F3C371</span></div></div></div></article>
+<article class="subject-bar" data-reason="Transgression" data-palette-status="working" data-type="Eros" style="--bar-a:#8F163B; --bar-b:#E24D82; --bar-c:#2D263A;"><div class="subject-bar-inner"><h3>Loveander</h3><span aria-hidden="true" class="bar-separator">|</span><p>Dragon Girl<span class="type-label">Eros</span></p><div class="swatch-row" role="group" aria-label="Loveander colour swatches"><div class="palette-swatch" title="Primary: Forbidden Crimson (#8F163B)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Forbidden Crimson</span><span class="swatch-hex">#8F163B</span></div><div class="palette-swatch" title="Secondary: Electric Rose (#E24D82)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Electric Rose</span><span class="swatch-hex">#E24D82</span></div><div class="palette-swatch" title="Accent: Dark Ink (#2D263A)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Dark Ink</span><span class="swatch-hex">#2D263A</span></div></div></div></article>
+<article class="subject-bar" data-reason="Restraint" data-palette-status="working" data-type="Logos" style="--bar-a:#D5C8A9; --bar-b:#FAEBD2; --bar-c:#687780;"><div class="subject-bar-inner"><h3>Moth girl</h3><span aria-hidden="true" class="bar-separator">|</span><p>Moth<span class="type-label">Logos</span></p><div class="swatch-row" role="group" aria-label="Moth girl colour swatches"><div class="palette-swatch" title="Primary: Antique Gold (#D5C8A9)"><span class="swatch-role">Primary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Antique Gold</span><span class="swatch-hex">#D5C8A9</span></div><div class="palette-swatch" title="Secondary: Ivory (#FAEBD2)"><span class="swatch-role">Secondary</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Ivory</span><span class="swatch-hex">#FAEBD2</span></div><div class="palette-swatch" title="Accent: Slate (#687780)"><span class="swatch-role">Accent</span><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-name">Slate</span><span class="swatch-hex">#687780</span></div></div></div></article>
+</div>
+</section><section id="archive"><h1 class="chapter-title">Development archive</h1><p>Historical studies remain inside the Body chapter’s collapsed regional studies. Preserve their status; an experiment does not override an approved reference.</p><section aria-labelledby="notes-title" id="notes">
+<div class="section-heading">
+<div>
+<div class="section-num">IV / WORKING NOTES</div>
+<h2 id="notes-title">Study Areas</h2>
+</div>
+<p>Where observations, references, and revisions belong as the journal grows.</p>
+</div>
+<div class="study-grid">
+<article class="study-card"><div class="index">01 / EXPRESSION</div><h3>Faces &amp; Natures</h3><p>Eye shape, mouth shape, expression studies, and each girl's distinctive emotional read.</p></article>
+<article class="study-card"><div class="index">02 / VISUAL SYSTEM</div><h3>Colour &amp; Material</h3><p>Primary, secondary, and accent palettes; patterns, textures, outfits, and collar treatments.</p></article>
+<article class="study-card"><div class="index">03 / CONTINUITY</div><h3>Forms &amp; References</h3><p>Approved anatomy, proportions, canonical views, exploratory variants, and revision history.</p></article>
+</div>
+<div class="memo" role="note">
+<span class="folio">Editorial note</span>
+<p>These are working notes, not a finished catalogue. New observations stay provisional until approved; earlier studies remain useful even after a design changes.</p>
+</div>
+</section><p><a href="https://github.com/lilzugs/GFs/tree/main/docs">Browse source documents →</a></p></section><div id="face-lock" class="prose"><h1>Growlfriends — Mallow Facial Design Lock (22 November 2026)</h1>
+<p><strong>Status:</strong> HARD-LOCKED by user, immediately after approving the final eye-highlight pass.  
+<strong>Approved generation ID:</strong> <code>dc057c34-4653-40a9-9548-400481090705</code>  
+<strong>Conversation output filename:</strong> <code>a_crisp_clean_bold_lined_flat_color_vector_cart.png</code>  
+<strong>Scope:</strong> Mallow's <strong>flat-color Growlfriends portrait face only</strong>. Do not replace or supersede independently approved lifelike or Lalafell-inspired Mallow designs.</p>
+<h2>Final facial identity — immutable unless expressly unlocked</h2>
+<ul><li><strong>Eye placement, aperture and size:</strong> keep the exact large round cartoon eye contours, spacing, orientation and black upper-lash shapes of the approved image; don't shrink the eye whites when adjusting pupils in future.</li><li><strong>Iris-pupil system:</strong> the final eyes have a very narrow, flat pink iris ring encircling a larger solid black vertical-oval pupil, with <strong>one tiny circular white catchlight</strong> on each dark pupil. The pink is an *inside ring*, not a broad colored gradient or thick outer disc. Match both eyes for size and symmetry. No gradient, complex iris textures, extra highlights or heart-shaped pupils.</li><li><strong>Brows:</strong> preserve the two soft, dark, expressive curved eyebrows and the gentle open-eyed demeanor.</li><li><strong>Face/head silhouette:</strong> preserve the rounded adult rabbit-girl face, short gentle muzzle, wide cream cheek pads and their tufted fur contours, balanced lower jaw and forehead-to-eye proportions.</li><li><strong>Nose:</strong> preserve small centered pink bunny nose, shape, exact placement and relationship to the muzzle.</li><li><strong>Mouth:</strong> preserve cheerful slightly open smile, black mouth contour, little pink interior detail and precisely <strong>two prominent centered upper buck incisors</strong>, without fangs or generic human teeth.</li><li><strong>Cheeks and expression:</strong> keep the three short pink blush strokes on each cheek, cream muzzle coloring and affectionate, eager, sweet open expression. No smugness, frown, dramatic eyelid narrowing or added makeup.</li><li><strong>Drawing language:</strong> retain bold smooth very dark outlines, clean flat color and limited hard-edged shadow shapes. Do not introduce realistic facial fur microtexture, gradients or glossy complex eye rendering.</li></ul>
+<h2>Explicit boundaries</h2>
+<p>This is a <strong>face-only</strong> lock. Her long floppy ears, voluminous two-tone blonde hairstyle, pink inner-ear coloring, torso, bust, outfit, pink leather-look collar and gold front O-ring are visible in the approved portrait but <strong>are not newly hard-locked by this facial approval</strong>; any separately approved design rules continue to apply. Do not let a later hair, clothing, collar, bust or body revision accidentally shift the locked face.</p>
+<p>The facial lock applies to the approved front-facing design. In other angles, preserve the same underlying dimensions, species-specific muzzle, feature relationships and expression, adjusting only perspective.</p>
+<h2>Development context</h2>
+<p>The eye design was revised gradually from large decorative magenta eyes to a simplified flat-color eye with small vertically oriented black pupils. The user then requested a slightly smaller pupil, a thin outline, restoration of the solid black interior, a thicker black interior relative to a <strong>thin pink ring</strong>, and finally a <strong>tiny white circle</strong> to restore cuteness. The final micro-highlight pass was explicitly approved with “ahhh i love it. hard lock face.”</p>
+<p>Older variants with elaborate magenta gradients, heart-shaped highlights, missing pupil interiors or no catchlight are historical and <strong>must not supersede</strong> this final checkpoint.</p>
+<h2>Future iteration protocol</h2>
+<ul><li>Open the approved generation image, not an older Mallow portrait, as the visual face source wherever it is available.</li><li>Compare eyes, pupils, highlights, muzzle, nose, teeth, cheek shapes and expression to this checkpoint before accepting a new generation.</li><li>Treat modifications to other parts of the character as local edits. No facial drift is acceptable.</li><li>If the precise source pixels are not accessible, request or recover the actual approved image; a textual description alone cannot guarantee pixel-identical reproduction.</li></ul>
+<p><strong>Artwork itself has not been embedded in this Markdown file; the generation ID identifies the precise conversation checkpoint.</strong></p></div></main><footer class="footer">Growlfriends · Shared standards and individual identities</footer></div>
+<script>
+const params=new URLSearchParams(location.search), chapter=params.get('chapter')||'body', girl=params.get('girl')||'';
+const routes={body:'anatomy',uniform:'uniform',style:'style',characters:'characters',archive:'archive'};
+const all=chapter==='render',valid=all||routes[chapter],active=valid?chapter:'body';
+for(const id of ['anatomy','uniform','style','characters','archive'])document.getElementById(id).hidden=all?id==='archive':id!==routes[active];
+document.querySelectorAll('[data-chapter]').forEach(a=>{if(a.dataset.chapter===active)a.setAttribute('aria-current','page')});
+const selector=document.getElementById('girl');selector.value=girl;
+document.querySelector('.chapter-controls').hidden=!all&&active!=='characters';
+for(const card of document.querySelectorAll('#characters .subject-bar'))card.hidden=!!girl&&card.querySelector('h3').textContent!==girl;
+document.getElementById('face-lock').hidden=!(girl==='Mallow'&&(all||active==='characters'));
+selector.addEventListener('change',()=>{params.set('girl',selector.value);location.search=params});
+document.getElementById('render-link').href='?chapter=render&girl='+encodeURIComponent(girl);
+if(all){document.querySelectorAll('.historical').forEach(d=>d.hidden=true);document.title=(girl?girl+' · ':'')+'Render reference · Growlfriends';}
+</script></body></html>
