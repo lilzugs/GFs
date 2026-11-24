@@ -257,6 +257,10 @@
     .subject-bar-inner{flex:1;min-width:0;grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr);gap:10px 14px;align-content:start;}
     .subject-bar h3{overflow-wrap:anywhere;}
     @media(max-width:370px){.subject-bar-inner{grid-template-columns:1fr;gap:9px;}}
+
+    /* Uniform gradient frame: grid stretches the inner panel in both axes. */
+    .roster > .subject-bar{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr;align-items:stretch;padding:5px;}
+    .roster > .subject-bar > .subject-bar-inner{align-self:stretch;min-height:100%;align-content:start;}
 </style>
 <!-- Subject index: working Type palettes v0.1, three base swatches with descriptive colour names and exact hex values. -->
 
