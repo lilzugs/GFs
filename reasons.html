@@ -191,7 +191,7 @@ body::after{inset:24px;border-radius:14px;background-image:linear-gradient(#8aee
 .page{box-shadow:-12px 0 36px #052d5866,12px 0 36px #052d5866,-1px 0 0 #e3fcff66,1px 0 0 #e3fcff66}
 }
 @media print{body{background:white}body::before,body::after{display:none}.page{box-shadow:none}}
-</style></head>
+</style><style id="remove-screen-rim">@media(min-width:1250px){body::before{display:none}body::after{inset:0;border-radius:0;box-shadow:none}}</style></head>
 <body>
 <div class="page">
 <header class="topline"><a class="brand" href="#top">Growlfriends.</a><div class="mini">Private field journal · Experimental taxonomy</div></header>
