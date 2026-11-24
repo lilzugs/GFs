@@ -118,6 +118,52 @@ select,button,.add-subject input{background-color:var(--paper);color:var(--cocoa
 .footer,.foot,.folio,.mini,.edition{color:var(--wine)}
 .cover-aside{background:linear-gradient(156deg,#837058,#64513e)}
 @media print{body{background:white}.page{background:none}}
+</style><style id="a2-colour-story">
+/* Parchment is the canvas; coloured chapter ribbons and character inks provide hierarchy. */
+:root{--wine:#743747;--rose:#C58D91;--cocoa:#382729;--wine-deep:#512638;--slate:#526879;--gold:#be9457;--sage:#708674}
+html{background:#b7b1a0}
+body{background-color:#eadcc0;background-image:radial-gradient(ellipse at 0% 0%,#c6d8d266,transparent 45%),radial-gradient(ellipse at 100% 30%,#e8c0bc55,transparent 55%),repeating-linear-gradient(3deg,#64513e03 0px,#64513e03 1px,transparent 1px,transparent 5px),url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%2364513e' opacity='.1' filter='url(%23p)' d='M0 0h150v150H0z'/%3E%3C/svg%3E")}
+.page{background:linear-gradient(90deg,#74374706,transparent 3%,transparent 97%,#52687909)}
+.topbar,.topline{border-bottom-color:#52687970}.mark,.brand{color:var(--wine)}
+.chapter-title,.hero h1{color:var(--wine)}
+.nav a{color:var(--slate)}.nav a:hover,.nav a:focus-visible{border-bottom-color:var(--wine);color:var(--wine)}
+.directory a{--chapter-ink:#743747;--chapter-wash:#ead0c8;border-top:5px solid var(--chapter-ink);background:linear-gradient(150deg,var(--chapter-wash),#f7ecd7 72%);box-shadow:inset 0 0 0 3px #fff6e3,inset 0 0 0 4px #64513e22,0 4px 10px #392f2515}
+.directory a:nth-child(2){--chapter-ink:#526879;--chapter-wash:#c9d9d8}
+.directory a:nth-child(3){--chapter-ink:#92703e;--chapter-wash:#ead19b}
+.directory a h2{color:var(--chapter-ink)}
+.directory a .folio{display:inline-block;color:var(--chapter-ink);padding:5px 9px;border:1px solid currentColor;background:#fff7e555;border-radius:2px}
+.directory a:hover{background:linear-gradient(150deg,var(--chapter-wash),#fff4dc 85%)}
+.chapter-nav{gap:8px;border-bottom-color:#52687955}
+.chapter-nav a{background:#d5deda;color:#3d5363;border-color:#52687970;box-shadow:inset 0 0 0 2px #f4edd577}
+.chapter-nav a:hover{background:#c2d1d1}
+.chapter-nav a[aria-current=page]{background:linear-gradient(#8d5263,#743747);color:#fff3d9;box-shadow:inset 0 0 0 2px #e8cba877}
+.section-heading{border-bottom-color:#8a714b55}
+.section-heading h2{color:var(--wine)}
+.section-num{color:#526879}
+.subject-bar{padding:3px;border-radius:5px;box-shadow:0 3px 8px #38272920;background:linear-gradient(125deg,var(--bar-a),var(--bar-b),var(--bar-c))}
+.subject-bar-inner{position:relative;border-radius:2px;border-top:4px solid var(--bar-a);background:#fff3dc;background:linear-gradient(125deg,color-mix(in srgb,var(--bar-a) 20%,#fff3dc),color-mix(in srgb,var(--bar-b) 32%,#fff3dc) 52%,color-mix(in srgb,var(--bar-c) 23%,#fff3dc));box-shadow:inset 0 0 0 1px #fff9ea99}
+.subject-bar h3{color:var(--cocoa);text-shadow:0 1px #fff9e780}
+.subject-bar p{color:var(--cocoa)}
+.type-label{color:#584331}
+.swatch-row{border-top-color:#64513e35}
+.swatch-name,.swatch-hex{color:var(--cocoa)}
+.profile-link{color:var(--wine);padding:7px 10px;background:#fff6e5bb;border:1px solid #74374744;border-radius:2px;text-decoration:none;width:max-content;max-width:100%}
+.profile-link:hover{background:#fff9ef}
+.anatomy-module-head,.style-workflow{border-left:4px solid #526879;padding-left:18px}
+.anatomy-chip{background:#d5e0da;color:#3d5363;border-color:#52687977}
+.anatomy-rule-num,.style-principle .folio{color:#526879}
+.style-principle:nth-child(2){background-color:#eee0bb}.style-principle:nth-child(3){background-color:#e5d2c8}
+details>summary{background:linear-gradient(90deg,#d8c7a4aa,#eee0c766);color:#674d39}
+.prose h2{border-bottom:1px solid #be945755;padding-bottom:10px}
+select:focus-visible,button:focus-visible,a:focus-visible{outline-color:#526879}
+button.primary{background:var(--wine);color:#fff3dc}
+.entry{border-top:3px solid #7b8b8c}
+.entry.is-set{border-top-color:#748667}
+.entry.is-duplicate{border-top-color:#a6535c}
+.type{background:#d6dfd9;color:#3d5363;border-color:#7e939677}
+.stamp{background:#e4c98877;color:var(--wine);border-color:#a5824f}
+.footer,.foot{border-top-color:#52687955;color:#526879}
+@media print{body{background:white}.page{background:none}.subject-bar-inner{background:white}}
 </style></head>
 <body>
 <div class="page">
